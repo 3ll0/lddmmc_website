@@ -1,8 +1,12 @@
+import { NavLink } from "react-router-dom"
 
+function Nav() {
+  
+}
 
 export default function Resources() {
   return (
-    <div>
+    <div className='resources'>
       <h1>Resources Page</h1>
       <p>Admins</p>
       <p>Adacdemics</p>
