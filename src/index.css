@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/*** ROOT ***/
+:root {
+  /*** COLORS ***/
+  /* PURE */
+  --pure-white-color: #FFFFFF;
+  --pure-black-color: #000000;
+
+  /* LOGO */
+  --red-color: #F22248;
+  --indigo-color: #2B3A8C;
+  --blue-color: #0597F2;
+  --green-color: #58A664;
+  --yellow-color: #F2CB05;
+
+  /* THEME */
+  --white-color: #F2F2F2;
+  --black-color: #0D0D0D;
+}
+
+/*** MAIN ***/
+
+html, body {
+  margin: 0px;
+  padding: 0;
+
+  background-color: var(--pure-white-color);
+  color: var(--black-color);
+  font-family:'Quicksand';
+  text-decoration: none;
+}
+
+/*** HEADER ***/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  background-color: var(--pure-white-color);
+  z-index: 1;
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.header-logo {
+  height: 75px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.header-name {
+  font-size: 25px;
+  text-decoration: none;
+  color: var(--black-color);
+}
+
+.header-navbar {
+  display: flex;
+  align-items: center;
+}
+.header-navbar > * {
+  margin-right: 25px;
+  color: var(--black-color);
+}
+.header-icon-container {
+  display: flex;
+  justify-content: center;
+}
+.header-navbar-active {
+  font-weight: 600;
+  color: var(--blue-color);
+}
+.header-navbar-inactive {
+  font-weight: 400;
+  text-decoration: none;
+}
+.header-facebook-icon, .header-instagram-icon {
+  width: 30px;
+}
+
+/*** HOME ***/
+
+.home-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-image {
+}
+.home-image-words {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--pure-white-color);
+  text-align: center;
+}
+
+.annoucements {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.annoucements-name {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+.annoucement-elements {
+  display: flex;
+}
+.annoucement-element {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.annoucement-element > * {
+  margin-bottom: 10px;
+}
+.annoucement-header {
+  display: flex;
+  align-items: center;
+}
+.annoucement-header-image {
+  height: 50px;
+}
+.annoucement-header-description {
+  margin-left: 10px;
+}
+.annoucement-header-name {
+  font-size: 20px;
+  font-weight: 500;
+}
+.annoucement-header-time {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.news-title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+}
+.news-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.news-element {
+  display: flex;
+  align-items: center;
+}
+.news-element-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 300px;
+  width: 250px;
+}
+.news-element-image {
+  min-width: 100%;
+  min-height: 100%
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+.chapters-title {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+}
+.chapters-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chapter-element {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  width: 800px;
+}
+.chapter-image {
+  width: 150px;
+}
+.chapter-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.chapter-name {
+  font-size: 50px;
+  font-weight: 500;
+}
+.chapter-description {
+  font-size: 20px;
+  font-weight: 300;
+}
+.chapter-quote {
+  font-size: 15px;
+  font-weight: 500;
+}
+.chapter-link {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+
+/*** FOOTER ***/
+
+.footer {
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
