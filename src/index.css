@@ -238,5 +238,55 @@ html, body {
   color: var(--white-color);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
+  padding: 30px;
+}
+
+.footer-doan {
+  display: flex;
+  flex-direction: column;
+}
+.footer-doan-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-doan-alt {
+
+}
+.footer-doan-quote {
+
+}
+
+.footer-link {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.footer-link-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-link-veym .footer-link-membership .footer-link-store {
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+}
+.footer-contact-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-contact-description {
+
+}
+.footer-contact-description-title {
+
+}
+.footer-contact-link {
+
 }
