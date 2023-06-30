@@ -32,10 +32,10 @@ function HeaderNav() {
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/contact'>
         CONTACT
       </NavLink>
-      <a className='header-icon-container' href='https://www.facebook.com/profile.php?id=100090993057919'>
+      <a className='header-icon-container' href='https://www.facebook.com/profile.php?id=100090993057919' target='_blank'>
         <img className='header-facebook-icon' src='/svg/facebook.svg' />
       </a>
-      <a className='header-icon-container' href='https://www.instagram.com/lddmmc/'>
+      <a className='header-icon-container' href='https://www.instagram.com/lddmmc/' target='_blank'>
         <img className='header-instagram-icon' src='/svg/instagram.svg' />
       </a>
     </nav>
