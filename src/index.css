@@ -85,7 +85,6 @@ html, body {
 }
 .header-facebook-icon, .header-instagram-icon {
   width: 30px;
-  target: 'blank';
 }
 
 /*** HOME ***/

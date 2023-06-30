@@ -5,7 +5,7 @@ function Doan() {
         Liên Đoàn Đức Mẹ Mân Côi
       </div>
       <div className='footer-doan-alt'>
-        Our Lady of the Rosary
+        Our Lady of the Holy Rosary
       </div>
       <div className='footer-doan-quote'>
         "lien doan quote here" -APY

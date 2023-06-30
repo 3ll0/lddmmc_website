@@ -1,9 +1,9 @@
 function NamePage() {
   return (
     <div className='home-image-container'>
-      <img className='home-image' src="/images/img2.jpg" />
+      <img className='home-image' src="/images/img4.jpg" />
       <div className='home-image-words'>
-        OUR LADY OF THE ROSARY LEAGUE OF CHAPTERS
+        OUR LADY OF THE HOLY ROSARY LEAGUE OF CHAPTERS
       </div>
     </div>
   )
