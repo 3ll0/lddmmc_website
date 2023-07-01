@@ -359,12 +359,11 @@ html, body {
   font-weight: 600;
   margin-bottom: 10px;
 }
-.footer-contact-description {
-
-}
-.footer-contact-description-title {
-
-}
 .footer-contact-link {
-
+  display: flex;
+  align-items: center;
+}
+.footer-contact-icon {
+  width: 20px;
+  margin-right: 5px;
 }

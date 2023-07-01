@@ -39,14 +39,10 @@ function Contact() {
       <div className='footer-contact-title'>
         Contact Us
       </div>
-      <div className='footer-contact-description'>
-        <div className='footer-contact-description-title'>
-          Contact us at:
-        </div>
-        <a className='footer-contact-link' href="mailto:btvlddmmc@veym.net">
-          btvlddmmc@veym.net
-        </a>
-      </div>
+      <a className='footer-contact-link' href="mailto:btvlddmmc@veym.net">
+        <img className='footer-contact-icon' src='/svg/mail.svg' />
+        btvlddmmc@veym.net
+      </a>
     </div>
   )
 }

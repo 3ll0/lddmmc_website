@@ -1,3 +1,5 @@
+import React from 'react'
+
 function NamePage() {
   return (
     <div className='home-image-container'>
@@ -10,40 +12,43 @@ function NamePage() {
 }
 
 function Annoucements() {
+  const [annoucements, setAnnoucements] = React.useState([])
+  React.useEffect(() => {
+    fetch("/api/annoucements")
+      .then(res => res.json())
+      .then(data => setAnnoucements(data.annoucements))
+  }, [])
+
+  const annoucementElements = annoucements.map(annoucement => (
+    <div className='annoucement-element'>
+      <div className='annoucement-header'>
+        <img className='annoucement-header-image' src="/images/logo.png" />
+        <div className='annoucement-header-description'>
+          <div className='annoucement-header-name'>
+            {annoucement.name}
+          </div>
+          <div className='annoucement-header-time'>
+            {annoucement.time}
+          </div>
+        </div>
+      </div>
+      <div>
+      {annoucement.content}
+      </div>
+      <img className='home-image' src="/images/img1.jpg" />
+      <div>
+        Links
+      </div>
+    </div>
+  ))
+
   return (
     <div className='annoucements'>
       <div className='annoucements-name'>
         ANNOUCEMENTS
       </div>
       <div className='annoucement-elements'>
-        <Annoucement />
-        <Annoucement />
-        <Annoucement />
-      </div>
-    </div>
-  )
-}
-
-function Annoucement() {
-  return (
-    <div className='annoucement-element'>
-      <div className='annoucement-header'>
-        <img className='annoucement-header-image' src="/images/logo.png" />
-        <div className='annoucement-header-description'>
-          <div className='annoucement-header-name'>
-            Liên Đoàn Đức Mẹ Mân Côi
-          </div>
-          <div className='annoucement-header-time'>
-            1 day ago
-          </div>
-        </div>
-      </div>
-      <div>
-        Announcing the winner of the Đại Hội Nguồn Sống 2023 T-Shirt Contest, drum roll please…congratulations to Tr. Joseph & Tr. Natalie from Đoàn St. Barbara! Over a thousand people will be wearing YOUR design at Đại Hội this year! See you on the Đại Hội stage where you will receive your cash prize and your Đoàn will receive VIP seating!Thank you to everyone who participated in our T-shirt contest this year. We can’t wait to see you all at Đại Hội Nguồn Sống 2023!
-      </div>
-      <img className='home-image' src="/images/img1.jpg" />
-      <div>
-        Links
+        {annoucementElements}
       </div>
     </div>
   )
