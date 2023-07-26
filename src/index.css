@@ -4,32 +4,58 @@
 :root {
   /*** COLORS ***/
   /* PURE */
-  --pure-white-color: #FFFFFF;
-  --pure-black-color: #000000;
+  /* --pure-white-color: #FFFFFF; */
+  /* --pure-black-color: #000000; */
 
   /* LOGO */
-  --red-color: #F22248;
-  --indigo-color: #2B3A8C;
-  --blue-color: #0597F2;
-  --green-color: #58A664;
-  --yellow-color: #F2CB05;
+  /* --red-color: #F22248; */
+  /* --indigo-color: #2B3A8C; */
+  /* --blue-color: #0597F2; */
+  /* --green-color: #58A664; */
+  /* --yellow-color: #F2CB05; */
 
   /* THEME */
-  --white-color: #F2F2F2;
-  --black-color: #0D0D0D;
+  /* --white-color: #F2F2F2; */
+  /* --black-color: #0D0D0D; */
 }
 
 /*** MAIN ***/
 
-html, body {
+body {
   margin: 0;
   padding: 0;
 
   font-family:'Quicksand';
-  text-decoration: none;
 
-  background-color: var(--pure-white-color);
-  color: var(--black-color);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+
+  /*** COLORS ***/
+  --primary-background-color: #FFFFFF;
+  --primary-text-color: #000000;
+
+  --acent-color: #0597F2;
+}
+
+body.dark {
+  /*** COLORS ***/
+  --primary-background-color: #020202;
+  --primary-text-color: #FDFDFD;
+
+  --acent-color: #0597F2;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /*** HEADER ***/
@@ -38,13 +64,15 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: sticky;
   top: 0;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-  background-color: var(--pure-white-color);
   z-index: 1;
+
+  font-size: 16px;
+  height: 8rem;
+
+  background-color: var(--primary-background-color);
 }
 
 .header-main {
@@ -78,7 +106,7 @@ html, body {
 }
 .header-navbar-active {
   font-weight: 600;
-  color: var(--blue-color);
+  color: var(--acent-color);
 }
 .header-navbar-inactive {
   font-weight: 400;

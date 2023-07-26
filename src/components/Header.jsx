@@ -4,9 +4,9 @@ function HeaderMain() {
   return (
     <Link className='header-main' to='/'>
       <img className='header-logo' src="/images/logo.png" />
-      <p className='header-name'>
+      <div className='header-name'>
         Liên Đoàn Đức Mẹ Mân Côi
-      </p>
+      </div>
     </Link>
   )
 }
