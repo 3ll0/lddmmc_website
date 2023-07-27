@@ -35,9 +35,11 @@ body {
 
   /*** COLORS ***/
   --primary-background-color: #FFFFFF;
-  --primary-text-color: #000000;
 
-  --acent-color: #0597F2;
+  --primary-text-color: #000000;
+  --secondary-text-color: #FFFFFF;
+
+  --primary-accent-color: #0597F2;
 }
 
 body.dark {
@@ -45,7 +47,7 @@ body.dark {
   --primary-background-color: #020202;
   --primary-text-color: #FDFDFD;
 
-  --acent-color: #0597F2;
+  --primary-accent-color: #0597F2;
 }
 
 body::-webkit-scrollbar {
@@ -69,8 +71,11 @@ body::-webkit-scrollbar {
   top: 0;
   z-index: 1;
 
+  padding-left: 2rem;
+  padding-right: 2rem;
+
   font-size: 16px;
-  height: 8rem;
+  height: 6rem;
 
   background-color: var(--primary-background-color);
 }
@@ -82,14 +87,12 @@ body::-webkit-scrollbar {
   text-decoration: none;
 }
 .header-logo {
-  height: 75px;
-  margin-left: 25px;
-  margin-right: 25px;
+  height: 4rem;
 }
 .header-name {
-  font-size: 25px;
-  text-decoration: none;
-  color: var(--black-color);
+  padding-left: 1rem;
+  color: var(--primary-text-color);
+  font-size: 1.5rem;
 }
 
 .header-navbar {
@@ -97,23 +100,23 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 .header-navbar > * {
-  margin-right: 25px;
-  color: var(--black-color);
+  padding-left: 1rem;
+  color: var(--primary-text-color);
 }
 .header-icon-container {
   display: flex;
   justify-content: center;
 }
-.header-navbar-active {
-  font-weight: 600;
-  color: var(--acent-color);
-}
 .header-navbar-inactive {
   font-weight: 400;
   text-decoration: none;
 }
+.header-navbar-active {
+  font-weight: 600;
+  color: var(--primary-accent-color);
+}
 .header-facebook-icon, .header-instagram-icon {
-  width: 30px;
+  width: 2rem;
 }
 
 /*** HOME ***/
@@ -123,12 +126,20 @@ body::-webkit-scrollbar {
 /*** FOOTER ***/
 
 .footer {
-  background-color: var(--blue-color);
-  color: var(--white-color);
   display: flex;
   justify-content: center;
   align-items: top;
-  padding: 30px;
+  justify-content: space-around;
+
+  height: 8rem;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  padding-top: 1.5rem;
+
+  background-color: var(--primary-accent-color);
+  color: var(--secondary-text-color);
 }
 
 .footer-doan {
@@ -136,9 +147,10 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 .footer-doan-title {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+
+  margin-bottom: 0.5rem;
 }
 .footer-doan-alt {
 
@@ -150,12 +162,12 @@ body::-webkit-scrollbar {
 .footer-link {
   display: flex;
   flex-direction: column;
-  margin-left: 150px;
 }
 .footer-link-title {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  
+  margin-bottom: 0.5rem;
 }
 .footer-link-veym .footer-link-membership .footer-link-store {
 }
@@ -163,18 +175,20 @@ body::-webkit-scrollbar {
 .footer-contact {
   display: flex;
   flex-direction: column;
-  margin-left: 150px;
 }
 .footer-contact-title {
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+
+  margin-bottom: 0.5rem;
 }
 .footer-contact-link {
   display: flex;
   align-items: center;
 }
 .footer-contact-icon {
-  width: 20px;
-  margin-right: 5px;
+  width: 1rem;
+}
+.footer-contact-email {
+  padding-left: 0.25rem;
 }

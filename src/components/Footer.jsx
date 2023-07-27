@@ -41,7 +41,9 @@ function Contact() {
       </div>
       <a className='footer-contact-link' href="mailto:btvlddmmc@veym.net">
         <img className='footer-contact-icon' src='/svg/mail.svg' />
-        btvlddmmc@veym.net
+        <div className='footer-contact-email'>
+          btvlddmmc@veym.net
+        </div>
       </a>
     </div>
   )
