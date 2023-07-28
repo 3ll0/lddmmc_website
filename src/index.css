@@ -119,10 +119,6 @@ body::-webkit-scrollbar {
   width: 2rem;
 }
 
-/*** HOME ***/
-
-
-
 /*** FOOTER ***/
 
 .footer {
@@ -191,4 +187,99 @@ body::-webkit-scrollbar {
 }
 .footer-contact-email {
   padding-left: 0.25rem;
+}
+
+/*** HOME PAGE ***/
+
+
+/*** ABOUT PAGE ***/
+
+
+/*** CHAPTERS PAGE ***/
+
+
+/*** RESURCES PAGE ***/
+
+
+/*** EVENTS PAGE ***/
+
+
+/*** CONTACT PAGE ***/
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact-form {
+  width: 30rem;
+}
+.contact-form-input-name {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid var(--primary-accent-color);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+.contact-form-input-email {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid var(--primary-accent-color);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+.contact-form-input-text {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid var(--primary-accent-color);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+.contact-form-submit {
+  width: 100%;
+  background: var(--primary-accent-color);
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: var(--secondary-text-color);
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  font-weight: 700;
+}
+.contact-form-submit:hover { 
+  background:var(--green-color);
 }

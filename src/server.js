@@ -1,6 +1,5 @@
 import { createServer, Model } from "miragejs"
 
-
 createServer({
   models: {
     annoucement: Model,
@@ -24,18 +23,59 @@ createServer({
 
     server.create("chapter", 
     {
-      name: "Anre Phu Yen", 
+      name: "Anrê Phú Yên", 
       description: "Or Doan is located in Hoston, TX blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff", 
       quote: "blah blah",
-      website: "www.youtube.com"
+      website: "www.youtube.com",
+      logo: "/chapterLogo/APY.jpg"
     })
-
     server.create("chapter", 
     {
-      name: "La Vang", 
+      name: "Anrê Dũng Lạc", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com"
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/ADL.jpg"
+    })
+    server.create("chapter", 
+    {
+      name: "Chúa Ba Ngôi", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/CBN.jpg"
+    })
+    server.create("chapter", 
+    {
+      name: "Savio", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/Savio.png"
+    })
+    server.create("chapter", 
+    {
+      name: "Kitô Vua", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/KTV.png"
+    })
+    server.create("chapter", 
+    {
+      name: "Nữ Vương Hòa Bình", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/NVHB.png"
+    })
+    server.create("chapter", 
+    {
+      name: "Don Bosco", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      website: "https://www.youtube.com",
+      logo: "/chapterLogo/LD.png"
     })
 
     server.create("van", { id: "2", name: "Beach Bum", price: 80, description: "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png", type: "rugged", hostId: "123" })

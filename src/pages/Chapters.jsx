@@ -10,7 +10,7 @@ export default function Chapters() {
 
   const chapterElements = chapters.map(chapter => (
     <div className='chapter-element'>
-      <img className='chapter-image' src="/images/tntt.png" />
+      <img className='chapter-image' src={chapter.logo} />
       <div className='chapter-info'>
         <div className='chapter-name'>
           {chapter.name}

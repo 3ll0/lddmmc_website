@@ -1,6 +1,6 @@
 function Form() {
   return (
-    <form className='contact-form'>      
+    <form method="post" action="tofu1300@gmail.com" className='contact-form'>      
       <input class='contact-form-input-name' name='name' type='text' placeholder='Name' />   
       <input class='contact-form-input-email' name='email' type='text' placeholder='Email' />
       <textarea class='contact-form-input-text' name='text' placeholder='Comment' />
