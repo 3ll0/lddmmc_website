@@ -1,5 +1,18 @@
 import { Link, NavLink } from 'react-router-dom'
 
+function HeaderButton() {
+  const toggleTheme = function Toggle() {
+    console.log('WORK');
+    document.body.classList.toggle('dark');
+  }
+
+  return (
+    <button className='theme-button' onClick={toggleTheme()}>
+      HI
+    </button>
+  )
+}
+
 function HeaderMain() {
   return (
     <Link className='header-main' to='/'>
@@ -14,6 +27,7 @@ function HeaderMain() {
 function HeaderNav() {
   return (
     <nav className='header-navbar'>
+      <HeaderButton />
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/'>
         HOME
       </NavLink>

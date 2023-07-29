@@ -196,16 +196,117 @@ body::-webkit-scrollbar {
 
 
 /*** CHAPTERS PAGE ***/
+.chapters {
+  display: flex;
+  flex-direction: column;
+}
+.chapters-title {
+  font-size: 4rem;
+  font-weight: 500;
+  text-align: center;
+}
+.chapters-list {
+  display: flex;
+  align-items: center;
+}
+.chapter-element {
+  display: flex;
+  flex-direction: column;
 
+  width: 20rem;
+  height: 50rem;
+}
+.chapter-image {
+  width: 20rem;
+}
+.chapter-info {
+  display: flex;
+  flex-direction: column;
+}
+.chapter-name {
+  font-size: 2em;
+  font-weight: 500;
+}
+.chapter-description {
+  font-weight: 300;
+}
+.chapter-quote {
+  font-weight: 500;
+}
+.chapter-link {
+  font-weight: 500;
+}
 
 /*** RESURCES PAGE ***/
 
 
 /*** EVENTS PAGE ***/
+.events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.events-title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.events-content {
+  display: flex;
+  align-items: center;
 
+  justify-content: space-between;
+}
+.events-image-container {
+  display: flex;
+  width: 40rem;
+}
+.events-image {
+  max-width:100%;
+  max-height:100%;
+}
+.events-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.event-element {
+  display: flex;
+  flex-direction: column;
+
+  width: 20rem;
+  height: 20rem;
+}
+.event-image {
+  max-width:100%;
+  max-height:100%;
+}
+.event-content {
+  display: flex;
+  align-items: center;
+}
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.event-date-number {
+}
+.event-date-month {
+}
+.event-info {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.event-info-name {
+  font-size: 2rem;
+}
+.event-info-location {
+}
+.event-info-description {
+}
 
 /*** CONTACT PAGE ***/
-
 .contact {
   display: flex;
   flex-direction: column;

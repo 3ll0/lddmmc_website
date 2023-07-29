@@ -3,7 +3,7 @@ import React from 'react'
 export default function Chapters() {
   const [chapters, setChapters] = React.useState([])
   React.useEffect(() => {
-    fetch("/api/chapters")
+    fetch('/api/chapters')
       .then(res => res.json())
       .then(data => setChapters(data.chapters))
   }, [])

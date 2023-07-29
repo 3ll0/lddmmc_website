@@ -4,10 +4,12 @@ createServer({
   models: {
     annoucement: Model,
     chapters: Model,
+    events: Model,
     vans: Model,
   },
 
   seeds(server) {
+    /* ANNOUCEMENTS */
     server.create("annoucement", 
     {
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
@@ -21,13 +23,14 @@ createServer({
       content: "blah blah",
     })
 
+    /* CHAPTERS */
     server.create("chapter", 
     {
       name: "Anrê Phú Yên", 
       description: "Or Doan is located in Hoston, TX blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff", 
       quote: "blah blah",
       website: "www.youtube.com",
-      logo: "/chapterLogo/APY.jpg"
+      logo: "/chapters/APY.jpg"
     })
     server.create("chapter", 
     {
@@ -35,7 +38,7 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/ADL.jpg"
+      logo: "/chapters/ADL.jpg"
     })
     server.create("chapter", 
     {
@@ -43,7 +46,7 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/CBN.jpg"
+      logo: "/chapters/CBN.jpg"
     })
     server.create("chapter", 
     {
@@ -51,7 +54,7 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/Savio.png"
+      logo: "/chapters/Savio.png"
     })
     server.create("chapter", 
     {
@@ -59,7 +62,7 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/KTV.png"
+      logo: "/chapters/KTV.png"
     })
     server.create("chapter", 
     {
@@ -67,7 +70,7 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/NVHB.png"
+      logo: "/chapters/NVHB.png"
     })
     server.create("chapter", 
     {
@@ -75,7 +78,36 @@ createServer({
       description: "less stuff blah blah", 
       quote: "blah bro blah",
       website: "https://www.youtube.com",
-      logo: "/chapterLogo/LD.png"
+      logo: "/chapters/LD.png"
+    })
+
+    /* EVENTS */
+    server.create("event", 
+    {
+      name: "DHLD", 
+      location: "St. Matthias Catholic Church", 
+      description: "EPHESIANS 2:10",
+      dateNumber: "30",
+      dateMonth: "September",
+      image: "/events/DHLD.png"
+    })
+    server.create("event", 
+    {
+      name: "DHLD", 
+      location: "St. Matthias Catholic Church",
+      description: "EPHESIANS 2:10",
+      dateNumber: "31",
+      dateMonth: "September",
+      image: "/events/DHLD.png"
+    })
+    server.create("event", 
+    {
+      name: "DHLD", 
+      location: "St. Matthias Catholic Church",
+      description: "EPHESIANS 2:10",
+      dateNumber: "1",
+      dateMonth: "October",
+      image: "/events/DHLD.png"
     })
 
     server.create("van", { id: "2", name: "Beach Bum", price: 80, description: "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png", type: "rugged", hostId: "123" })
@@ -97,6 +129,9 @@ createServer({
       return schema.chapters.all()
     })
 
+    this.get("/events", (schema, request) => {
+      return schema.events.all()
+    })
 
 
     this.get("/vans", (schema, request) => {
