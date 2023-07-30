@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Events() {
   const [events, setEvents] = React.useState([])
+
   React.useEffect(() => {
     fetch('/api/events')
       .then(res => res.json())
@@ -9,7 +10,7 @@ export default function Events() {
   }, [])
 
   const eventElements = events.map(event => (
-    <div className='event-element'>
+    <div key={event.id} className='event-element'>
       <img className='event-image' src={event.image} />
       <div className='event-content'>
         <div className='event-date'>

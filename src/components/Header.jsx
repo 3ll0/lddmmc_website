@@ -1,13 +1,12 @@
 import { Link, NavLink } from 'react-router-dom'
 
 function HeaderButton() {
-  const toggleTheme = function Toggle() {
-    console.log('WORK');
+  function ToggleDark() {
     document.body.classList.toggle('dark');
   }
 
   return (
-    <button className='theme-button' onClick={toggleTheme()}>
+    <button className='theme-button' onClick={ToggleDark}>
       HI
     </button>
   )

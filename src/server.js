@@ -12,12 +12,14 @@ createServer({
     /* ANNOUCEMENTS */
     server.create("annoucement", 
     {
+      id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "1 day ago", 
       content: "Announcing the winner of the Đại Hội Nguồn Sống 2023 T-Shirt Contest, drum roll please…congratulations to Tr. Joseph & Tr. Natalie from Đoàn St. Barbara! Over a thousand people will be wearing YOUR design at Đại Hội this year! See you on the Đại Hội stage where you will receive your cash prize and your Đoàn will receive VIP seating!Thank you to everyone who participated in our T-shirt contest this year. We can’t wait to see you all at Đại Hội Nguồn Sống 2023!",
     })
     server.create("annoucement", 
     {
+      id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "2 day ago", 
       content: "blah blah",
@@ -26,6 +28,7 @@ createServer({
     /* CHAPTERS */
     server.create("chapter", 
     {
+      id: 0,
       name: "Anrê Phú Yên", 
       description: "Or Doan is located in Hoston, TX blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff", 
       quote: "blah blah",
@@ -34,6 +37,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 1,
       name: "Anrê Dũng Lạc", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -42,6 +46,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 2,
       name: "Chúa Ba Ngôi", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -50,6 +55,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 3,
       name: "Savio", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -58,6 +64,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 4,
       name: "Kitô Vua", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -66,6 +73,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 5,
       name: "Nữ Vương Hòa Bình", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -74,6 +82,7 @@ createServer({
     })
     server.create("chapter", 
     {
+      id: 6,
       name: "Don Bosco", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
@@ -84,6 +93,7 @@ createServer({
     /* EVENTS */
     server.create("event", 
     {
+      id: 0,
       name: "DHLD", 
       location: "St. Matthias Catholic Church", 
       description: "EPHESIANS 2:10",
@@ -93,6 +103,7 @@ createServer({
     })
     server.create("event", 
     {
+      id: 1,
       name: "DHLD", 
       location: "St. Matthias Catholic Church",
       description: "EPHESIANS 2:10",
@@ -102,6 +113,7 @@ createServer({
     })
     server.create("event", 
     {
+      id: 2,
       name: "DHLD", 
       location: "St. Matthias Catholic Church",
       description: "EPHESIANS 2:10",

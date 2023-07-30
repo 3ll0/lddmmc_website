@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Chapters() {
   const [chapters, setChapters] = React.useState([])
+
   React.useEffect(() => {
     fetch('/api/chapters')
       .then(res => res.json())
@@ -9,7 +10,7 @@ export default function Chapters() {
   }, [])
 
   const chapterElements = chapters.map(chapter => (
-    <div className='chapter-element'>
+    <div key={chapter.id} className='chapter-element'>
       <img className='chapter-image' src={chapter.logo} />
       <div className='chapter-info'>
         <div className='chapter-name'>

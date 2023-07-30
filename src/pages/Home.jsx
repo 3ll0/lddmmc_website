@@ -13,6 +13,7 @@ function NamePage() {
 
 function Annoucements() {
   const [annoucements, setAnnoucements] = React.useState([])
+
   React.useEffect(() => {
     fetch("/api/annoucements")
       .then(res => res.json())
@@ -20,7 +21,7 @@ function Annoucements() {
   }, [])
 
   const annoucementElements = annoucements.map(annoucement => (
-    <div className='annoucement-element'>
+    <div key={annoucement.id} className='annoucement-element'>
       <div className='annoucement-header'>
         <img className='annoucement-header-image' src="/images/logo.png" />
         <div className='annoucement-header-description'>
@@ -71,11 +72,29 @@ function News() {
         NEWS
       </div>
       <div className='news-list'>
-        <NewsElement />
-        <NewsElement />
-        <NewsElement />
-        <NewsElement />
-        <NewsElement />
+        <div className='news-list-slider'>
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+        </div>
+
+        <div className='news-list-slider'>
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+          <NewsElement />
+        </div>
       </div>
     </div>
   )
