@@ -72,29 +72,8 @@ function News() {
         NEWS
       </div>
       <div className='news-list'>
-        <div className='news-list-slider'>
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-        </div>
-
-        <div className='news-list-slider'>
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-          <NewsElement />
-        </div>
+        <NewsElement />
+        <NewsElement />
       </div>
     </div>
   )
@@ -102,10 +81,10 @@ function News() {
 
 export default function Home() {
   return (
-    <>
+    <div className='home'>
       <NamePage />
       <Annoucements />
       <News />
-    </>
+    </div>
   )
 }

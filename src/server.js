@@ -3,9 +3,12 @@ import { createServer, Model } from "miragejs"
 createServer({
   models: {
     annoucement: Model,
-    chapters: Model,
-    events: Model,
-    vans: Model,
+    chapter: Model,
+    event: Model,
+    spiritual: Model,
+    btv: Model,
+    academic: Model,
+    bch: Model
   },
 
   seeds(server) {
@@ -99,7 +102,6 @@ createServer({
       description: "EPHESIANS 2:10",
       dateNumber: "30",
       dateMonth: "September",
-      image: "/events/DHLD.png"
     })
     server.create("event", 
     {
@@ -109,7 +111,6 @@ createServer({
       description: "EPHESIANS 2:10",
       dateNumber: "31",
       dateMonth: "September",
-      image: "/events/DHLD.png"
     })
     server.create("event", 
     {
@@ -119,14 +120,164 @@ createServer({
       description: "EPHESIANS 2:10",
       dateNumber: "1",
       dateMonth: "October",
-      image: "/events/DHLD.png"
     })
 
-    server.create("van", { id: "2", name: "Beach Bum", price: 80, description: "Beach Bum is a van inspired by surfers and travelers. It was created to be a portable home away from home, but with some cool features in it you won't find in an ordinary camper.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png", type: "rugged", hostId: "123" })
-    server.create("van", { id: "3", name: "Reliable Red", price: 100, description: "Reliable Red is a van that was made for travelling. The inside is comfortable and cozy, with plenty of space to stretch out in. There's a small kitchen, so you can cook if you need to. You'll feel like home as soon as you step out of it.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png", type: "luxury", hostId: "456" })
-    server.create("van", { id: "4", name: "Dreamfinder", price: 65, description: "Dreamfinder is the perfect van to travel in and experience. With a ceiling height of 2.1m, you can stand up in this van and there is great head room. The floor is a beautiful glass-reinforced plastic (GRP) which is easy to clean and very hard wearing. A large rear window and large side windows make it really light inside and keep it well ventilated.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png", type: "simple", hostId: "789" })
-    server.create("van", { id: "5", name: "The Cruiser", price: 120, description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png", type: "luxury", hostId: "789" })
-    server.create("van", { id: "6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged", hostId: "123" })
+    /* ABOUT */
+    server.create("spiritual", 
+    {
+      id: 0,
+      roleV: "Tuyên Úy", 
+      roleE: "League Chaplain", 
+      name: "Gioan Baotixita - Steven Son Tran",
+      image: "/about/chaplain.jpg"
+    })
+    
+    server.create("btv", 
+    {
+      id: 0,
+      roleV: "Liên Đoàn Trưởng",
+      roleE: "League President",
+      name: "Giuse - Jimmy Văn Hà", 
+      image: "/about/president.jpg"
+    })
+    server.create("btv", 
+    {
+      id: 1,
+      roleV: "Phó Quản Trị", 
+      roleE: "League Vice President Of Administrative Affairs", 
+      name: "Theresa - Ngoc Diep Khuu", 
+      image: "/about/vice_administrative.jpg"
+    })
+    server.create("btv", 
+    {
+      id: 2,
+      roleV: "Phó Nghiên Huấn", 
+      roleE: "League Vice President Of Academic Affairs", 
+      name: "Têrêsa - Kathy Thuỳ Cao",
+      image: "/about/vice_academic.jpg"
+    })
+    server.create("btv", 
+    {
+      id: 3,
+      roleV: "Thư Ký", 
+      roleE: "League Secretary", 
+      name: "Anna Têrêsa - Jackie Tuyết Nguyễn",
+      image: "/about/secretary.jpg"
+    })
+    server.create("btv", 
+    {
+      id: 4,
+      roleV: "Thủ Quỹ", 
+      roleE: "League Treasurer", 
+      name: "Thủ Quỹ",
+      image: "/about/treasurer.jpg"
+    })
+
+    server.create("academic", 
+    {
+      id: 0,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Seedling Specialist", 
+      name: "Giuse - Fanrcy Nguyen",
+      image: "/about/seedling.jpg"
+    })
+    server.create("academic", 
+    {
+      id: 1,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Search Specialist", 
+      name: "Anrê - Andy Kim Nguyen",
+      image: "/about/search.jpg"
+    })
+    server.create("academic", 
+    {
+      id: 2,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Companion Specialist", 
+      name: "Johnny Dinh",
+      image: "/about/companion.jpg"
+    })
+    server.create("academic", 
+    {
+      id: 3,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic KoE Specialist", 
+      name: "Anna - Adeline Nhan Ai Pham",
+      image: "/about/koe.jpg"
+    })
+
+    server.create("bch", 
+    {
+      id: 0,
+      roleV: "Ủy Viên Kỹ Thuật", 
+      roleE: "League Technical Lead", 
+      name: "Anton - Huy Nguyen",
+      image: "/about/technical.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 1,
+      roleV: "Ủy Viên Kỹ Thuật Vi Tính", 
+      roleE: "League IT Lead", 
+      name: "Peter - Ryan Hoang",
+      image: "/about/it.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 2,
+      roleV: "Ủy Viên Ơn Gọi", 
+      roleE: "League Vocational Lead", 
+      name: "Mary Thomas - Cindy Thanh-Lan Tran",
+      image: "/about/vocation.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 3,
+      roleV: "Ủy Viên Phụng Vụ", 
+      roleE: "League Liturgical Lead", 
+      name: "Maria - Tristine Thuỷ Dinh",
+      image: "/about/liturgical.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 4,
+      roleV: "Ủy Viên Truyền Thông", 
+      roleE: "League Communications Lead", 
+      name: "Cêcilia - Allison Diễm-Ngọc Hà",
+      image: "/about/communications.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 5,
+      roleV: "Ủy Viên Đại Hội", 
+      roleE: "League Conference Lead", 
+      name: "Augustine of Hippo - Vincent Nguyen Pham",
+      image: "/about/conference.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 6,
+      roleV: "Ủy Viên Nhân Sự", 
+      roleE: "League Human Resources Lead", 
+      name: "Giuse - Kelvin Nhat Tran",
+      image: "/about/human_resources.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 7,
+      roleV: "Ủy Viên Xã Hội", 
+      roleE: "League Social Works Lead", 
+      name: "Phero - Lam Ngoc Khanh Vu",
+      image: "/about/social_works.jpg"
+    })
+    server.create("bch", 
+    {
+      id: 8,
+      roleV: "Ủy Viên Văn Nghệ", 
+      roleE: "League Entertainment Lead", 
+      name: "League Entertainment Lead",
+      image: "/about/entertainment.jpg"
+    })
   },
 
   routes() {
@@ -136,34 +287,23 @@ createServer({
     this.get("/annoucements", (schema, request) => {
       return schema.annoucements.all()
     })
-
     this.get("/chapters", (schema, request) => {
       return schema.chapters.all()
     })
-
     this.get("/events", (schema, request) => {
       return schema.events.all()
     })
-
-
-    this.get("/vans", (schema, request) => {
-      return schema.vans.all()
+    this.get("/spirituals", (schema, request) => {
+      return schema.spirituals.all()
     })
-
-    this.get("/vans/:id", (schema, request) => {
-      const id = request.params.id
-      return schema.vans.find(id)
+    this.get("/btvs", (schema, request) => {
+      return schema.btvs.all()
     })
-
-    this.get("/host/vans", (schema, request) => {
-      // Hard-code the hostId for now
-      return schema.vans.where({ hostId: "123" })
+    this.get("/academics", (schema, request) => {
+      return schema.academics.all()
     })
-
-    this.get("/host/vans/:id", (schema, request) => {
-      // Hard-code the hostId for now
-      const id = request.params.id
-      return schema.vans.findBy({ id, hostId: "123" })
+    this.get("/bchs", (schema, request) => {
+      return schema.bchs.all()
     })
   }
 })

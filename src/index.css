@@ -20,12 +20,14 @@
 }
 
 /*** MAIN ***/
+* {
+  box-sizing: border-box;
+  font-family:'Quicksand';
+}
 
 body {
   margin: 0;
   padding: 0;
-
-  font-family:'Quicksand';
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -35,6 +37,7 @@ body {
 
   /*** COLORS ***/
   --primary-background-color: #FFFFFF;
+  --secondary-background-color: #000000;
 
   --primary-text-color: #000000;
   --secondary-text-color: #FFFFFF;
@@ -45,6 +48,7 @@ body {
 body.dark {
   /*** COLORS ***/
   --primary-background-color: #242424;
+  --secondary-background-color: #FDFDFD;
 
   --primary-text-color: #FDFDFD;
   --secondary-text-color: #000000;
@@ -60,6 +64,19 @@ body::-webkit-scrollbar {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-bottom: 10rem;
 }
 
 /*** HEADER ***/
@@ -117,8 +134,9 @@ body::-webkit-scrollbar {
   font-weight: 600;
   color: var(--primary-accent-color);
 }
-.header-facebook-icon, .header-instagram-icon {
+.header-facebook-icon, .header-instagram-icon > * {
   width: 2rem;
+  fill: var(--primary-text-color);
 }
 
 /*** FOOTER ***/
@@ -129,7 +147,11 @@ body::-webkit-scrollbar {
   align-items: top;
   justify-content: space-around;
 
-  height: 8rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  height: 10rem;
 
   padding-left: 2rem;
   padding-right: 2rem;
@@ -193,12 +215,13 @@ body::-webkit-scrollbar {
 
 /*** HOME PAGE ***/
 
+.home {
+}
 .home-image-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
 }
 .home-image {
+
 }
 .home-image-words {
   position: absolute;
@@ -256,73 +279,18 @@ body::-webkit-scrollbar {
 }
 
 
-@keyframes news-list-slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
 .news {
   display: flex;
   flex-direction: column;
   margin: 30px;
 }
 .news-title {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 500;
-  text-align: center;
 }
-
 .news-list {
-  overflow: hidden;
-  padding: 60px 0;
-  background: white;
-  white-space: nowrap;
-  position: relative;
+  background: var(--primary-background-color);
 }
-
-.news-list:before,
-.news-list:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-
-.news-list:before {
-  left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
-}
-
-.news-list:after {
-  right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
-}
-
-.news-list:hover .news-list-slide {
-  animation-play-state: paused;
-}
-
-.news-list-slider {
-  display: inline-flex;
-
-  animation: 20s news-list-slide infinite linear;
-}
-
-/* .news-list {
-  display: flex;
-
-  overflow: hidden;
-  white-space: nowrap;
-  animation: 5s news-list-slide infinite linear;
-}
-.news-list:hover {
-  animation-play-state: paused;
-} */
 
 .news-element {
   display: flex;
@@ -342,7 +310,33 @@ body::-webkit-scrollbar {
 }
 
 /*** ABOUT PAGE ***/
+.about {
 
+}
+
+.about-main {
+  display: flex;
+
+  height: 20rem;
+}
+.about-main-image-container {
+  
+}
+.about-main-image {
+  width: 100%;
+  height: 100%;
+}
+.about-main-description {
+  
+}
+.about-header {
+  font-size: 6rem;;
+}
+.about-element-lists {
+  display: flex;
+
+  height: 20rem;
+}
 
 /*** CHAPTERS PAGE ***/
 .chapters {
@@ -363,7 +357,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
 
   width: 20rem;
-  height: 50rem;
+  height: 30rem;
 }
 .chapter-image {
   width: 20rem;
@@ -422,12 +416,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 
-  width: 20rem;
-  height: 20rem;
-}
-.event-image {
-  max-width:100%;
-  max-height:100%;
+  height: 10rem;
 }
 .event-content {
   display: flex;
@@ -460,11 +449,13 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  min-height: 100%;
 }
 .contact-title {
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 .contact-form {
   width: 30rem;
@@ -472,14 +463,14 @@ body::-webkit-scrollbar {
 .contact-form-input-name {
   color: var(--primary-text-color);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 5px;
-  line-height: 22px;
+  line-height: 1rem;
   background-color: transparent;
   border: 2px solid var(--primary-accent-color);
   transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   box-sizing: border-box;
   outline: 0;
@@ -487,14 +478,14 @@ body::-webkit-scrollbar {
 .contact-form-input-email {
   color: var(--primary-text-color);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 5px;
-  line-height: 22px;
+  line-height: 1rem;
   background-color: transparent;
   border: 2px solid var(--primary-accent-color);
   transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   box-sizing: border-box;
   outline: 0;
@@ -502,18 +493,18 @@ body::-webkit-scrollbar {
 .contact-form-input-text {
   color: var(--primary-text-color);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1rem;
   border-radius: 5px;
-  line-height: 22px;
+  line-height: 1rem;
   background-color: transparent;
   border: 2px solid var(--primary-accent-color);
   transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
   width: 100%;
   box-sizing: border-box;
   outline: 0;
-  height: 150px;
+  height: 12rem;
   line-height: 150%;
   resize: vertical;
 }
@@ -524,11 +515,13 @@ body::-webkit-scrollbar {
   border: 0;
   cursor: pointer;
   color: var(--secondary-text-color);
-  font-size: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transition: all 0.3s;
+  
+  font-size: 1.5rem;
   font-weight: 700;
+
+  height: 3rem;
+
+  transition: all 0.3s;
 }
 .contact-form-submit:hover { 
   background:var(--green-color);

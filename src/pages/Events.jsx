@@ -11,7 +11,6 @@ export default function Events() {
 
   const eventElements = events.map(event => (
     <div key={event.id} className='event-element'>
-      <img className='event-image' src={event.image} />
       <div className='event-content'>
         <div className='event-date'>
           <div className='event-date-number'>
