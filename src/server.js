@@ -8,7 +8,7 @@ createServer({
     spiritual: Model,
     btv: Model,
     academic: Model,
-    bch: Model
+    lead: Model
   },
 
   seeds(server) {
@@ -206,7 +206,7 @@ createServer({
       image: "/about/koe.jpg"
     })
 
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 0,
       roleV: "Ủy Viên Kỹ Thuật", 
@@ -214,7 +214,7 @@ createServer({
       name: "Anton - Huy Nguyen",
       image: "/about/technical.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 1,
       roleV: "Ủy Viên Kỹ Thuật Vi Tính", 
@@ -222,15 +222,15 @@ createServer({
       name: "Peter - Ryan Hoang",
       image: "/about/it.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 2,
       roleV: "Ủy Viên Ơn Gọi", 
       roleE: "League Vocational Lead", 
       name: "Mary Thomas - Cindy Thanh-Lan Tran",
-      image: "/about/vocation.jpg"
+      image: "/about/vocational.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 3,
       roleV: "Ủy Viên Phụng Vụ", 
@@ -238,7 +238,7 @@ createServer({
       name: "Maria - Tristine Thuỷ Dinh",
       image: "/about/liturgical.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 4,
       roleV: "Ủy Viên Truyền Thông", 
@@ -246,7 +246,7 @@ createServer({
       name: "Cêcilia - Allison Diễm-Ngọc Hà",
       image: "/about/communications.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 5,
       roleV: "Ủy Viên Đại Hội", 
@@ -254,7 +254,7 @@ createServer({
       name: "Augustine of Hippo - Vincent Nguyen Pham",
       image: "/about/conference.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 6,
       roleV: "Ủy Viên Nhân Sự", 
@@ -262,7 +262,7 @@ createServer({
       name: "Giuse - Kelvin Nhat Tran",
       image: "/about/human_resources.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 7,
       roleV: "Ủy Viên Xã Hội", 
@@ -270,12 +270,12 @@ createServer({
       name: "Phero - Lam Ngoc Khanh Vu",
       image: "/about/social_works.jpg"
     })
-    server.create("bch", 
+    server.create("lead", 
     {
       id: 8,
       roleV: "Ủy Viên Văn Nghệ", 
       roleE: "League Entertainment Lead", 
-      name: "League Entertainment Lead",
+      name: "Maria Faustina - Michelle Lý Hứa",
       image: "/about/entertainment.jpg"
     })
   },
@@ -302,8 +302,8 @@ createServer({
     this.get("/academics", (schema, request) => {
       return schema.academics.all()
     })
-    this.get("/bchs", (schema, request) => {
-      return schema.bchs.all()
+    this.get("/leads", (schema, request) => {
+      return schema.leads.all()
     })
   }
 })

@@ -218,10 +218,11 @@ body::-webkit-scrollbar {
 .home {
 }
 .home-image-container {
+  display: flex;
   position: relative;
 }
 .home-image {
-
+  width: 100%;
 }
 .home-image-words {
   position: absolute;
@@ -336,6 +337,26 @@ body::-webkit-scrollbar {
   display: flex;
 
   height: 20rem;
+}
+.about-element {
+  display: flex;
+}
+.about-element-image-container {
+  
+}
+.about-element-image {
+  
+}
+.about-element-info {
+}
+.about-element-roleV {
+  font-size: 3rem;
+}
+.about-element-roleE {
+  font-size: 1rem;
+}
+.about-element-name {
+  font-size: 2rem;
 }
 
 /*** CHAPTERS PAGE ***/

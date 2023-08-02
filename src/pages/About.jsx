@@ -4,7 +4,7 @@ export default function About() {
   const [spirituals, setSpirituals] = React.useState([])
   const [btvs, setBtvs] = React.useState([])
   const [academics, setAcademics] = React.useState([])
-  const [bchs, setBchs] = React.useState([])
+  const [leads, setLeads] = React.useState([])
 
   React.useEffect(() => {
     fetch('/api/spirituals')
@@ -19,22 +19,24 @@ export default function About() {
       .then(res => res.json())
       .then(data => setAcademics(data.academics))
 
-    fetch('/api/bchs')
+    fetch('/api/leads')
       .then(res => res.json())
-      .then(data => setBchs(data.bchs))
+      .then(data => setLeads(data.leads))
   }, [])
 
   const spiritualElements = spirituals.map(spiritual => (
     <div key={spiritual.id} className='about-element'>
-      <img className='about-image' src={spiritual.image} />
-      <div className='about-info'>
-        <div className='about-roleV'>
+      <div className='about-element-image-container'>
+        <img className='about-element-image' src={spiritual.image} />
+      </div>
+      <div className='about-element-info'>
+        <div className='about-element-roleV'>
           {spiritual.roleV}
         </div>
-        <div className='about-roleE'>
+        <div className='about-element-roleE'>
           {spiritual.roleE}
         </div>
-        <div className='about-name'>
+        <div className='about-element-name'>
           {spiritual.name}
         </div>
       </div>
@@ -43,15 +45,17 @@ export default function About() {
 
   const btvElements = btvs.map(btv => (
     <div key={btv.id} className='about-element'>
-      <img className='about-image' src={btv.image} />
-      <div className='about-info'>
-        <div className='about-roleV'>
+      <div className='about-element-image-container'>
+        <img className='about-element-image' src={btv.image} />
+      </div>
+      <div className='about-element-info'>
+        <div className='about-element-roleV'>
           {btv.roleV}
         </div>
-        <div className='about-roleE'>
+        <div className='about-element-roleE'>
           {btv.roleE}
         </div>
-        <div className='about-name'>
+        <div className='about-element-name'>
           {btv.name}
         </div>
       </div>
@@ -60,37 +64,41 @@ export default function About() {
 
   const academicElements = academics.map(academic => (
     <div key={academic.id} className='about-element'>
-      <img className='about-image' src={academic.image} />
-      <div className='about-info'>
-        <div className='about-roleV'>
+      <div className='about-element-image-container'>
+        <img className='about-element-image' src={academic.image} />
+      </div>
+      <div className='about-element-info'>
+        <div className='about-element-roleV'>
           {academic.roleV}
         </div>
-        <div className='about-roleE'>
+        <div className='about-element-roleE'>
           {academic.roleE}
         </div>
-        <div className='about-name'>
+        <div className='about-element-name'>
           {academic.name}
         </div>
       </div>
     </div>
   ))
 
-  // const bchElements = bchs.map(bch => (
-  //   <div key={bch.id} className='about-element'>
-  //     <img className='about-image' src={bch.image} />
-  //     <div className='about-info'>
-  //       <div className='about-roleV'>
-  //         {bch.roleV}
-  //       </div>
-  //       <div className='about-roleE'>
-  //         {bch.roleE}
-  //       </div>
-  //       <div className='about-name'>
-  //         {bch.name}
-  //       </div>
-  //     </div>
-  //   </div>
-  // ))
+  const leadElements = leads.map(lead => (
+    <div key={lead.id} className='about-element'>
+      <div className='about-element-image-container'>
+        <img className='about-element-image' src={lead.image} />
+      </div>
+      <div className='about-element-info'>
+        <div className='about-element-roleV'>
+          {lead.roleV}
+        </div>
+        <div className='about-element-roleE'>
+          {lead.roleE}
+        </div>
+        <div className='about-element-name'>
+          {lead.name}
+        </div>
+      </div>
+    </div>
+  ))
   
   return (
     <div className="about">
@@ -126,6 +134,7 @@ export default function About() {
         BCH
       </div>
       <div className="about-element-list">
+        {leadElements}
       </div>
     </div>
   )

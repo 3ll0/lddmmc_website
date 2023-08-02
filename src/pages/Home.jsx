@@ -3,7 +3,7 @@ import React from 'react'
 function NamePage() {
   return (
     <div className='home-image-container'>
-      <img className='home-image' src="/images/img4.jpg" />
+      <img className='home-image' src="/images/main.jpg" />
       <div className='home-image-words'>
         OUR LADY OF THE HOLY ROSARY LEAGUE OF CHAPTERS
       </div>
