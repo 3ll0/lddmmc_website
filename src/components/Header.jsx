@@ -27,9 +27,6 @@ function HeaderNav() {
   return (
     <nav className='header-navbar'>
       <HeaderButton />
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/'>
-        HOME
-      </NavLink>
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/about'>
         ABOUT
       </NavLink>
