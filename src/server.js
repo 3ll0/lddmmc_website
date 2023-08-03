@@ -169,7 +169,7 @@ createServer({
       id: 4,
       roleV: "Thủ Quỹ", 
       roleE: "League Treasurer", 
-      name: "Thủ Quỹ",
+      name: "Maria Goretti - Jacqueline Nguyen",
       image: "/about/treasurer.jpg"
     })
 

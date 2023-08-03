@@ -112,27 +112,19 @@ export default function About() {
           aiosdn asodn i
         </div>
       </div>
-      <div className="about-header">
-        Spiritual
-      </div>
+      <div className="about-spacer" />
       <div className="about-element-list">
         {spiritualElements}
       </div>
-      <div className="about-header">
-        BTV
-      </div>
+      <div className="about-spacer" />
       <div className="about-element-list">
         {btvElements}
       </div>
-      <div className="about-header">
-        ACADEMICS
-      </div>
+      <div className="about-spacer" />
       <div className="about-element-list">
         {academicElements}
       </div>
-      <div className="about-header">
-        BCH
-      </div>
+      <div className="about-spacer" />
       <div className="about-element-list">
         {leadElements}
       </div>

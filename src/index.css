@@ -333,26 +333,45 @@ body::-webkit-scrollbar {
 
 /*** ABOUT PAGE ***/
 .about {
+  display: flex;
+  flex-direction: column;
 
+  align-items: center;
+
+  width: 100%;
 }
 
 .about-main {
   display: flex;
 
+  align-items: center;
+
   height: 20rem;
 }
 .about-main-image-container {
-  
+  height: 20rem;
 }
 .about-main-image {
   width: 100%;
   height: 100%;
 }
 .about-main-description {
+  margin-left: 4rem;
+
+  width: 40rem;
+  
+  font-size: 2rem;
   
 }
-.about-header {
-  font-size: 6rem;;
+.about-spacer {
+  margin: 4rem;
+
+  height: 4px;
+  width: 80vw;
+
+  border-radius: 4px;
+
+  background-color: var(--primary-accent-color);
 }
 .about-element-lists {
   display: flex;
@@ -361,7 +380,9 @@ body::-webkit-scrollbar {
 }
 .about-element {
   display: flex;
-  align-items: top;
+  align-items: center;
+
+  margin: 4rem;
 }
 .about-element-image-container {
   display: inline-block;
@@ -377,6 +398,8 @@ body::-webkit-scrollbar {
 .about-element-info {
   display: flex;
   flex-direction: column;
+
+  width: 45rem;
 
   margin-left: 2rem;
 }
@@ -452,6 +475,8 @@ body::-webkit-scrollbar {
   display: flex;
   align-items: center;
 
+  height: 40rem;
+
   justify-content: space-between;
 }
 .events-image-container {
@@ -461,6 +486,17 @@ body::-webkit-scrollbar {
 .events-image {
   max-width:100%;
   max-height:100%;
+}
+.events-spacer {
+  display: flex;
+  margin: 4rem;
+  
+  height: 80%;
+  width: 4px;
+
+  border-radius: 4px;
+
+  background-color: var(--primary-accent-color);
 }
 .events-list {
   display: flex;
@@ -481,24 +517,48 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  background-color: var(--primary-accent-color);
+
+  border-radius: 8px;
 
   width: 8rem;
+  height: 8rem;
 }
 .event-date-number {
+  font-size: 3rem;
+
+  color: var(--secondary-text-color);
 }
 .event-date-month {
+  font-weight: 600;
+
+  color: var(--secondary-text-color);
 }
 .event-info {
   display: flex;
   flex-direction: column;
   align-items: left;
 
+  margin-left: 2rem;
+
   width: 16rem;
 }
 .event-info-name {
   font-size: 2rem;
+  font-weight: 600;
+}
+.event-info-location-container {
+  display: flex;
+  align-items: center;
+}
+.event-info-location-icon {
+  fill: var(--primary-text-color);
+  width: 1rem;
 }
 .event-info-location {
+  margin-left: 2px;
 }
 .event-info-description {
 }
