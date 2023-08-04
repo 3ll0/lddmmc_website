@@ -8,6 +8,7 @@ import Events from './pages/Events'
 import Contact from './pages/Contact'
 
 import Neutral from './pages/resources/Neutral'
+import PhungVu from './pages/resources/PhungVu'
 import Au from './pages/resources/Au'
 import Thieu from './pages/resources/Thieu'
 import Nghia from './pages/resources/Nghia'
@@ -23,6 +24,7 @@ export default function App() {
           <Route path='chapters' element={<Chapters />} />
           <Route path='resources' element={<Resources />}>
             <Route index element={<Neutral />} />
+            <Route path='phungvu' element={<PhungVu />} />
             <Route path='au' element={<Au />} />
             <Route path='thieu' element={<Thieu />} />
             <Route path='nghia' element={<Nghia />} />

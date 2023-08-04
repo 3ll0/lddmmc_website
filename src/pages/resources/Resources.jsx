@@ -1,21 +1,28 @@
 import { NavLink, Outlet } from "react-router-dom"
 
-function Nav() {
+function AdminNav() {
   return (
-    <nav className='header-navbar'>
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/resources'>
-        NEUTRAL
+    <nav className='resources-navbar'>
+      <NavLink className={({isActive}) => isActive ? 'resources-navbar-active' : 'resources-navbar-inactive'} to='phungvu'>
+        Phụng Vụ
       </NavLink>
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='au'>
+    </nav>
+  )
+}
+
+function AcademicNav() {
+  return (
+    <nav className='resources-navbar'>
+      <NavLink className={({isActive}) => isActive ? 'resources-navbar-active' : 'resources-navbar-inactive'} to='au'>
         AU
       </NavLink>
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='thieu'>
+      <NavLink className={({isActive}) => isActive ? 'resources-navbar-active' : 'resources-navbar-inactive'} to='thieu'>
         THIEU
       </NavLink>
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='nghia'>
+      <NavLink className={({isActive}) => isActive ? 'resources-navbar-active' : 'resources-navbar-inactive'} to='nghia'>
         NGHIA
       </NavLink>
-      <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='hiep'>
+      <NavLink className={({isActive}) => isActive ? 'resources-navbar-active' : 'resources-navbar-inactive'} to='hiep'>
         HIEP
       </NavLink>
     </nav>
@@ -25,10 +32,16 @@ function Nav() {
 export default function Resources() {
   return (
     <div className='resources'>
-      <h1>Resources Page</h1>
-      <p>Admins</p>
-      <p>Adacdemics</p>
-      <Nav />
+      <div className="resources-navbars">
+        <div className="resources-navbar-titles">
+          ADMIN
+        </div>
+        <AdminNav />
+        <div className="resources-navbar-titles">
+          ACADEMICS
+        </div>
+        <AcademicNav />
+      </div>
       <Outlet />
     </div>
   )

@@ -384,6 +384,14 @@ body::-webkit-scrollbar {
 
   margin: 4rem;
 }
+.about-element-spacer {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  margin: 4px;
+  background-color: var(--primary-accent-color);
+}
 .about-element-image-container {
   display: inline-block;
   width: 12rem;
@@ -434,11 +442,21 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 
-  width: 20rem;
+  margin: 2rem;
+
+  width: 25rem;
   height: 30rem;
 }
+.chapter-element-spacer {
+  display: flex;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  margin: 4px;
+  background-color: var(--primary-accent-color);
+}
 .chapter-image {
-  width: 20rem;
+  height: 20rem;
 }
 .chapter-info {
   display: flex;
@@ -459,8 +477,43 @@ body::-webkit-scrollbar {
 }
 
 /*** RESURCES PAGE ***/
+.resources {
+  display: flex;
+  width: 100vw;
+}
+.resources-navbars {
+  display: flex;
+  flex-direction: column;
+}
+.resources-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  
+  width: 15rem;
 
+  background-color: var(--primary-accent-color);
+}
+.resources-navbar-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 
+  background-color: var(--primary-accent-color);
+  font-size: 2rem;
+  height: 4rem;
+}
+.resources-navbar-active, .resources-navbar-inactive {
+  height: 4rem;
+  font-size: 1.5rem;
+}
+.resources-navbar-active {
+  color: var(--primary-text-color)
+}
+.resources-navbar-inactive {
+  color: var(--secondary-text-color)
+}
 /*** EVENTS PAGE ***/
 .events {
   display: flex;
@@ -548,6 +601,13 @@ body::-webkit-scrollbar {
 .event-info-name {
   font-size: 2rem;
   font-weight: 600;
+}
+.event-spacer {
+  display: flex;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--primary-accent-color);
 }
 .event-info-location-container {
   display: flex;

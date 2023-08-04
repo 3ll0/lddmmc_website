@@ -24,6 +24,7 @@ export default function Events() {
           <div className='event-info-name'>
             {event.name}
           </div>
+          <div className='event-spacer' />
           <div className='event-info-location-container'>
             <svg className='event-info-location-icon' id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
               viewBox="0 0 395.71 395.71"

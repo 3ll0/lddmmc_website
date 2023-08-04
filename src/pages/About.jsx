@@ -36,6 +36,7 @@ export default function About() {
         <div className='about-element-roleE'>
           {spiritual.roleE}
         </div>
+        <div className='about-element-spacer' />
         <div className='about-element-name'>
           {spiritual.name}
         </div>
@@ -55,6 +56,7 @@ export default function About() {
         <div className='about-element-roleE'>
           {btv.roleE}
         </div>
+        <div className='about-element-spacer' />
         <div className='about-element-name'>
           {btv.name}
         </div>
@@ -74,6 +76,7 @@ export default function About() {
         <div className='about-element-roleE'>
           {academic.roleE}
         </div>
+        <div className='about-element-spacer' />
         <div className='about-element-name'>
           {academic.name}
         </div>
@@ -93,6 +96,7 @@ export default function About() {
         <div className='about-element-roleE'>
           {lead.roleE}
         </div>
+        <div className='about-element-spacer' />
         <div className='about-element-name'>
           {lead.name}
         </div>

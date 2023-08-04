@@ -16,6 +16,7 @@ export default function Chapters() {
         <div className='chapter-name'>
           {chapter.name}
         </div>
+        <div className='chapter-element-spacer' />
         <div className='chapter-description'>
           {chapter.description}
         </div>
