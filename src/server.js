@@ -109,15 +109,6 @@ createServer({
       name: "DHLD", 
       location: "St. Matthias Catholic Church",
       description: "EPHESIANS 2:10",
-      dateNumber: "31",
-      dateMonth: "September",
-    })
-    server.create("event", 
-    {
-      id: 2,
-      name: "DHLD", 
-      location: "St. Matthias Catholic Church",
-      description: "EPHESIANS 2:10",
       dateNumber: "1",
       dateMonth: "October",
     })

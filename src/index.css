@@ -108,10 +108,20 @@ body::-webkit-scrollbar {
 .header-logo {
   height: 4rem;
 }
-.header-name {
+.header-name-desktop, .header-name-mobile {
   padding-left: 1rem;
   color: var(--primary-text-color);
   font-size: 1.5rem;
+}
+@media only screen and (min-width: 1201px) {
+  .header-name-mobile {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header-name-desktop {
+    display: none;
+  }
 }
 
 .header-navbar {

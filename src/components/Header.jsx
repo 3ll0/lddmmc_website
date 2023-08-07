@@ -16,8 +16,11 @@ function HeaderMain() {
   return (
     <Link className='header-main' to='/'>
       <img className='header-logo' src="/images/logo.png" />
-      <div className='header-name'>
+      <div className='header-name-desktop'>
         Liên Đoàn Đức Mẹ Mân Côi
+      </div>
+      <div className='header-name-mobile'>
+        LDDMMC
       </div>
     </Link>
   )
