@@ -2,6 +2,9 @@
 
 /*** ROOT ***/
 :root {
+  /* ANIMATION TIME */
+  --dur: 0.3s;
+
   /*** COLORS ***/
   /* PURE */
   /* --pure-white-color: #FFFFFF; */
@@ -113,15 +116,67 @@ body::-webkit-scrollbar {
   color: var(--primary-text-color);
   font-size: 1.5rem;
 }
-@media only screen and (min-width: 1201px) {
+@media(min-width: 1201px) {
   .header-name-mobile {
     display: none;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media(max-width: 1200px) {
   .header-name-desktop {
     display: none;
   }
+}
+
+.toggle-darkmode {
+	position: relative;
+  overflow: hidden;
+
+  background: currentColor;
+	border-radius: 0.75em;
+	cursor: pointer;
+	width: 3em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.toggle-darkmode:before, .toggle-darkmode:after {
+  background: var(--primary-background-color);
+
+	position: absolute;
+  transition: transform var(--dur);
+
+  border-radius: 50%;
+	content: "";
+	top: 0.25em;
+	left: 0.25em;
+	width: 1em;
+	height: 1em;
+}
+.toggle-darkmode:before, .toggle-darkmode:checked:after  {
+	transition-timing-function: ease-out;
+}
+.toggle-darkmode:before, .toggle-darkmode:checked:after {
+	transition-delay: 0s;
+}
+.toggle-darkmode:checked:before, .toggle-darkmode:after {
+	transition-delay: calc(var(--dur) * 0.75);
+	transition-timing-function: cubic-bezier(0.3,1.6,0.5,0.7);
+}
+.toggle-darkmode:before {
+	transform: translateX(-1.5em);
+}
+.toggle-darkmode:checked:before {
+	transform: translateX(1.5em);
+}
+.toggle-darkmode:checked:after {
+	transform: translateX(3em);
+}
+.toggle-darkmode:checked ~ .curtain {
+	transform: scaleX(1);
+}
+.toggle-darkmode:focus {
+	outline: transparent;
 }
 
 .header-navbar {
@@ -147,6 +202,18 @@ body::-webkit-scrollbar {
 .header-facebook-icon, .header-instagram-icon > * {
   width: 2rem;
   fill: var(--primary-text-color);
+}
+
+@media(max-width: 1200px) {
+  .header-navbar {
+    display: none;
+  }
+}
+
+.header-navbar-dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*** FOOTER ***/
