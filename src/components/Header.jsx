@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 
-function HeaderButton() {
+function DarkThemeButton() {
   function ToggleDark() {
     document.body.classList.toggle('dark');
   }
@@ -27,7 +27,7 @@ function HeaderMain() {
 function HeaderNav() {
   return (
     <nav className='header-navbar'>
-      <HeaderButton />
+      <DarkThemeButton />
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/about'>
         ABOUT
       </NavLink>
@@ -57,10 +57,19 @@ function HeaderNav() {
   )
 }
 
+function HeaderDropDownButton () {
+
+  return (
+    
+    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72" width="64px" height="64px"><path d="M56 48c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 48 54.798 48 56 48zM56 32c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 32 54.798 32 56 32zM56 16c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 16 54.798 16 56 16z"/>
+    </svg>
+  )
+}
+
 function HeaderNavDropDown() {
   return (
     <nav className='header-navbar-dropdown'>
-      <HeaderButton />
+      <DarkThemeButton />
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/about'>
         ABOUT
       </NavLink>
@@ -95,8 +104,7 @@ export default function Header() {
     <header className='header'>
       <HeaderMain />
       <HeaderNav />
-      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 72 72" width="64px" height="64px"><path d="M56 48c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 48 54.798 48 56 48zM56 32c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 32 54.798 32 56 32zM56 16c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 16 54.798 16 56 16z"/>
-      </svg>
+      <HeaderDropDownButton />
       <HeaderNavDropDown />
     </header>
   )

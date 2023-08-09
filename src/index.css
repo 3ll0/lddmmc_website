@@ -211,6 +211,8 @@ body::-webkit-scrollbar {
 }
 
 .header-navbar-dropdown {
+  position: absolute;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
