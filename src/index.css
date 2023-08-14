@@ -83,7 +83,6 @@ body::-webkit-scrollbar {
 }
 
 /*** HEADER ***/
-
 .header {
   display: flex;
   align-items: center;
@@ -209,40 +208,45 @@ body::-webkit-scrollbar {
 
 
 .navbar-hamburger-menu {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  position: relative;
   
   width: 2rem;
   height: 2rem;
-  
-  background-color: red;
 }
 
 .hamburger-menu-checkbox {
+  display: block;
   position: absolute;
 
-  opacity: 100;
+  width: 2rem;
+  height: 2rem;
+  
+  opacity: 0;
   cursor: pointer;
+
+  z-index: 10;
 }
 .hamburger-lines {
+  display: block;
+  position: absolute;
+  
+  width: 2rem;
+  height: 1.625rem;
+  
   display: flex;
   flex-direction: column;
-  /* position: absolute; */
   justify-content: space-between;
-
-  height: 100%;
-
 }
 
 .hamburger-line1, .hamburger-line2, .hamburger-line3 {
   display: block;
-  position: relative;
 
   height: 0.25rem;
-  width: 100%;
+  width: 2rem;
 
   border-radius: 1rem;
-  background: var(--primary-text-color);
+  background-color: var(--primary-text-color);
 }
 
 .hamburger-line1 {
@@ -257,70 +261,56 @@ body::-webkit-scrollbar {
   transition: transform 0.4s ease-in-out;
 }
 
-.hamburger-menu-checkbox:checked ~ .hamburger-line1 {
+.hamburger-menu-checkbox:checked ~ .hamburger-lines .hamburger-line1 {
   transform: rotate(45deg);
 }
-.hamburger-menu-checkbox:checked ~ .hamburger-line2 {
-  background: white;
+.hamburger-menu-checkbox:checked ~ .hamburger-lines .hamburger-line2 {
   transform: scaleY(0);
 }
-.navbar-hamburger-menu input[type="checkbox"]:checked ~ .hamburger-line3 {
-  background: white;
+.hamburger-menu-checkbox:checked ~ .hamburger-lines .hamburger-line3 {
   transform: rotate(-45deg);
 }
 
-
 .header-navbar-dropdown {
-  display: flex;
-}
-
-.navbar-hamburger-menu input[type="hamburger-menu-checkbox"]:checked ~ .header-navbar-dropdown {
-  transform: translateX(0);
-}
-.navbar-hamburger-menu input[type="hamburger-menu-checkbox"]:checked ~ .logo{
   display: none;
-}
-
-/* .navbar .header-navbar-dropdown {
-  padding-top: 120px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  height: 100vh;
-  width: 100%;
-  transform: translate(-150%);
-  display: flex;
-  flex-direction: column;
-  margin-left: -40px;
-  padding-left: 50px;
-  transition: transform 0.5s ease-in-out;
-  text-align: center;
-} */
-
-
-
-/* .header-navbar-dropdown {
-  position: absolute;
-  
-
-  
-  display: flex;
   flex-direction: column;
   align-items: center;
-} */
+
+  position: absolute;
+
+  top: 6rem;
+  right: 0;
+
+  transition: transform 0.5s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  
+  opacity: 0;
+  background-color: var(--primary-background-color);
+}
+
+.hamburger-menu-checkbox:checked ~ .header-navbar-dropdown {
+  display: flex;
+  opacity: 100%;
+}
+
 
 @media(min-width: 1201px) {
   .header-navbar {
     display: flex;
   }
-  .header-navbar-dropdown {
+
+  .navbar-hamburger-menu {
     display: none;
   }
+
 }
 @media(max-width: 1200px) {
   .header-navbar {
     display: none;
   }
-  .header-navbar-dropdown {
-    display: none;
+
+  .navbar-hamburger-menu {
+    display: block;
   }
 }
 
@@ -345,6 +335,7 @@ body::-webkit-scrollbar {
 
   background-color: var(--primary-accent-color);
   color: var(--secondary-text-color);
+  box-shadow: 0 0 1rem var(--secondary-background-color);
 }
 
 .footer-doan {
@@ -520,7 +511,6 @@ body::-webkit-scrollbar {
 .about {
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
   width: 100%;
@@ -664,7 +654,8 @@ body::-webkit-scrollbar {
 /*** RESURCES PAGE ***/
 .resources {
   display: flex;
-  width: 100vw;
+  
+  width: 100%;
 }
 .resources-navbars {
   display: flex;
@@ -699,11 +690,14 @@ body::-webkit-scrollbar {
 .resources-navbar-inactive {
   color: var(--secondary-text-color)
 }
+
 /*** EVENTS PAGE ***/
 .events {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  width: 100%;
 }
 .events-title {
   font-size: 2rem;
@@ -806,6 +800,12 @@ body::-webkit-scrollbar {
   margin-left: 2px;
 }
 .event-info-description {
+}
+
+@media(max-width: 1200px) {
+  .events-content {
+    flex-direction: column;
+  }
 }
 
 /*** CONTACT PAGE ***/

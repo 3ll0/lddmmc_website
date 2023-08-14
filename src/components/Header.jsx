@@ -57,25 +57,26 @@ function HeaderNav() {
   )
 }
 
-function HeaderDropDownButton () {
+function HeaderNavMobile () {
   function ToggleDropDown() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    document.body.classList.toggle('dark');
+    var x = document.getElementsByClassName("header");
+    // if (x.style.display === "none") {
+    //   x.style.display = "block";
+    // } else {
+    //   x.style.display = "none";
+    // }
+    // x.style = "100rem";
   }
 
   return (
     <div className='navbar-hamburger-menu'>
-      <input className="hamburger-menu-checkbox" type="checkbox"/>
+      <input className="hamburger-menu-checkbox" type="checkbox" onClick={ToggleDropDown}/>
       <div className="hamburger-lines">
-        <div className="hamburger-line1"/>
-        <div className="hamburger-line2"/>
-        <div className="hamburger-line3"/>
+        <span className="hamburger-line1"/>
+        <span className="hamburger-line2"/>
+        <span className="hamburger-line3"/>
       </div>
+      <HeaderNavDropDown />
     </div>
   )
 }
@@ -118,8 +119,7 @@ export default function Header() {
     <header className='header'>
       <HeaderMain />
       <HeaderNav />
-      <HeaderDropDownButton />
-      {/* <HeaderNavDropDown /> */}
+      <HeaderNavMobile />
     </header>
   )
 }
