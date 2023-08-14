@@ -1,14 +1,17 @@
 function Doan() {
   return (
     <div className='footer-doan'>
-      <div className='footer-doan-title'>
+      <div className='footer-doan-title footer-desktop'>
         Liên Đoàn Đức Mẹ Mân Côi
+      </div>
+      <div className='footer-doan-title footer-mobile'>
+        LDDMMC
       </div>
       <div className='footer-doan-alt'>
         Our Lady of the Holy Rosary
       </div>
       <div className='footer-doan-quote'>
-        "lien doan quote here" -APY
+        "lien doan quote here" -LDDMMC
       </div>
     </div>
   )

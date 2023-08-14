@@ -111,25 +111,23 @@ export default function About() {
           <img className='about-main-image' src='/about/LD.png' />
         </div>
         <div className="about-main-description">
-          Our Lien Doan is nasodiasdnioasn doiasndi asn odnias 
-          ndioasn odnasi nidsan iodaosidni snidn aodnoas n iansodn 
-          aiosdn asodn i
+          Meet our Lien Doan Ban Chap Hanh for 2023-2026!
         </div>
       </div>
       <div className="about-spacer" />
-      <div className="about-element-list">
+      <div className="about-element-spirituals-list">
         {spiritualElements}
       </div>
       <div className="about-spacer" />
-      <div className="about-element-list">
+      <div className="about-element-btvs-list">
         {btvElements}
       </div>
       <div className="about-spacer" />
-      <div className="about-element-list">
+      <div className="about-element-academics-list">
         {academicElements}
       </div>
       <div className="about-spacer" />
-      <div className="about-element-list">
+      <div className="about-element-leads-list">
         {leadElements}
       </div>
     </div>

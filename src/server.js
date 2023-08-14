@@ -33,7 +33,7 @@ createServer({
     {
       id: 0,
       name: "Anrê Phú Yên", 
-      description: "Or Doan is located in Hoston, TX blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff blah stuff stuff blah blah stuff stuff blah blah stuff stuff", 
+      description: "Or Doan is located in Hoston, TX blah blah sf stuff blah blah stuff stuff blah blah stuff stuff", 
       quote: "blah blah",
       website: "www.youtube.com",
       logo: "/chapters/APY.jpg"

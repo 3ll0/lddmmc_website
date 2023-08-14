@@ -338,9 +338,12 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 1rem var(--secondary-background-color);
 }
 
-.footer-doan {
+.footer-doan, .footer-link, .footer-contact {
   display: flex;
   flex-direction: column;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .footer-doan-title {
   font-size: 1.5rem;
@@ -355,10 +358,6 @@ body::-webkit-scrollbar {
 
 }
 
-.footer-link {
-  display: flex;
-  flex-direction: column;
-}
 .footer-link-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -368,10 +367,6 @@ body::-webkit-scrollbar {
 .footer-link-veym .footer-link-membership .footer-link-store {
 }
 
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-}
 .footer-contact-title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -389,9 +384,22 @@ body::-webkit-scrollbar {
   padding-left: 0.25rem;
 }
 
+@media(min-width: 801px) {
+  .footer-mobile {
+    display: none;
+  }
+
+}
+@media(max-width: 800px) {
+  .footer-desktop {
+    display: none;
+  }
+}
+
 /*** HOME PAGE ***/
 
 .home {
+  width: 100%;
 }
 .home-image-section {
   display: flex;
@@ -480,7 +488,10 @@ body::-webkit-scrollbar {
 .news {
   display: flex;
   flex-direction: column;
-  margin: 30px;
+
+  margin: 2rem;
+
+  width: 100%;
 }
 .news-title {
   font-size: 2rem;
@@ -512,6 +523,8 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin: 2rem;
 
   width: 100%;
 }
@@ -548,7 +561,22 @@ body::-webkit-scrollbar {
 
   background-color: var(--primary-accent-color);
 }
-.about-element-lists {
+.about-element-spirituals-lists {
+  display: flex;
+
+  height: 20rem;
+}
+.about-element-btvs-lists {
+  display: flex;
+
+  height: 20rem;
+}
+.about-element-academics-lists {
+  display: flex;
+
+  height: 20rem;
+}
+.about-element-leads-lists {
   display: flex;
 
   height: 20rem;
@@ -602,6 +630,8 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 
+  margin: 2rem;
+
   width: 100%;
 }
 .chapters-title {
@@ -610,17 +640,35 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 .chapters-list {
-  display: flex;
-  align-items: center;
+  display: grid;
+  justify-content: center;
+
+  margin-top: 2rem;
+
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media(max-width: 1200px) {
+  .chapters-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+@media(max-width: 800px) {
+  .chapters-list {
+    grid-template-columns: 1fr;
+  }
+
 }
 .chapter-element {
   display: flex;
   flex-direction: column;
 
-  margin: 2rem;
+  align-items: center;
 
-  width: 25rem;
-  height: 30rem;
+  margin: auto;
+
+  width: 20rem;
+  height: 32rem;
 }
 .chapter-element-spacer {
   display: flex;
@@ -696,6 +744,8 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  margin: 2rem;
 
   width: 100%;
 }
@@ -814,7 +864,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
 
-  min-height: 100%;
+  margin: 2rem;
 }
 .contact-title {
   font-size: 2rem;
