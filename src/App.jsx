@@ -7,12 +7,18 @@ import Resources from './pages/resources/Resources'
 import Events from './pages/Events'
 import Contact from './pages/Contact'
 
-import Neutral from './pages/resources/Neutral'
-import PhungVu from './pages/resources/PhungVu'
-import Au from './pages/resources/Au'
-import Thieu from './pages/resources/Thieu'
-import Nghia from './pages/resources/Nghia'
-import Hiep from './pages/resources/Hiep'
+
+import Default from './pages/resources/Default'
+
+import PhungVu from './pages/resources/admin/PhungVu'
+import OnGoi from './pages/resources/admin/OnGoi'
+
+import Au from './pages/resources/academic/Au'
+import Thieu from './pages/resources/academic/Thieu'
+import Nghia from './pages/resources/academic/Nghia'
+import Hiep from './pages/resources/academic/Hiep'
+
+import DHLD from './pages/resources/other/DHLD'
 
 export default function App() {
   return (
@@ -23,12 +29,17 @@ export default function App() {
           <Route path='about' element={<About />} />
           <Route path='chapters' element={<Chapters />} />
           <Route path='resources' element={<Resources />}>
-            <Route index element={<Neutral />} />
+            <Route index element={<Default />} />
+
             <Route path='phungvu' element={<PhungVu />} />
+            <Route path='ongoi' element={<OnGoi />} />
+
             <Route path='au' element={<Au />} />
             <Route path='thieu' element={<Thieu />} />
             <Route path='nghia' element={<Nghia />} />
             <Route path='hiep' element={<Hiep />} />
+
+            <Route path='dhld' element={<DHLD />} />
           </Route>
           <Route path='events' element={<Events />} />
           <Route path='contact' element={<Contact />} />

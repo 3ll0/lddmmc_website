@@ -1,7 +1,7 @@
 export default function Nghia() {
   return (
-    <div>
-      <p>Nghia</p>
+    <div className='resources-nghia'>
+      Nghia
     </div>
   )
 }

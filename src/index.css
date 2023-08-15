@@ -708,35 +708,90 @@ body::-webkit-scrollbar {
 .resources-navbars {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  background-color: var(--primary-accent-color);
 }
 .resources-navbar {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   justify-content: space-between;
-  
-  width: 15rem;
 
   background-color: var(--primary-accent-color);
 }
+
 .resources-navbar-titles {
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  align-items: center;
+  justify-content: left;
 
-  background-color: var(--primary-accent-color);
   font-size: 2rem;
+  font-weight: 500;
+
   height: 4rem;
+  width: 13rem;
+
+  margin-left: 2rem;
+
+  color: var(--secondary-text-color);
+  background-color: var(--primary-accent-color);
 }
 .resources-navbar-active, .resources-navbar-inactive {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
   height: 4rem;
+  width: 10rem;
+
   font-size: 1.5rem;
 }
 .resources-navbar-active {
-  color: var(--primary-text-color)
+  color: var(--primary-text-color);
+  
+  background-color: var(--primary-background-color);
 }
 .resources-navbar-inactive {
-  color: var(--secondary-text-color)
+  color: var(--secondary-text-color);
+}
+
+.resources-navbar-icon {
+  height: 2rem;
+  width: 2rem;
+
+  margin-right: 0.5rem;
+}
+.resources-navbar-active .resources-navbar-icon {
+  fill: var(--primary-text-color);
+}
+.resources-navbar-inactive .resources-navbar-icon {
+  fill: var(--secondary-text-color);
+}
+
+/* PAGE SPECIFIC */
+.resources-default,
+.resources-phungvu,
+.resources-ongoi,
+.resources-au,
+.resources-thieu,
+.resources-nghia,
+.resources-hiep,
+.resources-dhld {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  flex-grow: 1;
+
+  margin: 2rem;
+}
+.resources-default {
+  font-size: 4rem;
 }
 
 /*** EVENTS PAGE ***/

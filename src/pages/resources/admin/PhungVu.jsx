@@ -1,7 +1,7 @@
 export default function PhungVu() {
   return (
-    <div>
-      <p>Phụng Vụ</p>
+    <div className='resources-phungvu'>
+      Phụng Vụ
     </div>
   )
 }
