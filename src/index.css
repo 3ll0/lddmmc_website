@@ -83,12 +83,6 @@ body::-webkit-scrollbar {
 }
 
 /*** LOADING ***/
-/* .loading-container {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  height: 100%;
-} */
 .loading {
   color: official;
   display: inline-block;
