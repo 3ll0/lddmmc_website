@@ -52,9 +52,11 @@ export default function Events() {
           <img className='events-image' src='/events/events.jpg' />
         </div>
         <div className='events-spacer' />
-        <div className='events-list'>
-          {eventElements}
-        </div>
+          {events.length > 0 ? (
+          <div className='events-list'>
+            {eventElements}
+          </div>
+        ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       </div>
     </div>
   )

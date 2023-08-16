@@ -115,21 +115,29 @@ export default function About() {
         </div>
       </div>
       <div className="about-spacer" />
-      <div className="about-element-spirituals-list">
-        {spiritualElements}
-      </div>
+      {spirituals.length > 0 ? (
+        <div className="about-element-spirituals-list">
+          {spiritualElements}
+        </div>
+      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       <div className="about-spacer" />
-      <div className="about-element-btvs-list">
-        {btvElements}
-      </div>
+      {btvs.length > 0 ? (
+        <div className="about-element-btvs-list">
+          {btvElements}
+        </div>
+        ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       <div className="about-spacer" />
-      <div className="about-element-academics-list">
-        {academicElements}
-      </div>
+      {academics.length > 0 ? (
+        <div className="about-element-academics-list">
+          {academicElements}
+        </div>
+      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       <div className="about-spacer" />
-      <div className="about-element-leads-list">
-        {leadElements}
-      </div>
+      {leads.length > 0 ? (
+        <div className="about-element-leads-list">
+          {leadElements}
+        </div>
+      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
     </div>
   )
 }

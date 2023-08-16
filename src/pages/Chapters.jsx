@@ -35,9 +35,11 @@ export default function Chapters() {
       <div className='chapters-title'>
         CHAPTERS
       </div>
-      <div className='chapters-list'>
-        {chapterElements}
-      </div>
+      {chapters.length > 0 ? (
+        <div className='chapters-list'>
+          {chapterElements}
+        </div>
+      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
     </div>
   )
 }
