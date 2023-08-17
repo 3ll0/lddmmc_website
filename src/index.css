@@ -431,8 +431,6 @@ body::-webkit-scrollbar {
 .footer-doan-title {
   font-size: 1.5rem;
   font-weight: 600;
-
-  margin-bottom: 0.5rem;
 }
 .footer-doan-alt {
 
@@ -444,8 +442,17 @@ body::-webkit-scrollbar {
 .footer-link-title {
   font-size: 1.5rem;
   font-weight: 600;
-  
+}
+.footer-spacer {
+  width: 100%;
+  height: 2px;
+
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+
+  border-radius: 1px;
+
+  background-color: var(--primary-background-color);
 }
 .footer-link-veym .footer-link-membership .footer-link-store {
 }
@@ -453,8 +460,6 @@ body::-webkit-scrollbar {
 .footer-contact-title {
   font-size: 1.5rem;
   font-weight: 600;
-
-  margin-bottom: 0.5rem;
 }
 .footer-contact-link {
   display: flex;
@@ -477,6 +482,16 @@ body::-webkit-scrollbar {
   .footer-desktop {
     display: none;
   }
+}
+@media(max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    height: 25rem;
+  }
+  .content-wrap {
+    padding-bottom: 25rem;
+  }
+  
 }
 
 /*** HOME PAGE ***/
