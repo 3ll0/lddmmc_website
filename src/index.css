@@ -734,13 +734,11 @@ body::-webkit-scrollbar {
   .chapters-list {
     grid-template-columns: 1fr 1fr;
   }
-
 }
 @media(max-width: 800px) {
   .chapters-list {
     grid-template-columns: 1fr;
   }
-
 }
 .chapter-element {
   display: flex;
@@ -806,19 +804,40 @@ body::-webkit-scrollbar {
 
   background-color: var(--primary-accent-color);
 }
-
-.resources-navbar-titles {
+.resources-navbars-title {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 
   height: 4rem;
   width: 13rem;
 
-  margin-left: 2rem;
+  color: var(--secondary-text-color);
+  background-color: var(--primary-accent-color);
+}
+.resource-navbar-spacer {
+  height: 2px;
+  width: 10rem;
+
+  margin: 0.25rem;
+
+  background-color: var(--primary-background-color);
+}
+.resources-navbar-titles {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  height: 4rem;
+  width: 10rem;
+
+  margin-left: 1rem;
 
   color: var(--secondary-text-color);
   background-color: var(--primary-accent-color);
@@ -828,10 +847,14 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: left;
 
-  height: 4rem;
+  padding-left: 1rem;
+
+  height: 3rem;
   width: 10rem;
 
-  font-size: 1.5rem;
+  border-radius: 0.2rem;
+
+  font-size: 1rem;
 }
 .resources-navbar-active {
   color: var(--primary-text-color);
@@ -843,8 +866,8 @@ body::-webkit-scrollbar {
 }
 
 .resources-navbar-icon {
-  height: 2rem;
-  width: 2rem;
+  height: 1.5rem;
+  width: 1.5rem;
 
   margin-right: 0.5rem;
 }
@@ -855,6 +878,23 @@ body::-webkit-scrollbar {
   fill: var(--secondary-text-color);
 }
 
+.resources-navbar-description {
+  display: block;
+}
+@media(max-width: 800px) {
+  .resources-navbars {
+    background-color: red;
+  }
+  .resources-navbars:hover {
+    width: 40rem;
+  }
+  .resources-navbar-description {
+    display: none;
+  }
+  .resources-navbar-description:hover .resources-navbar-description {
+    display: block;
+  }
+}
 /* PAGE SPECIFIC */
 .resources-default,
 .resources-phungvu,
@@ -875,6 +915,10 @@ body::-webkit-scrollbar {
 }
 .resources-default {
   font-size: 4rem;
+}
+.resources-pdf {
+  width: 100%;
+  height: 30rem;
 }
 
 /*** EVENTS PAGE ***/
