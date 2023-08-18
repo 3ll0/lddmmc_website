@@ -45,7 +45,7 @@ export default function Events() {
   return (
     <div className='events'>
       <div className='events-title'>
-        Events Page
+        EVENTS
       </div>
       <div className='events-content'>
         <div className='events-image-container'>
