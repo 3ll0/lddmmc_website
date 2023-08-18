@@ -541,27 +541,36 @@ body::-webkit-scrollbar {
 .annoucements {
   display: flex;
   flex-direction: column;
-  margin: 30px;
+
+  align-items: center;
+  margin: 2rem;
 }
 .annoucements-name {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
 }
 .annoucement-elements {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media(max-width: 800px) {
+  .annoucement-elements {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 .annoucement-element {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  margin: 15px;
-  padding: 10px;
-  border-radius: 3px;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .annoucement-element > * {
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 .annoucement-header {
   display: flex;
@@ -586,6 +595,7 @@ body::-webkit-scrollbar {
 .news {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin: 2rem;
 
@@ -596,9 +606,10 @@ body::-webkit-scrollbar {
   font-weight: 500;
 }
 .news-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   background: var(--primary-background-color);
 }
-
 .news-element {
   display: flex;
   align-items: center;
@@ -798,13 +809,19 @@ body::-webkit-scrollbar {
 /*** RESURCES PAGE ***/
 .resources {
   display: flex;
-  
+
+  height: calc(100vh - 6rem);
+
   width: 100%;
 }
 .resources-navbars {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: absolute;
+
+  height: calc(100vh - 6rem);
 
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -925,6 +942,8 @@ body::-webkit-scrollbar {
   justify-content: center;
 
   flex-grow: 1;
+
+  overflow-y: auto;
 
   margin: 2rem;
 }
