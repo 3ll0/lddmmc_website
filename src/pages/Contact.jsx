@@ -13,7 +13,7 @@ export default function Contact() {
   return (
     <div className='contact'>
       <div className='contact-title'>
-        Contact Us
+        CONTACT US
       </div>
       <Form />
     </div>
