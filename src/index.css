@@ -652,7 +652,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   align-items: center;
 
-  margin: 2rem;
+  margin-top: 2rem;
 
   width: 100%;
 }
@@ -663,9 +663,10 @@ body::-webkit-scrollbar {
   align-items: center;
 
   height: 20rem;
+  width: 60rem;
 }
 .about-main-image-container {
-  height: 20rem;
+  width: 30rem;
 }
 .about-main-image {
   width: 100%;
@@ -674,40 +675,27 @@ body::-webkit-scrollbar {
 .about-main-description {
   margin-left: 4rem;
 
-  width: 40rem;
+  width: 100%;
   
   font-size: 2rem;
-  
 }
 .about-spacer {
   margin: 4rem;
 
   height: 4px;
-  width: 80vw;
+  width: 75vw;
 
   border-radius: 4px;
 
   background-color: var(--primary-accent-color);
 }
 .about-element-spirituals-lists {
-  display: flex;
-
-  height: 20rem;
 }
 .about-element-btvs-lists {
-  display: flex;
-
-  height: 20rem;
 }
 .about-element-academics-lists {
-  display: flex;
-
-  height: 20rem;
 }
 .about-element-leads-lists {
-  display: flex;
-
-  height: 20rem;
 }
 .about-element {
   display: flex;
@@ -752,7 +740,22 @@ body::-webkit-scrollbar {
 .about-element-name {
   font-size: 2rem;
 }
-
+@media(max-width: 1200px) {
+  .about-element {
+    flex-direction: column;
+  }
+  .about-element-info {
+    width: 75vw;
+  }
+  .about-main {
+    width: 75vw;
+  }
+}
+@media(max-width: 800px) {
+  .about-main-description {
+    margin-left: 2rem;
+  }
+}
 /*** CHAPTERS PAGE ***/
 .chapters {
   display: flex;
@@ -1136,22 +1139,12 @@ body::-webkit-scrollbar {
 .contact-form {
   width: 30rem;
 }
-.contact-form-input-name {
-  color: var(--primary-text-color);
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 5px;
-  line-height: 1rem;
-  background-color: transparent;
-  border: 2px solid var(--primary-accent-color);
-  transition: all 0.3s;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
+.contact-content {
+  display: flex;
 }
-.contact-form-input-email {
+.contact-form-input-name,
+.contact-form-input-email,
+.contact-form-input-text {
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 1rem;
@@ -1167,22 +1160,7 @@ body::-webkit-scrollbar {
   outline: 0;
 }
 .contact-form-input-text {
-  color: var(--primary-text-color);
-  font-weight: 500;
-  font-size: 1rem;
-  border-radius: 5px;
-  line-height: 1rem;
-  background-color: transparent;
-  border: 2px solid var(--primary-accent-color);
-  transition: all 0.3s;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
-  height: 12rem;
-  line-height: 150%;
-  resize: vertical;
+  height: 16rem;
 }
 .contact-form-submit {
   width: 100%;
@@ -1200,20 +1178,52 @@ body::-webkit-scrollbar {
   transition: all 0.3s;
 }
 .contact-form-submit:hover { 
-  background:var(--green-color);
+  opacity: 75%;
 }
+.contact-info {
+  display: flex;
+  flex-direction: column;
 
+
+  margin-left: 2rem;
+}
+.contact-info-image-container {
+  width: 20rem;
+}
+.contact-info-image {
+  width: 100%;
+}
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 2rem;
+}
+.contact-info-title {
+  font-size: 1.5rem;
+}
+.contact-social-container {
+  display: flex;
+}
+.contact-social-icon-container {
+
+}
+.contact-facebook-icon, .contact-instagram-icon {
+  fill: var(--primary-text-color);
+}
 @media(max-width: 800px) {
-  .contact-form-input-name {
-    width: 80vw;
+  .contact-form {
+    width: 100%;
   }
-  .contact-form-input-email {
-    width: 80vw;
+  .contact-content {
+    flex-direction: column;
   }
-  .contact-form-input-text {
-    width: 80vw;
+  .contact-info {
+    margin-top: 2rem;
+    margin-left: 0;
   }
-  .contact-form-submit {
-    width: 80vw;
+  .contact-info-image-container {
+    width: 100%;
+    margin-bottom: 2rem;
   }
 }
