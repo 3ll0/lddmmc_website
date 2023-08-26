@@ -117,36 +117,11 @@ function Annoucements() {
   )
 }
 
-function NewsElement() {
-  return (
-    <div className='news-element'>
-      <a className='news-element-image-container' href='https://www.instagram.com/p/CtsP8eMJF6y/'>
-        <img className='news-element-image' src='/images/news.jpg' />
-      </a>
-    </div>
-  )
-}
-
-function News() {
-  return (
-    <div className='news'>
-      <div className='news-title'>
-        NEWS
-      </div>
-      <div className='news-list'>
-        <NewsElement />
-        <NewsElement />
-      </div>
-    </div>
-  )
-}
-
 export default function Home() {
   return (
     <div className='home'>
       <HomeImage />
       <Annoucements />
-      <News />
     </div>
   )
 }

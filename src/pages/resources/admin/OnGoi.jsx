@@ -1,7 +1,9 @@
 export default function OnGoi() {
   return (
     <div className='resources-ongoi'>
-      Ơn Gọi
+      <div className="resources-page-titles">
+        Ơn Gọi
+      </div>
     </div>
   )
 }

@@ -40,8 +40,12 @@ body {
   background-color: var(--primary-background-color);
   color: var(--primary-text-color);
 
+  /*** HEADER DIMENSIONS ***/
   --header-height: 6rem;
   --footer-height: 10rem;
+
+  /*** CALENDAR DIMENSIONS ***/
+  --calender-size: 40rem;
 
   /*** COLORS ***/
   --primary-background-color: #FFFFFF;
@@ -516,7 +520,6 @@ body::-webkit-scrollbar {
 /*** HOME PAGE ***/
 
 .home {
-  width: 100%;
 }
 .home-image-section {
   display: flex;
@@ -610,42 +613,6 @@ body::-webkit-scrollbar {
   font-weight: 200;
 }
 
-
-.news {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin: 2rem;
-
-  width: 100%;
-}
-.news-title {
-  font-size: 2rem;
-  font-weight: 500;
-}
-.news-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--primary-background-color);
-}
-.news-element {
-  display: flex;
-  align-items: center;
-}
-.news-element-image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  height: 300px;
-  width: 250px;
-}
-.news-element-image {
-  min-width: 100%;
-  min-height: 100%
-}
-
 /*** ABOUT PAGE ***/
 .about {
   display: flex;
@@ -653,8 +620,6 @@ body::-webkit-scrollbar {
   align-items: center;
 
   margin-top: 2rem;
-
-  width: 100%;
 }
 
 .about-main {
@@ -750,6 +715,12 @@ body::-webkit-scrollbar {
   .about-main {
     width: 75vw;
   }
+  .about-main-image-container {
+    display: none;
+  }
+  .about-main-description {
+    margin-left: 0;
+  }
 }
 @media(max-width: 800px) {
   .about-main-description {
@@ -776,7 +747,12 @@ body::-webkit-scrollbar {
 
   margin-top: 2rem;
 
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media(max-width: 1600px) {
+  .chapters-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 @media(max-width: 1200px) {
   .chapters-list {
@@ -830,14 +806,16 @@ body::-webkit-scrollbar {
 
 /*** RESURCES PAGE ***/
 .resources {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+
   margin-left: 12rem;
 
   min-height: calc(100vh - var(--header-height) - var(--footer-height));
   width: calc(100vw - 12rem);
 
   padding: 2rem;
-
-  background-color: red;
 }
 .resources-navbars {
   display: flex;
@@ -979,12 +957,16 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: top;
 
   overflow-y: auto;
 }
+
+.resources-page-titles {
+  font-size: 2rem;
+}
+
 .resources-default {
-  font-size: 4rem;
 }
 .resources-pdf {
   width: 100%;
@@ -997,8 +979,6 @@ body::-webkit-scrollbar {
   align-items: center;
 
   margin: 2rem;
-
-  width: 100%;
 }
 .events-title {
   font-size: 2rem;
@@ -1123,6 +1103,67 @@ body::-webkit-scrollbar {
   }
 }
 
+.calendar {
+  display: flex;
+}
+.calendar-day-view {
+  width: 10rem;
+  height: var(--calender-size);
+
+  background-color: orange;
+}
+.calendar-month-view {
+  display: block;
+
+  width: var(--calender-size);
+  height: var(--calender-size);
+
+  padding: 1rem;
+
+  /* background-color: red; */
+}
+.calendar-header {
+  display: flex;
+
+}
+.calendar-header-month-year {
+  display: flex;
+}
+.calendar-header-month, .calendar-header-year  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 2rem;
+}
+.calendar-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 100%;
+}
+.calendar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+}
+.calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 4rem;
+  height: 4rem;
+
+  font-size: 1.5rem;
+
+  /* background-color: purple; */
+}
+
 /*** CONTACT PAGE ***/
 .contact {
   display: flex;
@@ -1188,7 +1229,7 @@ body::-webkit-scrollbar {
   margin-left: 2rem;
 }
 .contact-info-image-container {
-  width: 20rem;
+  width: 24rem;
 }
 .contact-info-image {
   width: 100%;
@@ -1211,7 +1252,7 @@ body::-webkit-scrollbar {
 .contact-facebook-icon, .contact-instagram-icon {
   fill: var(--primary-text-color);
 }
-@media(max-width: 800px) {
+@media(max-width: 1000px) {
   .contact-form {
     width: 100%;
   }

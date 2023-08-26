@@ -1,7 +1,9 @@
 export default function Au() {
   return (
     <div className='resources-au'>
-      Au
+      <div className="resources-page-titles">
+        Au
+      </div>
     </div>
   )
 }

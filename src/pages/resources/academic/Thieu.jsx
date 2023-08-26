@@ -1,7 +1,9 @@
 export default function Thieu() {
   return (
     <div className='resources-thieu'>
-      Thieu
+      <div className="resources-page-titles">
+        Thieu
+      </div>
     </div>
   )
 }
