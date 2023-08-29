@@ -31,65 +31,93 @@ createServer({
     /* CHAPTERS */
     server.create("chapter", 
     {
-      id: 0,
+      id: "apy",
       name: "Anrê Phú Yên", 
       description: "Or Doan is located in Hoston, TX blah blah sf stuff blah blah stuff stuff blah blah stuff stuff", 
       quote: "blah blah",
-      website: "www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/APY.jpg"
     })
     server.create("chapter", 
     {
-      id: 1,
+      id: "adl",
       name: "Anrê Dũng Lạc", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/ADL.jpg"
     })
     server.create("chapter", 
     {
-      id: 2,
+      id: "cbn",
       name: "Chúa Ba Ngôi", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/CBN.jpg"
     })
     server.create("chapter", 
     {
-      id: 3,
+      id: "savio",
       name: "Savio", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/Savio.png"
     })
     server.create("chapter", 
     {
-      id: 4,
+      id: "ktv",
       name: "Kitô Vua", 
-      description: "less stuff blah blah", 
+      description: "First establish on April 16, 1988 at St. Jerome Catholic Church with Tr. Pham An as the first Đoàn Trưởng and Lm. Dominic Trịnh Thế Huy as the first Cha Tuyên Úy. It wasn’t until 1997 where Our Lady of Lourdes Catholic Church was building and Đoàn Kitô Vua moved and continue to sinh hoạt with Tr. Trần Dorothy as the current Đoàn Trưởng. Đoàn Kitô Vua currently has 115 members and 34 Youth Leaders.", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Facebook': 'https://www.facebook.com/doankitovuahouston',
+        'Instagram': 'https://www.instagram.com/tnttkvh',
+        'NS Instagram': 'https://www.instagram.com/tnttkvhns',
+        'Youtube': 'https://www.youtube.com/@kitovuahouston',
+      },
       logo: "/chapters/KTV.png"
     })
     server.create("chapter", 
     {
-      id: 5,
+      id: "nvhb",
       name: "Nữ Vương Hòa Bình", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/NVHB.png"
     })
     server.create("chapter", 
     {
-      id: 6,
+      id: "db",
       name: "Don Bosco", 
       description: "less stuff blah blah", 
       quote: "blah bro blah",
-      website: "https://www.youtube.com",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
+      logo: "/chapters/LD.png"
+    })
+    server.create("chapter", 
+    {
+      id: "tt",
+      name: "Thánh Tâm", 
+      description: "less stuff blah blah", 
+      quote: "blah bro blah",
+      links: {
+        'Youtube': 'https://www.youtube.com',
+      },
       logo: "/chapters/LD.png"
     })
 

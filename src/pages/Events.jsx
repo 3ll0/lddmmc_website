@@ -1,240 +1,129 @@
 import React from 'react'
 
 function Calendar() {
-  // const [calender, setCalender] = React.useState([])
+  const [calendarDays, setCalendarDays] = React.useState([])
+  const [date, setDate] = React.useState(new Date())
+  const [currYear, setCurrYear] = React.useState(date.getFullYear())
+  const [currMonth, setCurrMonth] = React.useState(date.getMonth())
+  
+  // storing full name of all months in array
+  const months = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"]
+  
+  
+  const updateCalendar = () => {
+    let firstDayofMonth = new Date(currYear, currMonth, 1).getDay() // getting first day of month
+    let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate() // getting last date of month
+    let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay() // getting last day of month
+    let lastDateofLastMonth = new Date(currYear, currMonth, 0).getDate() // getting last date of previous month
+    let keyCounter = 0
 
-  // React.useEffect(() => {
-  //   fetch('/api/calender')
-  //     .then(res => res.json())
-  //     .then(data => setCalender(data.events))
-  // }, [])
+    let newCalender = []
 
-  // const calenderDays = calender.map(day => (
-
-  // ))
-
-  // var calender = function(o) {
-  //   //Store div id
-  //   this.divId = o.ParentID;
-  
-  //   // Days of week, starting on Sunday
-  //   this.DaysOfWeek = o.DaysOfWeek;
-  //   // Months, stating on January
-  //   this.Months = o.Months;
-  //   // Set the current month, year
-  //   var d = new Date();
-  //   this.CurrentMonth = d.getMonth();
-  //   this.CurrentYear = d.getFullYear();
-  
-  //   var f=o.Format;
-  
-  //   if(typeof(f) == 'string') {
-  //     this.f  = f.charAt(0).toUpperCase();
-  //   } else {
-  //     this.f = 'M';
-  //   }
-  
-  // };
-  
-  // // Goes to next month
-  // calender.prototype.nextMonth = function() {
-  //   if ( this.CurrentMonth == 11 ) {
-  //     this.CurrentMonth = 0;
-  //     this.CurrentYear = this.CurrentYear + 1;
-  //   } else {
-  //     this.CurrentMonth = this.CurrentMonth + 1;
-  //   }
-  //   this.showCurrent();
-  // };
-  
-  // // Goes to previous month
-  // calender.prototype.previousMonth = function() {
-  //   if ( this.CurrentMonth == 0 ) {
-  //     this.CurrentMonth = 11;
-  //     this.CurrentYear = this.CurrentYear - 1;
-  //   } else {
-  //     this.CurrentMonth = this.CurrentMonth - 1;
-  //   }
-  //   this.showCurrent();
-  // };
-  
-  // // 
-  // calender.prototype.previousYear = function() {
-  //   this.CurrentYear = this.CurrentYear - 1;
-  //   this.showCurrent();
-  // }
-  
-  // // 
-  // calender.prototype.nextYear = function() {
-  //   console.log(" ");
-  //   console.log("calender.prototype.nextYear = function() {");
-  //   console.log("this.CurrentYear == " + this.CurrentYear);
-  //   this.CurrentYear = this.CurrentYear + 1;
-  //   console.log("this.CurrentYear - 1 i.e. this.CurrentYear == " + this.CurrentYear);
-  //   this.showCurrent();
-  // }              
-  
-  // // Show current month
-  // calender.prototype.showCurrent = function() {
-  //   this.calender(this.CurrentYear, this.CurrentMonth);
-  // };
-  
-  // // Show month (year, month)
-  // calender.prototype.calender = function(y,m) {
-  //   typeof(y) == 'number' ? this.CurrentYear = y : null;
-  //   typeof(y) == 'number' ? this.CurrentMonth = m : null;
-  
-  //   // 1st day of the selected month
-  //   var firstDayOfCurrentMonth = new Date(y, m, 1).getDay();
-
-  //   // Last date of the selected month
-  //   var lastDateOfCurrentMonth = new Date(y, m+1, 0).getDate();
-  
-  //   // Last day of the previous month
-  //   var lastDateOfLastMonth = m == 0 ? new Date(y-1, 11, 0).getDate() : new Date(y, m, 0).getDate();
-  
-  //   // Write selected month and year. This HTML goes into <div id="month"></div>
-  //   var monthandyearhtml = '<span id="monthandyearspan">' + this.Months[m] + ' - ' + y + '</span>';
-  
-  //   var html = '<table>';
-  
-  //   // Write the header of the days of the week
-  //   html += '<tr>';
-  
-  //   for(var i=0; i < 7;i++) {
-  
-  //     html += '<th class="daysheader">' + this.DaysOfWeek[i] + '</th>';
-  //   }
-  
-  //   html += '</tr>';
-  
-  //   var p = dm = this.f == 'M' ? 1 : firstDayOfCurrentMonth == 0 ? -5 : 2;
-  
-  //   var cellvalue;
-  
-  //   for (var d, i=0, z0=0; z0<6; z0++) {
-  //     html += '<tr>';
-  
-  //     for (var z0a = 0; z0a < 7; z0a++) {
-  
-  //       d = i + dm - firstDayOfCurrentMonth;
-  
-  //       // Dates from prev month
-  //       if (d < 1){
-  
-  //         cellvalue = lastDateOfLastMonth - firstDayOfCurrentMonth + p++;
-  
-  //         html += '<td id="prevmonthdates">' + 
-  //               '<span id="cellvaluespan">' + (cellvalue) + '</span><br/>' + 
-  //               '<ul id="cellvaluelist"><li>apples</li><li>bananas</li><li>pineapples</li></ul>' + 
-  //             '</td>';
-  
-  //       // Dates from next month
-  //       } else if ( d > lastDateOfCurrentMonth){
-  
-  //         html += '<td id="nextmonthdates">' + (p++) + '</td>';
-  
-  //       // Current month dates
-  //       } else {
-  //         html += '<td id="currentmonthdates">' + (d) + '</td>';
-  
-  //         p = 1;
-  
-  //       }
-        
-  //       if (i % 7 == 6 && d >= lastDateOfCurrentMonth) {
-  
-  //         z0 = 10; // no more rows
-  //       }
-  
-  //       i++;
-  
-  //     }
-  
-  //     html += '</tr>';
-  //   }
-  
-  //   // Closes table
-  //   html += '</table>';
-  
-  
-  //   document.getElementById("monthandyear").innerHTML = monthandyearhtml;
-  
-  //   document.getElementById(this.divId).innerHTML = html;
-  // };
-  
-  // // On Load of the window
-  // window.onload = function() {
+    // creating li of previous month last days
+    for (let i = firstDayofMonth; i > 0; i--) {
+      newCalender.push({
+        key: keyCounter,
+        className: "calendar-day calendar-day-inactive", 
+        dayNumber: lastDateofLastMonth - i + 1})
+        keyCounter++
+    }
     
-  //   // Start calender
-  //   var c = new calender({
-  //     ParentID:"divcalendertable",
-  
-  //     DaysOfWeek:[
-  //     'MON',
-  //     'TUE',
-  //     'WED',
-  //     'THU',
-  //     'FRI',
-  //     'SAT',
-  //     'SUN'
-  //     ],
-  
-  //     Months:['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
-  
-  //     Format:'dd/mm/yyyy'
-  //   });
-  
-  //   c.showCurrent();
-    
-  //   // Bind next and previous button clicks
-  //   getId('btnPrev').onclick = function(){
-  //     c.previousMonth();
-  //   };
-  
-  //   getId('btnPrevYr').onclick = function(){
-  //     c.previousYear();
-  //   };
-  
-  //   getId('btnNext').onclick = function(){
-  //     c.nextMonth();
-  //   };
-  
-  //   getId('btnNextYr').onclick = function(){
-  //     c.nextYear();
-  //   };                        
-  // }
-  
-  // Get element by id
-  // function getId(id) {
-  //   return document.getElementById(id);
-  // }
+    // creating li of all days of current month
+    for (let i = 1; i <= lastDateofMonth; i++) {
+      // adding active class to li if the current day, month, and year matched
+      let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+                  && currYear === new Date().getFullYear() ? 
+                  "calendar-day calendar-day-current" : "calendar-day";
+      newCalender.push({
+        key: keyCounter,
+        className: isToday,
+        dayNumber: i})
+        keyCounter++
+    }
 
-  // document.getElementById("monthandyear").innerHTML = monthandyearhtml;
+    // creating li of next month first days
+    for (let i = lastDayofMonth; i < 6; i++) { 
+      newCalender.push({
+        key: keyCounter,
+        className: "calendar-day calendar-day-inactive", 
+        dayNumber: i - lastDayofMonth + 1})
+        keyCounter++
+    }
 
+    console.log(newCalender)
+    setCalendarDays(newCalender)
+  }
 
+  window.onload = function() {
+    updateCalendar()
+  }
+
+  function changeNextMonth() {
+    console.log(currMonth)
+    let newMonth = currMonth+1
+    setCurrMonth(newMonth)
+    console.log(newMonth)
+    console.log(currMonth)
+    if(currMonth > 11) {
+      setDate(new Date(currYear, currMonth, new Date().getDate()))
+      setCurrYear(date.getFullYear())
+      setCurrMonth(date.getMonth())
+    } else {
+      setDate(new Date())
+    }
+    updateCalendar()
+  }
+
+  function changePrevMonth() {
+    setCurrMonth(currMonth-1)
+    if(currMonth < 0) {
+      setDate(new Date(currYear, currMonth, new Date().getDate()))
+      setCurrYear(date.getFullYear())
+      setCurrMonth(date.getMonth())
+    } else {
+      setDate(new Date())
+    }
+    updateCalendar()
+  }
+
+  // prevNextIcon.forEach(icon => { // getting prev and next icons
+  //     icon.addEventListener("click", () => { // adding click event on both icons
+  //         // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
+  //         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1
+
+  //         if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
+  //             // creating a new date of current year & month and pass it as date value
+  //             date = new Date(currYear, currMonth, new Date().getDate())
+  //             currYear = date.getFullYear() // updating current year with new date year
+  //             currMonth = date.getMonth() // updating current month with new date month
+  //         } else {
+  //             date = new Date() // pass the current date as date value
+  //         }
+  //         renderCalendar() // calling renderCalendar function
+  //     })
+  // })
   return (
     <div className='calendar'>
-      <div className='calendar-day-view'>
-
+      <div className='calendar-day-view' id="myList">
       </div>
       <div className='calendar-month-view'>
         <div className='calendar-rows'>
           <div className='calendar-header'>
             <div className='calendar-header-month-year'>
               <div className='calendar-header-month'>
-                August
+                {currMonth}{months[currMonth]}
               </div>
               <div className='calendar-header-year'>
-                2023
+                {currYear}
               </div>
             </div>
             <div className='calendar-header-buttons'>
-              <div className='calender-header-next-year'>
-
+              <div className='calender-next-month' onClick={changeNextMonth}>
+                ˅
               </div>
-              <div className='calender-header-prev-year'>
-                
+              <div className='calender-prev-month' onClick={changePrevMonth}>
+                ˄
               </div>
             </div>
           </div>
@@ -261,120 +150,12 @@ function Calendar() {
               Sa
             </div>
           </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              30
-            </div>
-            <div className='calendar-day'>
-              31
-            </div>
-            <div className='calendar-day'>
-              1
-            </div>
-            <div className='calendar-day'>
-              2
-            </div>
-            <div className='calendar-day'>
-              3
-            </div>
-            <div className='calendar-day'>
-              4
-            </div>
-            <div className='calendar-day'>
-              5
-            </div>
-          </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              6
-            </div>
-            <div className='calendar-day'>
-              7
-            </div>
-            <div className='calendar-day'>
-              8
-            </div>
-            <div className='calendar-day'>
-              9
-            </div>
-            <div className='calendar-day'>
-              10
-            </div>
-            <div className='calendar-day'>
-              11
-            </div>
-            <div className='calendar-day'>
-              12
-            </div>
-          </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              13
-            </div>
-            <div className='calendar-day'>
-              14
-            </div>
-            <div className='calendar-day'>
-              15
-            </div>
-            <div className='calendar-day'>
-              16
-            </div>
-            <div className='calendar-day'>
-              17
-            </div>
-            <div className='calendar-day'>
-              18
-            </div>
-            <div className='calendar-day'>
-              19
-            </div>
-          </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              20
-            </div>
-            <div className='calendar-day'>
-              21
-            </div>
-            <div className='calendar-day'>
-              22
-            </div>
-            <div className='calendar-day'>
-              23
-            </div>
-            <div className='calendar-day'>
-              24
-            </div>
-            <div className='calendar-day'>
-              25
-            </div>
-            <div className='calendar-day'>
-              26
-            </div>
-          </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              27
-            </div>
-            <div className='calendar-day'>
-              28
-            </div>
-            <div className='calendar-day'>
-              29
-            </div>
-            <div className='calendar-day'>
-              30
-            </div>
-            <div className='calendar-day'>
-              31
-            </div>
-            <div className='calendar-day'>
-              1
-            </div>
-            <div className='calendar-day'>
-              2
-            </div>
+          <div className='calendar-days'>
+            {calendarDays.map(({ key, className, dayNumber }) => (
+              <div className={className} key={key}>
+                {dayNumber}
+              </div>
+            ))}
           </div>
         </div>
       </div>
