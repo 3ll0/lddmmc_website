@@ -18,14 +18,14 @@ createServer({
       id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "1 day ago", 
-      content: "Announcing the winner of the Đại Hội Nguồn Sống 2023 T-Shirt Contest, drum roll please…congratulations to Tr. Joseph & Tr. Natalie from Đoàn St. Barbara! Over a thousand people will be wearing YOUR design at Đại Hội this year! See you on the Đại Hội stage where you will receive your cash prize and your Đoàn will receive VIP seating!Thank you to everyone who participated in our T-shirt contest this year. We can’t wait to see you all at Đại Hội Nguồn Sống 2023!",
+      content: "Join us for DHLD Sep 30 - Oct 1",
     })
     server.create("annoucement", 
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "2 day ago", 
-      content: "blah blah",
+      content: "Good luck going back to school!",
     })
 
     /* CHAPTERS */

@@ -58,15 +58,58 @@ function HomeImage() {
     document.body.appendChild(css);
   };
 
+  const [annoucements, setAnnoucements] = React.useState([])
+
+  React.useEffect(() => {
+    fetch("/api/annoucements")
+      .then(res => res.json())
+      .then(data => setAnnoucements(data.annoucements))
+  }, [])
+
+  const annoucementElements = annoucements.map(annoucement => (
+    <div key={annoucement.id} className='home-latest-element'>
+      <div className='home-latest-header'>
+        <img className='home-latest-header-icon' src="/images/logo.png" />
+        <div className='home-latest-header-description'>
+          <div className='home-latest-header-name'>
+            {annoucement.name}
+          </div>
+          <div className='home-latest-header-time'>
+            {annoucement.time}
+          </div>
+        </div>
+      </div>
+      <div className='home-latest-content'>
+        {annoucement.content}
+      </div>
+    </div>
+  ))
+  
   return (
     <div className='home-image-section'>
       <div className='home-image-container'>
         <img className='home-image' src="/images/main.jpg" />
       </div>
-      <div className='home-image-words-container'>
+      {/* <div className='home-image-words-container'>
         <div className="typewrite" data-period="10" 
           data-type='[ "Liên Đoàn Đức Mẹ Mân Côi", "Our Lady of The Holy Rosary League of Chapters" ]'>
           <span className="home-image-words"></span>
+        </div>
+      </div> */}
+      <div className='home-content-container'>
+        <div className='home-title-container'>
+          <div className='home-title-welcome'>
+            Welcome to...
+          </div>
+          <div className='home-title-name'>
+            Liên Đoàn Đức Mẹ Mân Côi!
+          </div>
+          <div className='home-sub-title'>
+            Our Lady of The Holy Rosary League of Chapters
+          </div>
+        </div>
+        <div className='home-latest-container'>
+          {annoucementElements}
         </div>
       </div>
     </div>
@@ -121,7 +164,7 @@ export default function Home() {
   return (
     <div className='home'>
       <HomeImage />
-      <Annoucements />
+      {/* <Annoucements /> */}
     </div>
   )
 }

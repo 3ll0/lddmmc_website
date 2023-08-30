@@ -556,8 +556,88 @@ body::-webkit-scrollbar {
 
   text-align: left;
 }
-.home-image-words {
+.home-content-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+}
+.home-title-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  color: var(--secondary-text-color)
+}
+.home-title-welcome {
+  font-size: 3em;
+}
+.home-title-name {
+  font-size: 4em;
+}
+.home-sub-title{
+  font-size: 1.5em;
+}
+.home-latest-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 2em;
+
+  font-size: 1em;
+}
+
+.home-latest-element {
+  padding: 0.5em;
+  margin: 0.5em;
+
+  border-radius: 1em;
+
+  background-color: var(--primary-background-color);
+}
+.home-latest-header {
+  display: flex;
+  align-items: center;
+}
+.home-latest-header-icon {
+  width: 3em;
+}
+.home-latest-header-description {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 4px;
+}
+.home-latest-header-name {
+}
+.home-latest-header-time {
+}
+.home-latest-content {
+}
+
+@media(max-width: 1200px) {
+  .home-content-container {
+    flex-direction: column;
+  }
+  .home-latest-container {
+    margin-left: 0;
+    margin-top: 2em
+  }
+}
+@media(max-width: 900px) {
+  .home-title-container, .home-latest-container {
+    font-size: 0.75rem;
+  }
+}
+@media(max-width: 620px) {
+  .home-title-container, .home-latest-container {
+    font-size: 0.5rem;
+  }
 }
 
 .annoucements {
@@ -777,6 +857,8 @@ body::-webkit-scrollbar {
 
   width: 20rem;
   height: 32rem;
+
+  background-color: red;
 }
 .chapter-element-spacer {
   display: flex;
@@ -988,7 +1070,46 @@ body::-webkit-scrollbar {
 .resources-pdf {
   width: 100%;
 }
+.resources-default-image {
+  max-width: 100%;
+}
 
+
+.resources-dhld {
+}
+.resources-dhld-flyers {
+  display: flex;
+  flex-direction: column;
+
+}
+.resources-dhld-flyer {
+  width: 100%;
+  margin-bottom: 1rem;
+
+}
+.resources-dhld-downloads {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+.resources-dhld-downloads-title {
+  font-size: 2rem;
+}
+.resources-dhld-downloads-spacer {
+  display: flex;
+
+  height: 1px;
+  width: 100%;
+
+  background-color: var(--primary-accent-color);
+}
+.resources-dhld-downloads-files {
+  display: flex;
+  flex-direction: column;
+}
+.resources-dhld-downloads-file {
+}
 /*** EVENTS PAGE ***/
 .events {
   display: flex;

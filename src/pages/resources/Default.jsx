@@ -4,6 +4,7 @@ export default function Default() {
       <div className="resources-page-titles">
         Welcome to the Resource Page!
       </div>
+      <img className='resources-default-image' src='/resources/resources.jpg' />
     </div>
   )
 }
