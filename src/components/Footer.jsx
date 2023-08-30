@@ -12,7 +12,7 @@ function Doan() {
         Our Lady of the Holy Rosary
       </div>
       <div className='footer-doan-quote'>
-        "lien doan quote here" -LDDMMC
+        "Behold, your Mother" -John 19:26-27
       </div>
     </div>
   )

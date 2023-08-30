@@ -2,14 +2,14 @@ import React from 'react'
 
 export default function Chapters() {
   const [chapters, setChapters] = React.useState([])
-  const [chapter, setChapter] = React.useState({})
+  const [displayChapter, setDisplayChapter] = React.useState({})
 
   React.useEffect(() => {
     fetch('/api/chapters')
       .then(res => res.json())
       .then(data => setChapters(data.chapters))
   }, [])
-  console.log(chapters)
+  console.log(displayChapter)
 
   function ChapterDetails() {
     return (
@@ -21,9 +21,11 @@ export default function Chapters() {
     )
   }
 
+
+
+
   const chapterElements = chapters.map(chapter => (
     <div key={chapter.id} className='chapter-element'>
-      {/* <button onClick={this.console.log('hi')}> */}
         <img className='chapter-image' src={chapter.logo} />
         <div className='chapter-info'>
           <div className='chapter-name'>
@@ -40,9 +42,10 @@ export default function Chapters() {
             {chapter.website}
           </a> */}
         </div>
-      {/* </button> */}
     </div>
   ))
+
+  console.log(chapterElements)
 
   return (
     <div className='chapters'>

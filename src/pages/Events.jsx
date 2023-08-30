@@ -210,7 +210,7 @@ export default function Events() {
       <div className='events-title'>
         EVENTS
       </div>
-      {/* <div className='events-content'>
+      <div className='events-content'>
         <div className='events-image-container'>
           <img className='events-image' src='/events/events.jpg' />
         </div>
@@ -220,8 +220,8 @@ export default function Events() {
             {eventElements}
           </div>
         ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
-      </div> */}
-      <Calendar />
+      </div>
+      {/* <Calendar /> */}
     </div>
   )
 }

@@ -858,7 +858,7 @@ body::-webkit-scrollbar {
   width: 20rem;
   height: 32rem;
 
-  background-color: red;
+  /* background-color: red; */
 }
 .chapter-element-spacer {
   display: flex;

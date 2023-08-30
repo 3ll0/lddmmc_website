@@ -90,10 +90,10 @@ export default function Resources() {
           </div>
         </NavLink>
         <div className="resource-navbar-spacer"/>
-        <AdminNav />
+        {/* <AdminNav />
         <div className="resource-navbar-spacer"/>
         <AcademicNav />
-        <div className="resource-navbar-spacer"/>
+        <div className="resource-navbar-spacer"/> */}
         <OtherNav />
       </div>
       <Outlet className="resource-page-wrap" />
