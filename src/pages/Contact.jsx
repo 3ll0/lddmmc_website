@@ -1,6 +1,6 @@
 import { useState } from "react"
 // import { db } from '../firebase'
-import { addDoc, collection } from 'firebase/firestore'
+// import { addDoc, collection } from 'firebase/firestore'
 
 
 import { firestore } from '../firebase'
@@ -39,15 +39,15 @@ function Form() {
   return (
     // todo validation
     <form className='contact-form' onSubmit={handleSubmit}>      
-      <input className='contact-form-input-name' name='name' value={name} type='text' placeholder='Name'
+      <input className='contact-form-input-name' value={name} type='text' placeholder='Name'
         onChange={(event)=>{
           setName(event.target.value)
         }}/>
-      <input className='contact-form-input-email' name='email' value={email} type='text' placeholder='Email'
+      <input className='contact-form-input-email' value={email} type='text' placeholder='Email'
         onChange={(event)=>{
           setEmail(event.target.value)
         }}/>
-      <textarea className='contact-form-input-text' name='message' value={message} placeholder='Message'
+      <textarea className='contact-form-input-text' value={message} placeholder='Message'
         onChange={(event)=>{
           setMessage(event.target.value)
         }}/>

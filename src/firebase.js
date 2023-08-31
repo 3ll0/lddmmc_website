@@ -31,12 +31,11 @@ const firebaseConfig = {
   projectId: "lddmmc-f9d78",
   storageBucket: "lddmmc-f9d78.appspot.com",
   messagingSenderId: "147578903067",
-  appId: "1:147578903067:web:bfc07587bd20eb719976be",
-  // measurementId: "G-HWNFMLD74R"
+  appId: "1:147578903067:web:bfc07587bd20eb719976be"
 };
 
 if (!firebase.app.lenth) {
   firebase.initializeApp(firebaseConfig);
 }
-firebase.firestore().settings({ experimentalForceLongPolling: true });
+
 export const firestore = firebase.firestore();
