@@ -1,28 +1,149 @@
 import React from 'react'
 
 export default function About() {
-  const [spirituals, setSpirituals] = React.useState([])
-  const [btvs, setBtvs] = React.useState([])
-  const [academics, setAcademics] = React.useState([])
-  const [leads, setLeads] = React.useState([])
+  const spirituals = [
+    {
+      id: 0,
+      roleV: "Tuyên Úy", 
+      roleE: "League Chaplain", 
+      name: "Gioan Baotixita - Steven Son Tran",
+      image: "/about/chaplain.jpg"
+    }
+  ]
 
-  React.useEffect(() => {
-    fetch('/api/spirituals')
-      .then(res => res.json())
-      .then(data => setSpirituals(data.spirituals))
-    
-    fetch('/api/btvs')
-      .then(res => res.json())
-      .then(data => setBtvs(data.btvs))
+  const btvs = [
+    {
+      id: 0,
+      roleV: "Liên Đoàn Trưởng",
+      roleE: "League President",
+      name: "Giuse - Jimmy Văn Hà", 
+      image: "/about/president.jpg"
+    },
+    {
+      id: 1,
+      roleV: "Phó Quản Trị", 
+      roleE: "League Vice President Of Administrative Affairs", 
+      name: "Theresa - Ngoc Diep Khuu", 
+      image: "/about/vice_administrative.jpg"
+    },
+    {
+      id: 2,
+      roleV: "Phó Nghiên Huấn", 
+      roleE: "League Vice President Of Academic Affairs", 
+      name: "Têrêsa - Kathy Thuỳ Cao",
+      image: "/about/vice_academic.jpg"
+    },
+    {
+      id: 3,
+      roleV: "Thư Ký", 
+      roleE: "League Secretary", 
+      name: "Anna Têrêsa - Jackie Tuyết Nguyễn",
+      image: "/about/secretary.jpg"
+    },
+    {
+      id: 4,
+      roleV: "Thủ Quỹ", 
+      roleE: "League Treasurer", 
+      name: "Maria Goretti - Jacqueline Nguyen",
+      image: "/about/treasurer.jpg"
+    }
+  ]
+  const academics = [
+    {
+      id: 0,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Seedling Specialist", 
+      name: "Giuse - Fanrcy Nguyen",
+      image: "/about/seedling.jpg"
+    },
+    {
+      id: 1,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Search Specialist", 
+      name: "Anrê - Andy Kim Nguyen",
+      image: "/about/search.jpg"
+    },
+    {
+      id: 2,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic Companion Specialist", 
+      name: "Johnny Dinh",
+      image: "/about/companion.jpg"
+    },
+    {
+      id: 3,
+      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleE: "League Academic KoE Specialist", 
+      name: "Anna - Adeline Nhan Ai Pham",
+      image: "/about/koe.jpg"
+    }
+  ]
 
-    fetch('/api/academics')
-      .then(res => res.json())
-      .then(data => setAcademics(data.academics))
-
-    fetch('/api/leads')
-      .then(res => res.json())
-      .then(data => setLeads(data.leads))
-  }, [])
+  const leads = [
+    {
+      id: 0,
+      roleV: "Ủy Viên Kỹ Thuật", 
+      roleE: "League Technical Lead", 
+      name: "Anton - Huy Nguyen",
+      image: "/about/technical.jpg"
+    },
+    {
+      id: 1,
+      roleV: "Ủy Viên Kỹ Thuật Vi Tính", 
+      roleE: "League IT Lead", 
+      name: "Peter - Ryan Hoang",
+      image: "/about/it.jpg"
+    },
+    {
+      id: 2,
+      roleV: "Ủy Viên Ơn Gọi", 
+      roleE: "League Vocational Lead", 
+      name: "Mary Thomas - Cindy Thanh-Lan Tran",
+      image: "/about/vocational.jpg"
+    },
+    {
+      id: 3,
+      roleV: "Ủy Viên Phụng Vụ", 
+      roleE: "League Liturgical Lead", 
+      name: "Maria - Tristine Thuỷ Dinh",
+      image: "/about/liturgical.jpg"
+    },
+    {
+      id: 4,
+      roleV: "Ủy Viên Truyền Thông", 
+      roleE: "League Communications Lead", 
+      name: "Cêcilia - Allison Diễm-Ngọc Hà",
+      image: "/about/communications.jpg"
+    },
+    {
+      id: 5,
+      roleV: "Ủy Viên Đại Hội", 
+      roleE: "League Conference Lead", 
+      name: "Augustine of Hippo - Vincent Nguyen Pham",
+      image: "/about/conference.jpg"
+    },
+    {
+      id: 6,
+      roleV: "Ủy Viên Nhân Sự", 
+      roleE: "League Human Resources Lead", 
+      name: "Giuse - Kelvin Nhat Tran",
+      image: "/about/human_resources.jpg"
+    },
+    {
+      id: 7,
+      roleV: "Ủy Viên Xã Hội", 
+      roleE: "League Social Works Lead", 
+      name: "Phero - Lam Ngoc Khanh Vu",
+      image: "/about/social_works.jpg"
+    },
+    {
+      id: 8,
+      roleV: "Ủy Viên Văn Nghệ", 
+      roleE: "League Entertainment Lead", 
+      name: "Maria Faustina - Michelle Lý Hứa",
+      image: "/about/entertainment.jpg"
+    }
+  ]
 
   const spiritualElements = spirituals.map(spiritual => (
     <div key={spiritual.id} className='about-element'>

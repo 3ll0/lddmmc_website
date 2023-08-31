@@ -1,16 +1,10 @@
 import { useState } from "react"
-// import { db } from '../firebase'
-// import { addDoc, collection } from 'firebase/firestore'
-
-
 import { firestore } from '../firebase'
 
 function Form() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
-
-  // const userCollectionRef = collection(db, "contactdata")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,25 +19,15 @@ function Form() {
       setEmail("");
       setMessage("");
     }).catch((error) => console.error('Error submitting data', error))
-    // addDoc(userCollectionRef, {
-    //   name: name,
-    //   email: email,
-    //   messag: message
-    // }).then(() => {
-    //   if(!alert("Form Submitted!"))document.location = ''
-    // }).catch((error) => {
-    //   alert(error.message)
-    // })
   }
 
   return (
-    // todo validation
     <form className='contact-form' onSubmit={handleSubmit}>      
       <input className='contact-form-input-name' value={name} type='text' placeholder='Name'
         onChange={(event)=>{
           setName(event.target.value)
         }}/>
-      <input className='contact-form-input-email' value={email} type='text' placeholder='Email'
+      <input className='contact-form-input-email' value={email} type='email' placeholder='Email'
         onChange={(event)=>{
           setEmail(event.target.value)
         }}/>

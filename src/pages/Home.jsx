@@ -1,70 +1,77 @@
 import React from 'react'
 
 function HomeImage() {
-  var TxtType = function(el, toRotate, period) {
-      this.toRotate = toRotate;
-      this.el = el;
-      this.loopNum = 0;
-      this.period = parseInt(period, 10) || 2000;
-      this.txt = '';
-      this.tick();
-      this.isDeleting = false;
-  };
+  // var TxtType = function(el, toRotate, period) {
+  //     this.toRotate = toRotate;
+  //     this.el = el;
+  //     this.loopNum = 0;
+  //     this.period = parseInt(period, 10) || 2000;
+  //     this.txt = '';
+  //     this.tick();
+  //     this.isDeleting = false;
+  // };
 
-  TxtType.prototype.tick = function() {
-      var i = this.loopNum % this.toRotate.length;
-      var fullTxt = this.toRotate[i];
+  // TxtType.prototype.tick = function() {
+  //     var i = this.loopNum % this.toRotate.length;
+  //     var fullTxt = this.toRotate[i];
 
-      if (this.isDeleting) {
-      this.txt = fullTxt.substring(0, this.txt.length - 1);
-      } else {
-      this.txt = fullTxt.substring(0, this.txt.length + 1);
-      }
+  //     if (this.isDeleting) {
+  //     this.txt = fullTxt.substring(0, this.txt.length - 1);
+  //     } else {
+  //     this.txt = fullTxt.substring(0, this.txt.length + 1);
+  //     }
 
-      this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  //     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
 
-      var that = this;
-      var delta = 200 - Math.random() * 100;
+  //     var that = this;
+  //     var delta = 200 - Math.random() * 100;
 
-      if (this.isDeleting) { delta /= 2; }
+  //     if (this.isDeleting) { delta /= 2; }
 
-      if (!this.isDeleting && this.txt === fullTxt) {
-      delta = this.period;
-      this.isDeleting = true;
-      } else if (this.isDeleting && this.txt === '') {
-      this.isDeleting = false;
-      this.loopNum++;
-      delta = 500;
-      }
+  //     if (!this.isDeleting && this.txt === fullTxt) {
+  //     delta = this.period;
+  //     this.isDeleting = true;
+  //     } else if (this.isDeleting && this.txt === '') {
+  //     this.isDeleting = false;
+  //     this.loopNum++;
+  //     delta = 500;
+  //     }
 
-      setTimeout(function() {
-      that.tick();
-      }, delta);
-  };
+  //     setTimeout(function() {
+  //     that.tick();
+  //     }, delta);
+  // };
   
-  window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i=0; i<elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
-        }
+  // window.onload = function() {
+  //   var elements = document.getElementsByClassName('typewrite');
+  //   for (var i=0; i<elements.length; i++) {
+  //       var toRotate = elements[i].getAttribute('data-type');
+  //       var period = elements[i].getAttribute('data-period');
+  //       if (toRotate) {
+  //         new TxtType(elements[i], JSON.parse(toRotate), period);
+  //       }
+  //   }
+  //   // INJECT CSS
+  //   var css = document.createElement("style");
+  //   css.type = "text/css";
+  //   css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  //   document.body.appendChild(css);
+  // };
+
+  const annoucements = [
+    {
+      id: 0,
+      name: "Liên Đoàn Đức Mẹ Mân Côi", 
+      time: "1 day ago", 
+      content: "Join us for DHLD Sep 30 - Oct 1",
+    },
+    {
+      id: 1,
+      name: "Liên Đoàn Đức Mẹ Mân Côi", 
+      time: "2 day ago", 
+      content: "Good luck going back to school!",
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
-  };
-
-  const [annoucements, setAnnoucements] = React.useState([])
-
-  React.useEffect(() => {
-    fetch("/api/annoucements")
-      .then(res => res.json())
-      .then(data => setAnnoucements(data.annoucements))
-  }, [])
+  ]
 
   const annoucementElements = annoucements.map(annoucement => (
     <div key={annoucement.id} className='home-latest-element'>
@@ -116,55 +123,10 @@ function HomeImage() {
   )
 }
 
-function Annoucements() {
-  const [annoucements, setAnnoucements] = React.useState([])
-
-  React.useEffect(() => {
-    fetch("/api/annoucements")
-      .then(res => res.json())
-      .then(data => setAnnoucements(data.annoucements))
-  }, [])
-
-  const annoucementElements = annoucements.map(annoucement => (
-    <div key={annoucement.id} className='annoucement-element'>
-      <div className='annoucement-header'>
-        <img className='annoucement-header-image' src="/images/logo.png" />
-        <div className='annoucement-header-description'>
-          <div className='annoucement-header-name'>
-            {annoucement.name}
-          </div>
-          <div className='annoucement-header-time'>
-            {annoucement.time}
-          </div>
-        </div>
-      </div>
-      <div>
-      {annoucement.content}
-      </div>
-      <img className='home-image' src="/images/img1.jpg" />
-      <div>
-        Links
-      </div>
-    </div>
-  ))
-
-  return (
-    <div className='annoucements'>
-      <div className='annoucements-name'>
-        ANNOUCEMENTS
-      </div>
-      <div className='annoucement-elements'>
-        {annoucementElements}
-      </div>
-    </div>
-  )
-}
-
 export default function Home() {
   return (
     <div className='home'>
       <HomeImage />
-      {/* <Annoucements /> */}
     </div>
   )
 }

@@ -164,13 +164,24 @@ function Calendar() {
 }
 
 export default function Events() {
-  const [events, setEvents] = React.useState([])
-
-  React.useEffect(() => {
-    fetch('/api/events')
-      .then(res => res.json())
-      .then(data => setEvents(data.events))
-  }, [])
+  const events = [
+    {
+      id: 0,
+      name: "DHLD", 
+      location: "St. Matthias Catholic Church", 
+      description: "EPHESIANS 2:10",
+      dateNumber: "30",
+      dateMonth: "September",
+    },
+    {
+      id: 1,
+      name: "DHLD", 
+      location: "St. Matthias Catholic Church",
+      description: "EPHESIANS 2:10",
+      dateNumber: "1",
+      dateMonth: "October",
+    }
+  ]
 
   const eventElements = events.map(event => (
     <div key={event.id} className='event-element'>
