@@ -1,40 +1,57 @@
 import { useState } from "react"
-import { db } from '../firebaseConfig'
+// import { db } from '../firebase'
 import { addDoc, collection } from 'firebase/firestore'
 
+
+import { firestore } from '../firebase'
+
 function Form() {
-  const [name, setName] = useState()
-  const [email, setEmail] = useState()
-  const [message, setMessage] = useState()
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
 
-  const userCollectionRef = collection(db, "contactdata")
+  // const userCollectionRef = collection(db, "contactdata")
 
-  const handleSubmit = () => {
-    addDoc(userCollectionRef, {
-      name: name,
-      email: email,
-      messag: message
-    }).then(() => {
-      if(!alert("Form Submitted!"))document.location = ''
-    }).catch((error) => {
-      alert(error.message)
-    })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(name, email, message);
+
+    firestore.collection("messages").add({
+      name,
+      email,
+      message
+    }).then (() => {
+      setName("");
+      setEmail("");
+      setMessage("");
+    }).catch((error) => console.error('Error submitting data', error))
+    // addDoc(userCollectionRef, {
+    //   name: name,
+    //   email: email,
+    //   messag: message
+    // }).then(() => {
+    //   if(!alert("Form Submitted!"))document.location = ''
+    // }).catch((error) => {
+    //   alert(error.message)
+    // })
   }
 
   return (
     // todo validation
-    <form className='contact-form' id="contactForm">      
-      <input className='contact-form-input-name' name='name' type='text' placeholder='Name' id='name'
+    <form className='contact-form' onSubmit={handleSubmit}>      
+      <input className='contact-form-input-name' name='name' value={name} type='text' placeholder='Name'
         onChange={(event)=>{
           setName(event.target.value)
         }}/>
-      <input className='contact-form-input-email' name='email' type='text' placeholder='Email' id='email'onChange={(event)=>{
+      <input className='contact-form-input-email' name='email' value={email} type='text' placeholder='Email'
+        onChange={(event)=>{
           setEmail(event.target.value)
         }}/>
-      <textarea className='contact-form-input-text' name='message' placeholder='Message' id='message'onChange={(event)=>{
+      <textarea className='contact-form-input-text' name='message' value={message} placeholder='Message'
+        onChange={(event)=>{
           setMessage(event.target.value)
         }}/>
-      <input className='contact-form-submit' type='submit' value='SUBMIT' onClick={handleSubmit}/>
+      <input className='contact-form-submit' type='submit' value='SUBMIT'/>
     </form>
   )
 }
