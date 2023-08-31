@@ -14,6 +14,10 @@ function Form() {
       name: name,
       email: email,
       messag: message
+    }).then(() => {
+      if(!alert("Form Submitted!"))document.location = ''
+    }).catch((error) => {
+      alert(error.message)
     })
   }
 
