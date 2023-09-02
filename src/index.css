@@ -49,6 +49,7 @@ body {
 
   /*** COLORS ***/
   --primary-background-color: #FFFFFF;
+  --primary-background-color-transparent: rgb(0, 0, 0, 0.5);
   --secondary-background-color: #000000;
 
   --primary-text-color: #000000;
@@ -874,35 +875,63 @@ body::-webkit-scrollbar {
 .chapter-info {
   display: flex;
   flex-direction: column;
+  
+  margin-top: 1rem;
 }
 .chapter-name {
   font-size: 2em;
   font-weight: 500;
 }
-.chapter-description {
-  font-weight: 300;
-}
-.chapter-quote {
-  font-weight: 500;
-}
-.chapter-link {
-  font-weight: 500;
-}
 
 .chapter-details {
   display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: fixed;
   top: var(--header-height);
   height: calc(100vh - var(--header-height));
   width: 100%;
 
-  opacity: 50%;
-  background-color: gray;
-  z-index: 200;
+  padding: 2rem;
+
+  background-color: var(--primary-background-color-transparent);
 }
 .chapter-details-content {
+  display: flex;
+  align-items: top;
+
+  padding: 1rem;
+  background-color: var(--primary-background-color);
+}
+.chapter-details-image {
+  height: 20rem;
+}
+.chapter-details-info {
+  display: flex;
+  flex-direction: column;
+
+  margin: 1rem;
+}
+.chapter-details-name {
+  font-size: 2rem;
+}
+.chapter-details-parish {
+}
+.chapter-details-location {
+}
+.chapter-details-sinhhoat {
+}
+.chapter-details-description {
+}
+.chapter-details-links {
+  display: flex;
+  flex-direction: column;
+}
+.chapter-details-link {
 
 }
+
 /*** RESURCES PAGE ***/
 .resources {
   display: flex;
@@ -1110,6 +1139,7 @@ body::-webkit-scrollbar {
 }
 .resources-dhld-downloads-file {
 }
+
 /*** EVENTS PAGE ***/
 .events {
   display: flex;
@@ -1343,6 +1373,10 @@ body::-webkit-scrollbar {
 }
 
 .calendar-events-dots {
+  position: absolute;
+  margin-top: 0.5rem;
+
+  font-size: 2rem;
 }
 .calendar-day-selectors {
 }

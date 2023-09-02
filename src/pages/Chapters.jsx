@@ -4,106 +4,141 @@ export default function Chapters() {
   const chapters = [
     {
       id: "apy",
-      name: "Anrê Phú Yên", 
-      description: "Or Doan is located in Hoston, TX blah blah sf stuff blah blah stuff stuff blah blah stuff stuff", 
-      quote: "blah blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Anrê Phú Yên",
+      parish: "Vietnamese Martrys",
+      location: "",
+      sinhhoat: "Saturday: 12:30-2:30",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/APY.jpg"
     },
     {
       id: "adl",
-      name: "Anrê Dũng Lạc", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Anrê Dũng Lạc",
+      parish: "La Vang",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/ADL.jpg"
     },
     {
       id: "cbn",
-      name: "Chúa Ba Ngôi", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Chúa Ba Ngôi",
+      parish: "",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/CBN.jpg"
     },
     {
       id: "savio",
-      name: "Savio", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Savio",
+      parish: "St. Christopher",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/Savio.png"
     },
     {
       id: "ktv",
-      name: "Kitô Vua", 
-      description: "First establish on April 16, 1988 at St. Jerome Catholic Church with Tr. Pham An as the first Đoàn Trưởng and Lm. Dominic Trịnh Thế Huy as the first Cha Tuyên Úy. It wasn’t until 1997 where Our Lady of Lourdes Catholic Church was building and Đoàn Kitô Vua moved and continue to sinh hoạt with Tr. Trần Dorothy as the current Đoàn Trưởng. Đoàn Kitô Vua currently has 115 members and 34 Youth Leaders.", 
-      quote: "blah bro blah",
-      links: {
-        'Facebook': 'https://www.facebook.com/doankitovuahouston',
-        'Instagram': 'https://www.instagram.com/tnttkvh',
-        'NS Instagram': 'https://www.instagram.com/tnttkvhns',
-        'Youtube': 'https://www.youtube.com/@kitovuahouston',
-      },
+      name: "Kitô Vua",
+      parish: "",
+      location: "",
+      sinhhoat: "",
+      description: "First establish on April 16, 1988 at St. Jerome Catholic Church with Tr. Pham An as the first Đoàn Trưởng and Lm. Dominic Trịnh Thế Huy as the first Cha Tuyên Úy. It wasn’t until 1997 where Our Lady of Lourdes Catholic Church was building and Đoàn Kitô Vua moved and continue to sinh hoạt with Tr. Trần Dorothy as the current Đoàn Trưởng. Đoàn Kitô Vua currently has 115 members and 34 Youth Leaders.",
+      links: [
+        {
+          name: 'Facebook',
+          link: 'https://www.facebook.com/doankitovuahouston'
+        },
+        {
+          name: 'Instagram',
+          link: 'https://www.instagram.com/tnttkvh'
+        },
+        {
+          name: 'NS Instagram',
+          link: 'https://www.instagram.com/tnttkvhns'
+        },
+        {
+          name: 'Youtube',
+          link: 'https://www.youtube.com/@kitovuahouston'
+        },
+      ],
       logo: "/chapters/KTV.png"
     },
     {
       id: "nvhb",
-      name: "Nữ Vương Hòa Bình", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Nữ Vương Hòa Bình",
+      parish: "",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/NVHB.png"
     },
     {
       id: "db",
-      name: "Don Bosco", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Don Bosco",
+      parish: "",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/LD.png"
     },
     {
       id: "tt",
-      name: "Thánh Tâm", 
-      description: "less stuff blah blah", 
-      quote: "blah bro blah",
-      links: {
-        'Youtube': 'https://www.youtube.com',
-      },
+      name: "Thánh Tâm",
+      parish: "",
+      location: "",
+      sinhhoat: "",
+      description: "",
+      links: [
+      ],
       logo: "/chapters/LD.png"
     }
   ]
   const [displayChapter, setDisplayChapter] = React.useState({})
 
-
-  // useEffect(() => {
-  //   if (Object.keys(displayChapter).length === 0) {
-  //     console.log('not empty')
-  //   }
-  //   else {
-  //     console.log('empty')
-  //   }
-  // }, [displayChapter])
-  
   function ChapterDetails() {
     if (Object.keys(displayChapter).length > 0) {
       return (
         <div className='chapter-details' onClick={() => (setDisplayChapter({}))}>
           <div className='chapter-details-content'>
-            {displayChapter.name}
+            <img className='chapter-details-image' src={displayChapter.logo} />
+            <div className='chapter-details-info'>
+              <div className='chapter-details-name'>
+                {displayChapter.name}
+              </div>
+              <div className='chapter-details-parish'>
+                {displayChapter.parish}
+              </div>
+              <div className='chapter-details-location'>
+                {displayChapter.location}
+              </div>
+              <div className='chapter-details-sinhhoat'>
+                {displayChapter.sinhhoat}
+              </div>
+              <div className='chapter-details-description'>
+                {displayChapter.description}
+              </div>
+              <div className='chapter-details-links'>
+                {displayChapter.links.map(link => (
+                  <a className='chapter-details-link' key={link.name} href={link.link} target='_blank'>
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )
@@ -124,16 +159,6 @@ export default function Chapters() {
                   <div className='chapter-name'>
                     {chapter.name}
                   </div>
-                  {/* <div className='chapter-element-spacer' />
-                  <div className='chapter-description'>
-                    {chapter.description}
-                  </div>
-                  <div className='chapter-quote'>
-                    {chapter.quote}
-                  </div>
-                  <a className='chapter-link' href={chapter.website}>
-                    {chapter.website}
-                  </a> */}
                 </div>
             </div>
           ))}
