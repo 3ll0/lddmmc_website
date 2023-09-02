@@ -1,17 +1,80 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function Calendar() {
+  // MMDDYYYY format
+  const events = {
+    8312023: [
+      {
+        key: 0,
+        name: "Dai Hoi"
+      },
+      {
+        key: 1,
+        name: "Dai Hoi"
+      },
+      {
+        key: 2,
+        name: "Dai Hoi"
+      },
+      {
+        key: 3,
+        name: "Dai Hoi"
+      }
+    ],
+    9072023: [
+      {
+        key: 0,
+        name: "Dai Hoi"
+      },
+      {
+        key: 1,
+        name: "Dai Hoi"
+      },
+      {
+        key: 2,
+        name: "Dai Hoi"
+      },
+      {
+        key: 3,
+        name: "Dai Hoi"
+      }
+    ],
+    10012023: [
+      {
+        key: 0,
+        name: "Dai Hoi"
+      },
+      {
+        key: 1,
+        name: "Dai Hoi"
+      },
+      {
+        key: 2,
+        name: "Dai Hoi"
+      },
+      {
+        key: 3,
+        name: "Dai Hoi"
+      }
+    ]
+  }
+  function getEventKey(day, month, year) {
+    return month * 1000000 + day * 10000 + year
+  }
+
   const [calendarDays, setCalendarDays] = React.useState([])
   const [date, setDate] = React.useState(new Date())
   const [currYear, setCurrYear] = React.useState(date.getFullYear())
   const [currMonth, setCurrMonth] = React.useState(date.getMonth())
-  
+  const [selectedDate, setSelectedDate] = React.useState(getEventKey(date.getDate(), currMonth+1, currYear))
+  const [selectedEvents, setSelectedEvents] = React.useState([])
+
   // storing full name of all months in array
   const months = ["January", "February", "March", "April", "May", "June", "July",
                 "August", "September", "October", "November", "December"]
-  
-  
-  const updateCalendar = () => {
+
+  // update calender
+  useEffect(() => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay() // getting first day of month
     let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate() // getting last date of month
     let lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay() // getting last day of month
@@ -22,11 +85,14 @@ function Calendar() {
 
     // creating li of previous month last days
     for (let i = firstDayofMonth; i > 0; i--) {
+      let eventCode = getEventKey(lastDateofLastMonth-i+1, currMonth, currYear)
       newCalender.push({
         key: keyCounter,
         className: "calendar-day calendar-day-inactive", 
-        dayNumber: lastDateofLastMonth - i + 1})
-        keyCounter++
+        dayNumber: lastDateofLastMonth - i + 1,
+        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
+        eventCode: eventCode})
+      keyCounter++
     }
     
     // creating li of all days of current month
@@ -35,84 +101,85 @@ function Calendar() {
       let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
                   && currYear === new Date().getFullYear() ? 
                   "calendar-day calendar-day-current" : "calendar-day";
+
+      let eventCode = getEventKey(i, currMonth+1, currYear)
       newCalender.push({
         key: keyCounter,
         className: isToday,
-        dayNumber: i})
-        keyCounter++
+        dayNumber: i,
+        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
+        eventCode: eventCode})
+      keyCounter++
     }
 
     // creating li of next month first days
-    for (let i = lastDayofMonth; i < 6; i++) { 
+    let trailingDays = 6
+    if (newCalender.length <= 35) {
+      trailingDays = 13
+    }
+    for (let i = lastDayofMonth; i < trailingDays; i++) { 
+      let eventCode = getEventKey(i-lastDayofMonth+1, currMonth+2, currYear)
       newCalender.push({
         key: keyCounter,
         className: "calendar-day calendar-day-inactive", 
-        dayNumber: i - lastDayofMonth + 1})
-        keyCounter++
+        dayNumber: i - lastDayofMonth + 1,
+        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
+        eventCode: eventCode})
+      keyCounter++
     }
 
-    console.log(newCalender)
     setCalendarDays(newCalender)
-  }
-
-  window.onload = function() {
-    updateCalendar()
-  }
+  }, [currMonth, currYear])
 
   function changeNextMonth() {
-    console.log(currMonth)
     let newMonth = currMonth+1
-    setCurrMonth(newMonth)
-    console.log(newMonth)
-    console.log(currMonth)
-    if(currMonth > 11) {
-      setDate(new Date(currYear, currMonth, new Date().getDate()))
-      setCurrYear(date.getFullYear())
-      setCurrMonth(date.getMonth())
+    if(newMonth > 11) {
+      setCurrYear(currYear+1)
+      setCurrMonth(0)
     } else {
-      setDate(new Date())
+      setCurrMonth(newMonth)
     }
-    updateCalendar()
   }
 
   function changePrevMonth() {
-    setCurrMonth(currMonth-1)
-    if(currMonth < 0) {
-      setDate(new Date(currYear, currMonth, new Date().getDate()))
-      setCurrYear(date.getFullYear())
-      setCurrMonth(date.getMonth())
+    let newMonth = currMonth-1
+    if(newMonth < 0) {
+      setCurrYear(currYear-1)
+      setCurrMonth(11)
     } else {
-      setDate(new Date())
+      setCurrMonth(newMonth)
     }
-    updateCalendar()
   }
 
-  // prevNextIcon.forEach(icon => { // getting prev and next icons
-  //     icon.addEventListener("click", () => { // adding click event on both icons
-  //         // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
-  //         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1
+  useEffect(() => {
+    if (selectedDate in events) {
+      setSelectedEvents(events[selectedDate])
+    }
+    else {
+      setSelectedEvents([])
+    }
+  }, [selectedDate])
 
-  //         if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
-  //             // creating a new date of current year & month and pass it as date value
-  //             date = new Date(currYear, currMonth, new Date().getDate())
-  //             currYear = date.getFullYear() // updating current year with new date year
-  //             currMonth = date.getMonth() // updating current month with new date month
-  //         } else {
-  //             date = new Date() // pass the current date as date value
-  //         }
-  //         renderCalendar() // calling renderCalendar function
-  //     })
-  // })
   return (
     <div className='calendar'>
       <div className='calendar-day-view' id="myList">
+        <div className='calendar-selected-date'>
+          {selectedDate}
+        </div>
+        <div className='calendar-events'>
+          {selectedEvents.map((event) => (
+            <div className='calendar-event' key={event.key}>
+              {event.name}
+            </div>
+          ))}
+        </div>
       </div>
       <div className='calendar-month-view'>
         <div className='calendar-rows'>
           <div className='calendar-header'>
             <div className='calendar-header-month-year'>
               <div className='calendar-header-month'>
-                {currMonth}{months[currMonth]}
+                {months[currMonth]}
               </div>
               <div className='calendar-header-year'>
                 {currYear}
@@ -151,9 +218,12 @@ function Calendar() {
             </div>
           </div>
           <div className='calendar-days'>
-            {calendarDays.map(({ key, className, dayNumber }) => (
-              <div className={className} key={key}>
-                {dayNumber}
+            {calendarDays.map((calenderDay) => (
+              <div className={calenderDay.className} key={calenderDay.key} onClick={() => {setSelectedDate(calenderDay.eventCode)}}>
+                {calenderDay.dayNumber}
+                <div className='calendar-events-dots'>
+                  {calenderDay.eventDots}
+                </div>
               </div>
             ))}
           </div>
@@ -221,7 +291,7 @@ export default function Events() {
       <div className='events-title'>
         EVENTS
       </div>
-      <div className='events-content'>
+      {/* <div className='events-content'>
         <div className='events-image-container'>
           <img className='events-image' src='/events/events.jpg' />
         </div>
@@ -231,8 +301,8 @@ export default function Events() {
             {eventElements}
           </div>
         ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
-      </div>
-      {/* <Calendar /> */}
+      </div> */}
+      <Calendar />
     </div>
   )
 }

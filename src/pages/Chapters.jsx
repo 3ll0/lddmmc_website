@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function Chapters() {
   const chapters = [
@@ -87,43 +87,28 @@ export default function Chapters() {
     }
   ]
   const [displayChapter, setDisplayChapter] = React.useState({})
-  console.log(displayChapter)
 
-  function ChapterDetails() {
-    return (
-      <div className='chapter-details'>
-        <div className='chapter-details-content'>
+
+  // useEffect(() => {
+  //   if (Object.keys(displayChapter).length === 0) {
+  //     console.log('not empty')
+  //   }
+  //   else {
+  //     console.log('empty')
+  //   }
+  // }, [displayChapter])
   
+  function ChapterDetails() {
+    if (Object.keys(displayChapter).length > 0) {
+      return (
+        <div className='chapter-details' onClick={() => (setDisplayChapter({}))}>
+          <div className='chapter-details-content'>
+            {displayChapter.name}
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
-
-
-
-
-  const chapterElements = chapters.map(chapter => (
-    <div key={chapter.id} className='chapter-element'>
-        <img className='chapter-image' src={chapter.logo} />
-        <div className='chapter-info'>
-          <div className='chapter-name'>
-            {chapter.name}
-          </div>
-          {/* <div className='chapter-element-spacer' />
-          <div className='chapter-description'>
-            {chapter.description}
-          </div>
-          <div className='chapter-quote'>
-            {chapter.quote}
-          </div>
-          <a className='chapter-link' href={chapter.website}>
-            {chapter.website}
-          </a> */}
-        </div>
-    </div>
-  ))
-
-  console.log(chapterElements)
 
   return (
     <div className='chapters'>
@@ -132,7 +117,26 @@ export default function Chapters() {
       </div>
       {chapters.length > 0 ? (
         <div className='chapters-list'>
-          {chapterElements}
+          {chapters.map(chapter => (
+            <div key={chapter.id} className='chapter-element' onClick={() => (setDisplayChapter(chapter))}>
+                <img className='chapter-image' src={chapter.logo} />
+                <div className='chapter-info'>
+                  <div className='chapter-name'>
+                    {chapter.name}
+                  </div>
+                  {/* <div className='chapter-element-spacer' />
+                  <div className='chapter-description'>
+                    {chapter.description}
+                  </div>
+                  <div className='chapter-quote'>
+                    {chapter.quote}
+                  </div>
+                  <a className='chapter-link' href={chapter.website}>
+                    {chapter.website}
+                  </a> */}
+                </div>
+            </div>
+          ))}
         </div>
       ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
       <ChapterDetails />

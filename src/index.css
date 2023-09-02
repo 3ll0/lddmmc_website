@@ -890,7 +890,7 @@ body::-webkit-scrollbar {
 }
 
 .chapter-details {
-  display: none;
+  display: flex;
   position: fixed;
   top: var(--header-height);
   height: calc(100vh - var(--header-height));
@@ -1327,6 +1327,31 @@ body::-webkit-scrollbar {
 }
 .calendar-day-current {
   background-color: rgb(255, 127, 127);
+}
+
+.calendar-day-view {
+
+}
+.calendar-selected-date {
+
+}
+.calendar-events {
+
+}
+.calendar-event {
+  
+}
+
+.calendar-events-dots {
+}
+.calendar-day-selectors {
+}
+.calendar-day-selector {
+  position: absolute;
+  background-color: red;
+  width: 2rem;
+  height: 2rem;
+  
 }
 
 /*** CONTACT PAGE ***/
