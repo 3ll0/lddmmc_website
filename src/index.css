@@ -44,8 +44,8 @@ body {
   --header-height: 6rem;
   --footer-height: 10rem;
 
-  /*** CALENDAR DIMENSIONS ***/
-  --calender-size: 40rem;
+  /*** CALENDAR COLOR ***/
+  --calendar-acent-color: rgb(255, 127, 127);
 
   /*** COLORS ***/
   --primary-background-color: #FFFFFF;
@@ -789,6 +789,8 @@ body::-webkit-scrollbar {
 .about-element-name {
   font-size: 2rem;
 }
+.about-element-email {
+}
 @media(max-width: 1200px) {
   .about-element {
     flex-direction: column;
@@ -858,8 +860,6 @@ body::-webkit-scrollbar {
 
   width: 20rem;
   height: 32rem;
-
-  /* background-color: red; */
 }
 .chapter-element-spacer {
   display: flex;
@@ -906,6 +906,16 @@ body::-webkit-scrollbar {
 }
 .chapter-details-image {
   height: 20rem;
+}
+@media(max-width: 800px) {
+  .chapter-details-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .chapter-details-image {
+    height: 100%;
+    width: 20rem;
+  }
 }
 .chapter-details-info {
   display: flex;
@@ -1152,189 +1162,129 @@ body::-webkit-scrollbar {
   font-size: 2rem;
   font-weight: 500;
 }
-.events-content {
-  display: flex;
-  align-items: center;
-
-  margin-top: 2rem;
-
-  justify-content: space-between;
-}
-.events-image-container {
-  display: flex;
-  width: 40rem;
-}
-.events-image {
-  max-width:100%;
-  max-height:100%;
-}
-.events-spacer {
-  display: flex;
-
-  margin-left: 3rem;
-  margin-right: 3rem;
-  
-  height: 30rem;
-  width: 3px;
-
-  border-radius: 3px;
-
-  background-color: var(--primary-accent-color);
-}
-.events-list {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-.event-element {
-  display: flex;
-  flex-direction: column;
-
-  height: 10rem;
-  width: 100%;
-}
-.event-content {
-  display: flex;
-  align-items: center;
-}
-.event-date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--primary-accent-color);
-
-  border-radius: 8px;
-
-  width: 6rem;
-  height: 6rem;
-}
-.event-date-number {
-  font-size: 2.75rem;
-
-  color: var(--secondary-text-color);
-}
-.event-date-month {
-  font-weight: 600;
-  font-size: 0.75rem;
-
-  color: var(--secondary-text-color);
-}
-.event-info {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-
-  margin-left: 1rem;
-}
-.event-info-name {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.event-spacer {
-  display: flex;
-
-  height: 2px;
-  width: 100%;
-
-  border-radius: 2px;
-  background-color: var(--primary-accent-color);
-}
-.event-info-location-container {
-  display: flex;
-  align-items: center;
-}
-.event-info-location-icon {
-  fill: var(--primary-text-color);
-  width: 1rem;
-}
-.event-info-location {
-  margin-left: 2px;
-}
-.event-info-description {
-}
-
-@media(max-width: 1200px) {
-  .events-content {
-    flex-direction: column;
-  }
-  .events-spacer {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    
-    height: 3px;
-    width: 100%;
-  }
-  .events-image-container {
-    width: 100%;
-  }
-}
 
 .calendar {
   display: flex;
 }
+
 .calendar-day-view {
-  width: 10rem;
-  height: var(--calender-size);
-
-  background-color: orange;
-}
-.calendar-month-view {
-  display: block;
-
-  width: var(--calender-size);
-  height: var(--calender-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   padding: 1rem;
+  margin-top: 1rem;
+  
+  width: 16rem;
 
-  /* background-color: red; */
+  color: var(--secondary-text-color);
+
+  border-radius: 0.5rem;
+
+  background-color: var(--primary-accent-color);
+}
+.calendar-selected-date {
+  font-size: 4rem;
+}
+.calendar-selected-month {
+  font-size: 1.5rem;
+}
+.calendar-selected-year {
+  font-size: 1.25rem;
+}
+.calendar-events {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 1rem;
+}
+@media(max-width: 800px) {
+  .calendar {
+    flex-direction: column;
+  }
+  .calendar-day-view {
+    width: 100%;
+    height: 24rem;
+  }
+  .calendar-events {
+    width: 100%;
+  }
+}
+.calendar-event {
+  display: flex;
+  flex-direction: column;
+}
+.calendar-event-name {
+  font-size: 1.25rem;
+}
+.calendar-event-time {
+  
+}
+.calendar-event-location {
+  font-size: 0.75rem;
+  
+}
+.calendar-event-address {
+  font-size: 0.75rem;
+  
+}
+.calendar-event-description {
+  
+}
+.calendar-events-dots {
+  position: absolute;
+  margin-top: 0.5rem;
+
+  font-size: 2rem;
+  font-weight: 600;
+
+  color: var(--calendar-acent-color);
+}
+
+.calendar-month-view {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem;
 }
 .calendar-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  padding: 1rem;
+
+  width: 100%;
 }
 .calendar-header-month-year {
   display: flex;
+
+  font-size: 2.5rem;
 }
 .calendar-header-month, .calendar-header-year  {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+.calendar-header-year {
+  margin-left: 1rem;
 }
 .calendar-header-buttons {
   display: flex;
   align-items: center;
 }
 .calender-next-month, .calender-prev-month {
-  font-size: 2rem;
-}
-.calendar-rows {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-
-  height: 100%;
-
-  background-color: blue;
-}
-.calendar-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  width: 100%;
+  font-size: 2.5rem;
 }
 .calendar-days {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
-  width: 100%;
-
-  background-color: orange;
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
 }
 .calendar-day {
   display: flex;
@@ -1342,6 +1292,7 @@ body::-webkit-scrollbar {
   justify-content: center;
 
   justify-self: center;
+  align-self: center;
   
   border-radius: 50%;
 
@@ -1349,43 +1300,12 @@ body::-webkit-scrollbar {
   height: 4rem;
 
   font-size: 1.5rem;
-
-  background-color: purple;
 }
 .calendar-day-inactive {
   opacity: 50%;
 }
 .calendar-day-current {
-  background-color: rgb(255, 127, 127);
-}
-
-.calendar-day-view {
-
-}
-.calendar-selected-date {
-
-}
-.calendar-events {
-
-}
-.calendar-event {
-  
-}
-
-.calendar-events-dots {
-  position: absolute;
-  margin-top: 0.5rem;
-
-  font-size: 2rem;
-}
-.calendar-day-selectors {
-}
-.calendar-day-selector {
-  position: absolute;
-  background-color: red;
-  width: 2rem;
-  height: 2rem;
-  
+  background-color: var(--calendar-acent-color);
 }
 
 /*** CONTACT PAGE ***/

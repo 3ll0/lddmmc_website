@@ -3,77 +3,144 @@ import React, { useEffect } from 'react'
 function Calendar() {
   // MMDDYYYY format
   const events = {
-    8312023: [
+    9302023: [
       {
         key: 0,
-        name: "Dai Hoi"
-      },
-      {
-        key: 1,
-        name: "Dai Hoi"
-      },
-      {
-        key: 2,
-        name: "Dai Hoi"
-      },
-      {
-        key: 3,
-        name: "Dai Hoi"
-      }
-    ],
-    9072023: [
-      {
-        key: 0,
-        name: "Dai Hoi"
-      },
-      {
-        key: 1,
-        name: "Dai Hoi"
-      },
-      {
-        key: 2,
-        name: "Dai Hoi"
-      },
-      {
-        key: 3,
-        name: "Dai Hoi"
+        name: "DHLD",
+        location: "St. Matthias Catholic Church",
+        address: "",
+        time: "",
+        description: ""
       }
     ],
     10012023: [
       {
         key: 0,
-        name: "Dai Hoi"
-      },
+        name: "DHLD",
+        location: "St. Matthias Catholic Church",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    12072023: [
       {
-        key: 1,
-        name: "Dai Hoi"
-      },
+        key: 0,
+        name: "Tĩnh Tâm và Chầu",
+        location: "Co-Cathedral of of the Sacred Heart",
+        address: "1111 St Joseph Pkwy, Houston, TX 77002",
+        time: "7:00 PM",
+        description: "All Doan's are invited to come"
+      }
+    ],
+    12242023: [
       {
-        key: 2,
-        name: "Dai Hoi"
-      },
+        key: 0,
+        name: "Thi Đua CTTT",
+        location: "Our Lady of Lavang Parish",
+        address: "12320 Old Foltin Rd, Houston, TX 77086",
+        time: "",
+        description: ""
+      }
+    ],
+    1052024: [
       {
-        key: 3,
-        name: "Dai Hoi"
+        key: 0,
+        name: "Tĩnh Tâm HT",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    1062024: [
+      {
+        key: 0,
+        name: "Tĩnh Tâm HT",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    1072024: [
+      {
+        key: 0,
+        name: "Tĩnh Tâm HT",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    8092024: [
+      {
+        key: 0,
+        name: "Dai Hoi Ve Dat Hua 7",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    8102024: [
+      {
+        key: 0,
+        name: "Dai Hoi Ve Dat Hua 7",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    8112024: [
+      {
+        key: 0,
+        name: "Dai Hoi Ve Dat Hua 7",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
+      }
+    ],
+    8122024: [
+      {
+        key: 0,
+        name: "Dai Hoi Ve Dat Hua 7",
+        location: "",
+        address: "",
+        time: "",
+        description: ""
       }
     ]
   }
-  function getEventKey(day, month, year) {
-    return month * 1000000 + day * 10000 + year
-  }
 
   const [calendarDays, setCalendarDays] = React.useState([])
-  const [date, setDate] = React.useState(new Date())
-  const [currYear, setCurrYear] = React.useState(date.getFullYear())
-  const [currMonth, setCurrMonth] = React.useState(date.getMonth())
-  const [selectedDate, setSelectedDate] = React.useState(getEventKey(date.getDate(), currMonth+1, currYear))
+  const [currMonth, setCurrMonth] = React.useState(new Date().getMonth())
+  const [currYear, setCurrYear] = React.useState(new Date().getFullYear())
+  const [selectedDate, setSelectedDate] = React.useState(new Date().getDate())
+  const [selectedMonth, setSelectedMonth] = React.useState(currMonth)
+  const [selectedYear, setSelectedYear] = React.useState(currYear)
   const [selectedEvents, setSelectedEvents] = React.useState([])
 
-  // storing full name of all months in array
   const months = ["January", "February", "March", "April", "May", "June", "July",
                 "August", "September", "October", "November", "December"]
 
-  // update calender
+  function getEventDots(day, month, year) {
+    let eventCode = ((month+1) * 1000000 + day * 10000 + year)
+    return eventCode in events ? ".".repeat(events[eventCode].length): ""
+  }
+
+  useEffect(() => {
+    let eventCode = ((selectedMonth+1) * 1000000 + selectedDate * 10000 + selectedYear)
+    if (eventCode in events) {
+      setSelectedEvents(events[eventCode])
+    }
+    else {
+      setSelectedEvents([])
+    }
+  }, [selectedDate, selectedMonth, selectedYear])
+
   useEffect(() => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay() // getting first day of month
     let lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate() // getting last date of month
@@ -83,48 +150,49 @@ function Calendar() {
 
     let newCalender = []
 
-    // creating li of previous month last days
     for (let i = firstDayofMonth; i > 0; i--) {
-      let eventCode = getEventKey(lastDateofLastMonth-i+1, currMonth, currYear)
       newCalender.push({
         key: keyCounter,
         className: "calendar-day calendar-day-inactive", 
-        dayNumber: lastDateofLastMonth - i + 1,
-        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
-        eventCode: eventCode})
+        day: lastDateofLastMonth - i + 1,
+        month: currMonth - 1 < 0 ? 11 : currMonth - 1,
+        year: currMonth - 1 < 0 ? currYear - 1 : currYear,
+        eventDots: getEventDots(lastDateofLastMonth - i + 1,
+                                currMonth - 1 < 0 ? 11 : currMonth - 1,
+                                currMonth - 1 < 0 ? currYear - 1 : currYear)})
       keyCounter++
     }
     
-    // creating li of all days of current month
     for (let i = 1; i <= lastDateofMonth; i++) {
-      // adding active class to li if the current day, month, and year matched
-      let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
+      let isToday = i === new Date().getDate() && currMonth === new Date().getMonth() 
                   && currYear === new Date().getFullYear() ? 
                   "calendar-day calendar-day-current" : "calendar-day";
-
-      let eventCode = getEventKey(i, currMonth+1, currYear)
       newCalender.push({
         key: keyCounter,
         className: isToday,
-        dayNumber: i,
-        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
-        eventCode: eventCode})
+        day: i,
+        month: currMonth,
+        year: currYear,
+        eventDots: getEventDots(i,
+                                currMonth, 
+                                currYear)})
       keyCounter++
     }
 
-    // creating li of next month first days
     let trailingDays = 6
     if (newCalender.length <= 35) {
       trailingDays = 13
     }
-    for (let i = lastDayofMonth; i < trailingDays; i++) { 
-      let eventCode = getEventKey(i-lastDayofMonth+1, currMonth+2, currYear)
+    for (let i = lastDayofMonth; i < trailingDays; i++) {
       newCalender.push({
         key: keyCounter,
         className: "calendar-day calendar-day-inactive", 
-        dayNumber: i - lastDayofMonth + 1,
-        eventDots: eventCode in events ? ".".repeat(events[eventCode].length): "",
-        eventCode: eventCode})
+        day: i - lastDayofMonth + 1,
+        month: currMonth + 1 > 11 ? 0 : currMonth + 1,
+        year: currMonth + 1 > 11 ? currYear + 1 : currYear,
+        eventDots: getEventDots(i - lastDayofMonth + 1, 
+                                currMonth + 1 > 11 ? 0 : currMonth + 1, 
+                                currMonth + 1 > 11 ? currYear + 1 : currYear)})
       keyCounter++
     }
 
@@ -151,82 +219,87 @@ function Calendar() {
     }
   }
 
-  useEffect(() => {
-    if (selectedDate in events) {
-      setSelectedEvents(events[selectedDate])
-    }
-    else {
-      setSelectedEvents([])
-    }
-  }, [selectedDate])
-
   return (
     <div className='calendar'>
-      <div className='calendar-day-view' id="myList">
+      <div className='calendar-day-view'>
         <div className='calendar-selected-date'>
           {selectedDate}
+        </div>
+        <div className='calendar-selected-month'>
+          {months[selectedMonth]}
+        </div>
+        <div className='calendar-selected-year'>
+          {selectedYear}
         </div>
         <div className='calendar-events'>
           {selectedEvents.map((event) => (
             <div className='calendar-event' key={event.key}>
-              {event.name}
+              <div className='calendar-event-name'>
+                {event.name}
+              </div>
+              <div className='calendar-event-time'>
+                {event.time}
+              </div>
+              <div className='calendar-event-location'>
+                {event.location}
+              </div>
+              <div className='calendar-event-address'>
+                {event.address}
+              </div>
+              <div className='calendar-event-description'>
+                {event.description}
+              </div>
             </div>
           ))}
         </div>
       </div>
       <div className='calendar-month-view'>
-        <div className='calendar-rows'>
-          <div className='calendar-header'>
-            <div className='calendar-header-month-year'>
-              <div className='calendar-header-month'>
-                {months[currMonth]}
-              </div>
-              <div className='calendar-header-year'>
-                {currYear}
-              </div>
+        <div className='calendar-header'>
+          <div className='calendar-header-month-year'>
+              {months[currMonth]} {currYear}
+          </div>
+          <div className='calendar-header-buttons'>
+            <div className='calender-prev-month' onClick={changePrevMonth}>
+              ˄
             </div>
-            <div className='calendar-header-buttons'>
-              <div className='calender-next-month' onClick={changeNextMonth}>
-                ˅
-              </div>
-              <div className='calender-prev-month' onClick={changePrevMonth}>
-                ˄
-              </div>
+            <div className='calender-next-month' onClick={changeNextMonth}>
+              ˅
             </div>
           </div>
-          <div className='calendar-row'>
-            <div className='calendar-day'>
-              Su
-            </div>
-            <div className='calendar-day'>
-              Mo
-            </div>
-            <div className='calendar-day'>
-              Tu
-            </div>
-            <div className='calendar-day'>
-              We
-            </div>
-            <div className='calendar-day'>
-              Th
-            </div>
-            <div className='calendar-day'>
-              Fr
-            </div>
-            <div className='calendar-day'>
-              Sa
-            </div>
+        </div>
+        <div className='calendar-days'>
+          <div className='calendar-day'>
+            Su
           </div>
-          <div className='calendar-days'>
-            {calendarDays.map((calenderDay) => (
-              <div className={calenderDay.className} key={calenderDay.key} onClick={() => {setSelectedDate(calenderDay.eventCode)}}>
-                {calenderDay.dayNumber}
-                <div className='calendar-events-dots'>
-                  {calenderDay.eventDots}
-                </div>
+          <div className='calendar-day'>
+            Mo
+          </div>
+          <div className='calendar-day'>
+            Tu
+          </div>
+          <div className='calendar-day'>
+            We
+          </div>
+          <div className='calendar-day'>
+            Th
+          </div>
+          <div className='calendar-day'>
+            Fr
+          </div>
+          <div className='calendar-day'>
+            Sa
+          </div>
+          {calendarDays.map((calenderDay) => (
+            <div className={calenderDay.className} key={calenderDay.key} 
+              onClick={() => {setSelectedDate(calenderDay.day);
+                              setSelectedMonth(calenderDay.month);
+                              setSelectedYear(calenderDay.year)}}>
+              {calenderDay.day}
+              <div className='calendar-events-dots'>
+                {calenderDay.eventDots}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -234,74 +307,11 @@ function Calendar() {
 }
 
 export default function Events() {
-  const events = [
-    {
-      id: 0,
-      name: "DHLD", 
-      location: "St. Matthias Catholic Church", 
-      description: "EPHESIANS 2:10",
-      dateNumber: "30",
-      dateMonth: "September",
-    },
-    {
-      id: 1,
-      name: "DHLD", 
-      location: "St. Matthias Catholic Church",
-      description: "EPHESIANS 2:10",
-      dateNumber: "1",
-      dateMonth: "October",
-    }
-  ]
-
-  const eventElements = events.map(event => (
-    <div key={event.id} className='event-element'>
-      <div className='event-content'>
-        <div className='event-date'>
-          <div className='event-date-number'>
-            {event.dateNumber}
-          </div>
-          <div className='event-date-month'>
-            {event.dateMonth}
-          </div>
-        </div>
-        <div className='event-info'>
-          <div className='event-info-name'>
-            {event.name}
-          </div>
-          <div className='event-spacer' />
-          <div className='event-info-location-container'>
-            <svg className='event-info-location-icon'viewBox="0 0 395.71 395.71"><g><path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738
-                  c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388
-                  C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191
-                  c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/></g></svg>
-            <div className='event-info-location'>
-              {event.location}
-            </div>
-          </div>
-          <div className='event-info-description'>
-            {event.description}
-          </div>
-        </div>
-      </div>
-    </div>
-  ))
-
   return (
     <div className='events'>
       <div className='events-title'>
         EVENTS
       </div>
-      {/* <div className='events-content'>
-        <div className='events-image-container'>
-          <img className='events-image' src='/events/events.jpg' />
-        </div>
-        <div className='events-spacer' />
-        {events.length > 0 ? (
-          <div className='events-list'>
-            {eventElements}
-          </div>
-        ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
-      </div> */}
       <Calendar />
     </div>
   )

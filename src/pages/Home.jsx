@@ -62,14 +62,20 @@ function HomeImage() {
     {
       id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "1 day ago", 
-      content: "Join us for DHLD Sep 30 - Oct 1",
+      time: "9/1/2023", 
+      content: "Join us for DHLD Sep 30 - Oct 1!",
     },
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "2 day ago", 
+      time: "9/2/2023", 
       content: "Good luck going back to school!",
+    },
+    {
+      id: 2,
+      name: "Liên Đoàn Đức Mẹ Mân Côi", 
+      time: "9/3/2023", 
+      content: "Remember to submit your DHLD forms!",
     }
   ]
 
