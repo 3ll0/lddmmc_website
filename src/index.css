@@ -594,6 +594,7 @@ body::-webkit-scrollbar {
 }
 .home-title-name {
   font-size: 4em;
+  font-weight: 500;
 }
 .home-sub-title{
   font-size: 1.5em;
@@ -1172,6 +1173,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 .resources-dhld-downloads-file {
+  color: var(--primary-accent-color);
 }
 
 /*** EVENTS PAGE ***/
