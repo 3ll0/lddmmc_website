@@ -297,12 +297,12 @@ function Calendar() {
           </div>
           <div className='calendar-header-buttons'>
             <div className='calender-prev-month' onClick={changePrevMonth}>
-              <svg width="48" height="48" viewBox="0 2 24 24" transform="rotate(180 0 0)">
-                <polygon points="12 17.414 3.293 8.707 4.707 7.293 12 14.586 19.293 7.293 20.707 8.707 12 17.414"/>
+              <svg width="48" height="48" viewBox="0 0 24 24">
+                <polygon points="12 6.586 3.293 15.293 4.707 16.707 12 9.414 19.293 16.707 20.707 15.293 12 6.586"/>
               </svg>
             </div>
             <div className='calender-next-month' onClick={changeNextMonth}>
-              <svg width="48" height="48" viewBox="0 -2 24 24">
+              <svg width="48" height="48" viewBox="0 0 24 24">
                 <polygon points="12 17.414 3.293 8.707 4.707 7.293 12 14.586 19.293 7.293 20.707 8.707 12 17.414"/>
               </svg>
             </div>

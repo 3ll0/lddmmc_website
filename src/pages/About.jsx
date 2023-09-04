@@ -115,8 +115,8 @@ export default function About() {
       roleE: "League IT Lead", 
       name: "Peter - Ryan Hoang",
       image: "/about/it.jpg",
-      email: "tofu1300@gmail.com",
-      emailLink: "mailto:tofu1300@gmail.com"
+      email: "ryan.hoang1@veym.net",
+      emailLink: "mailto:ryan.hoang1@veym.net"
     },
     {
       id: 2,
@@ -142,8 +142,8 @@ export default function About() {
       roleE: "League Communications Lead", 
       name: "Cêcilia - Allison Diễm-Ngọc Hà",
       image: "/about/communications.jpg",
-      email: "cindy.tran@veym.net",
-      emailLink: "mailto:cindy.tran@veym.net"
+      email: "allison.ha@veym.net",
+      emailLink: "mailto:allison.ha@veym.net"
     },
     {
       id: 5,
