@@ -63,36 +63,30 @@ function HomeImage() {
       id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "9/1/2023", 
-      content: "Join us for DHLD Sep 30 - Oct 1!",
+      content: "Join us for DHLD Sep 30 - Oct 1! Remember to submit your DHLD forms!",
     },
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "9/2/2023", 
       content: "Good luck going back to school!",
-    },
-    {
-      id: 2,
-      name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/3/2023", 
-      content: "Remember to submit your DHLD forms!",
     }
   ]
 
   const annoucementElements = annoucements.map(annoucement => (
-    <div key={annoucement.id} className='home-latest-element'>
-      <div className='home-latest-header'>
-        <img className='home-latest-header-icon' src="/images/logo.png" />
-        <div className='home-latest-header-description'>
-          <div className='home-latest-header-name'>
+    <div key={annoucement.id} className='home-annoucement-element'>
+      <div className='home-annoucement-header'>
+        <img className='home-annoucement-header-icon' src="/images/logo.png" />
+        <div className='home-annoucement-header-description'>
+          <div className='home-annoucement-header-name'>
             {annoucement.name}
           </div>
-          <div className='home-latest-header-time'>
+          <div className='home-annoucement-header-time'>
             {annoucement.time}
           </div>
         </div>
       </div>
-      <div className='home-latest-content'>
+      <div className='home-annoucement-content'>
         {annoucement.content}
       </div>
     </div>
@@ -121,7 +115,7 @@ function HomeImage() {
             Our Lady of The Holy Rosary League of Chapters
           </div>
         </div>
-        <div className='home-latest-container'>
+        <div className='home-annoucement-container'>
           {annoucementElements}
         </div>
       </div>

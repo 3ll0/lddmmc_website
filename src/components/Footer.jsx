@@ -26,13 +26,19 @@ function Links() {
       </div>
       <div className="footer-spacer"/>
       <a className='footer-link-veym' href="https://veym.net">
-        VEYM Main Website
+        <div className="footer-link-text">
+          VEYM Main Website
+        </div>
       </a>
       <a className='footer-link-membership' href="https://members.veym.net">
-        Membership
+        <div className="footer-link-text">
+          Membership
+        </div>
       </a>
       <a className='footer-link-store' href="https://store.veym.net">
-        VEYM Store
+        <div className="footer-link-text">
+          VEYM Store
+        </div>
       </a>
     </div>
   )

@@ -18,7 +18,7 @@ function HeaderMain() {
         Liên Đoàn Đức Mẹ Mân Côi
       </div>
       <div className='header-name-mobile'>
-        LDDMMC
+        LĐĐMMC
       </div>
     </Link>
   )
@@ -54,16 +54,6 @@ function HeaderNav() {
 }
 
 function HeaderNavMobile () {
-  function ToggleDropDown() {
-    var x = document.getElementsByClassName("header");
-    // if (x.style.display === "none") {
-    //   x.style.display = "block";
-    // } else {
-    //   x.style.display = "none";
-    // }
-    // x.style = "100rem";
-  }
-
   return (
     <div className='navbar-hamburger-menu'>
       <div className="hamburger-lines">
