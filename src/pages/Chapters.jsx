@@ -84,11 +84,15 @@ export default function Chapters() {
     {
       id: "nvhb",
       name: "Nữ Vương Hòa Bình",
-      parish: "",
-      location: "",
-      sinhhoat: "",
-      description: "",
+      parish: "Giáo Xứ Đức Kitô Ngôi Lời Nhập Thể or Christ the Incarnate Word Catholic Church",
+      location: "8503 S. Kirkwood Rd Houston, Tx 77099",
+      sinhhoat: "Sunday 10AM-12PM",
+      description: "Our Đoàn TNTT was first established at Notre Dame Catholic Church in 1984, donned with the name Mẹ Là Mẹ Thiên Chúa. After a period of several years, the chapter name was officially changed to Nữ Vương Hòa Bình in 1990, honoring Mother Mary, our Lady of Peace. Now, we officially sinh hoạt at GX Đức Kitô Ngôi Lời Nhập Thể and celebrate the Queenship of Mother Mary and our Đoàn Lễ Bổn Mạng (Feast Day) on 8/22 or dates that are nearby. Đoàn Nữ Vương Hòa Bình continues to sinh hoạt today with around 170 members and 25 youth leaders, with Lm. Gioan Viannêy Nguyễn Ngọc Thụ as our current Cha Tuyên Úy and Tr. Giuse Nguyễn Fanrcy as our current Đoàn Trưởng.",
       links: [
+        {
+          name: 'Instagram',
+          link: 'https://instagram.com/tnttnvhb?igshid=NzZlODBkYWE4Ng=='
+        }
       ],
       logo: "/chapters/NVHB.png"
     },

@@ -40,6 +40,9 @@ function HeaderNav() {
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/events'>
         EVENTS
       </NavLink>
+      {/* <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/gallery'>
+        GALLERY
+      </NavLink> */}
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/contact'>
         CONTACT
       </NavLink>
@@ -81,6 +84,9 @@ function HeaderNavDropDown() {
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/events'>
         EVENTS
       </NavLink>
+      {/* <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/gallery'>
+        GALLERY
+      </NavLink> */}
       <NavLink className={({isActive}) => isActive ? 'header-navbar-active' : 'header-navbar-inactive'} to='/contact'>
         CONTACT
       </NavLink>

@@ -6,6 +6,7 @@ import Chapters from './pages/Chapters'
 import Resources from './pages/resources/Resources'
 import Events from './pages/Events'
 import Contact from './pages/Contact'
+import Gallery from './pages/Gallery'
 
 import Default from './pages/resources/Default'
 
@@ -41,6 +42,7 @@ export default function App() {
             <Route path='dhld' element={<DHLD />} />
           </Route>
           <Route path='events' element={<Events />} />
+          <Route path='gallery' element={<Gallery />} />
           <Route path='contact' element={<Contact />} />
         </Route>
       </Routes>

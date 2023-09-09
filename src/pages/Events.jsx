@@ -232,7 +232,7 @@ function Calendar() {
           {selectedYear}
         </div>
         <div className='calendar-events'>
-          {selectedEvents.map((event) => (
+          {selectedEvents.length > 0 ? selectedEvents.map((event) => (
             <div className='calendar-event' key={event.key}>
               <div className='calendar-event-name'>
                 {event.name}
@@ -282,7 +282,11 @@ function Calendar() {
                 {event.description}
               </div>
             </div>
-          ))}
+          )) : (
+            <div className='calendar-event'>
+              No Events
+            </div>
+          )}
         </div>
       </div>
       <div className='calendar-month-view'>

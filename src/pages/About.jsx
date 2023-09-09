@@ -72,7 +72,7 @@ export default function About() {
     },
     {
       id: 1,
-      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleV: "Ủy Viên Ngành Thiếu Nhi", 
       roleE: "League Academic Search Specialist", 
       name: "Anrê - Andy Kim Nguyen",
       image: "/about/search.jpg",
@@ -81,7 +81,7 @@ export default function About() {
     },
     {
       id: 2,
-      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleV: "Ủy Viên Ngành Nghĩa Sĩ", 
       roleE: "League Academic Companion Specialist", 
       name: "Johnny Dinh",
       image: "/about/companion.jpg",
@@ -90,7 +90,7 @@ export default function About() {
     },
     {
       id: 3,
-      roleV: "Ủy Viên Ngành Ấu Nhi", 
+      roleV: "Ủy Viên Ngành Hiệp Sĩ", 
       roleE: "League Academic KoE Specialist", 
       name: "Anna - Adeline Nhan Ai Pham",
       image: "/about/koe.jpg",
