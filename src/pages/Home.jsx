@@ -68,8 +68,8 @@ function HomeImage() {
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/2/2023", 
-      content: "Good luck going back to school!",
+      time: "9/12/2023", 
+      content: "Please pray for the soul of MARIA MAGDELENA, mother of Tr. Khải Hoàn Đoàn Savio.",
     }
   ]
 
