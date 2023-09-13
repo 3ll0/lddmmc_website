@@ -1,4 +1,6 @@
 import React from 'react'
+import { useRef } from 'react'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
 export default function About() {
   const spirituals = [
@@ -212,9 +214,59 @@ export default function About() {
   const academicElements = academics.map(academic => aboutElement(academic))
   const leadElements = leads.map(lead => aboutElement(lead))
   
+  const ref = useRef();
+
   return (
     <div className="about">
-      <div className="about-main">
+      <Parallax pages={5} ref={ref}>
+        <ParallaxLayer 
+          speed={1}
+          style={{
+            backgroundColor: 'red',
+            backgroundSize: 'cover'
+          }}
+          onClick={() => ref.current.scrollTo(1)}>
+          <div className="about-main-image-container">
+            <img className='about-main-image' src='/about/LD.png' />
+          </div>
+          <div className="about-main-description">
+            Meet our Lien Doan Ban Chap Hanh for 2023-2026!
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer 
+          offset={1} 
+          speed={0.5}
+          onClick={() => ref.current.scrollTo(2)}>
+          <div className="about-element-spirituals-list">
+            {spiritualElements}
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer 
+          offset={2} 
+          speed={0.5}
+          onClick={() => ref.current.scrollTo(3)}>
+          <div className="about-element-spirituals-list">
+            {btvElements}
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer 
+          offset={3} 
+          speed={0.5}
+          onClick={() => ref.current.scrollTo(4)}>
+          <div className="about-element-spirituals-list">
+            {academicElements}
+          </div>
+        </ParallaxLayer>
+        <ParallaxLayer 
+          offset={4} 
+          speed={0.5}
+          onClick={() => ref.current.scrollTo(0)}>
+          <div className="about-element-spirituals-list">
+            {leadElements}
+          </div>
+        </ParallaxLayer>
+      </Parallax>
+      {/* <div className="about-main">
         <div className="about-main-image-container">
           <img className='about-main-image' src='/about/LD.png' />
         </div>
@@ -245,7 +297,7 @@ export default function About() {
         <div className="about-element-leads-list">
           {leadElements}
         </div>
-      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>} */}
     </div>
   )
 }
