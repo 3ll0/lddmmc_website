@@ -64,17 +64,21 @@ function HomeImage() {
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "9/12/2023", 
       content: "Please pray for the soul of MARIA MAGDELENA, mother of Tr. Khải Hoàn Đoàn Savio.",
+      link: ""
     },
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
       time: "9/21/2023", 
-      content: "9-Day Spiritual Novena + Countdown for DHLD starts today! Check the Resources Tab!",
+      content: "9-Day Spiritual Novena + Countdown for DHLD starts today! Click Here!",
+      link: "http://www.lddmmc.org/resources/dhld"
     }
   ]
 
   const annoucementElements = annoucements.map(annoucement => (
     <div key={annoucement.id} className='home-annoucement-element'>
+      {annoucement.link != "" ?
+      <a className="home-annoucement-link" href={annoucement.link}/> : <div/>}
       <div className='home-annoucement-header'>
         <img className='home-annoucement-header-icon' src="/shared/logo.png" />
         <div className='home-annoucement-header-description'>
@@ -86,9 +90,13 @@ function HomeImage() {
           </div>
         </div>
       </div>
-      <div className='home-annoucement-content'>
-        {annoucement.content}
-      </div>
+      {annoucement.link != "" ?
+        <a className='home-annoucement-content' href={annoucement.link}>
+          {annoucement.content}
+        </a> 
+        : <div className='home-annoucement-content'>
+          {annoucement.content}
+        </div>}
     </div>
   ))
   

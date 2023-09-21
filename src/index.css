@@ -613,7 +613,6 @@ body::-webkit-scrollbar {
 
   font-size: 1em;
 }
-
 .home-annoucement-element {
   padding: 1em;
   margin: 0.5em;
@@ -643,6 +642,7 @@ body::-webkit-scrollbar {
 }
 .home-annoucement-content {
   margin-top: 0.5em;
+  color: var(--primary-text-color);
 }
 
 @media(max-width: 1200px) {
