@@ -62,21 +62,21 @@ function HomeImage() {
     {
       id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/1/2023", 
-      content: "Join us for DHLD Sep 30 - Oct 1! Remember to submit your DHLD forms!",
+      time: "9/12/2023", 
+      content: "Please pray for the soul of MARIA MAGDELENA, mother of Tr. Khải Hoàn Đoàn Savio.",
     },
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/12/2023", 
-      content: "Please pray for the soul of MARIA MAGDELENA, mother of Tr. Khải Hoàn Đoàn Savio.",
+      time: "9/21/2023", 
+      content: "9-Day Spiritual Novena + Countdown for DHLD starts today! Check the Resources Tab!",
     }
   ]
 
   const annoucementElements = annoucements.map(annoucement => (
     <div key={annoucement.id} className='home-annoucement-element'>
       <div className='home-annoucement-header'>
-        <img className='home-annoucement-header-icon' src="/images/logo.png" />
+        <img className='home-annoucement-header-icon' src="/shared/logo.png" />
         <div className='home-annoucement-header-description'>
           <div className='home-annoucement-header-name'>
             {annoucement.name}
@@ -95,7 +95,10 @@ function HomeImage() {
   return (
     <div className='home-image-section'>
       <div className='home-image-container'>
-        <img className='home-image' src="/images/main.jpg" />
+        <img className='home-image' src="/home/main.jpg" />
+      </div>
+      <div className='home-image-container-mobile'>
+        <img className='home-image' src="/home/main-mobile.jpg" />
       </div>
       {/* <div className='home-image-words-container'>
         <div className="typewrite" data-period="10" 

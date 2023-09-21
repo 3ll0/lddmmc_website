@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRef } from 'react'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import Footer from '../../components/Footer'
 
 export default function About() {
   const spirituals = [
@@ -218,13 +219,10 @@ export default function About() {
 
   return (
     <div className="about">
-      <Parallax pages={5} ref={ref}>
-        <ParallaxLayer 
+      {/* <Parallax className="about-parallax" pages={6} ref={ref}>
+        <ParallaxLayer
+          className="about-parallax-layer"
           speed={1}
-          style={{
-            backgroundColor: 'red',
-            backgroundSize: 'cover'
-          }}
           onClick={() => ref.current.scrollTo(1)}>
           <div className="about-main-image-container">
             <img className='about-main-image' src='/about/LD.png' />
@@ -233,7 +231,8 @@ export default function About() {
             Meet our Lien Doan Ban Chap Hanh for 2023-2026!
           </div>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer
+          className="about-parallax-layer"
           offset={1} 
           speed={0.5}
           onClick={() => ref.current.scrollTo(2)}>
@@ -241,7 +240,8 @@ export default function About() {
             {spiritualElements}
           </div>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer
+          className="about-parallax-layer"
           offset={2} 
           speed={0.5}
           onClick={() => ref.current.scrollTo(3)}>
@@ -249,7 +249,8 @@ export default function About() {
             {btvElements}
           </div>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer
+          className="about-parallax-layer"
           offset={3} 
           speed={0.5}
           onClick={() => ref.current.scrollTo(4)}>
@@ -257,16 +258,24 @@ export default function About() {
             {academicElements}
           </div>
         </ParallaxLayer>
-        <ParallaxLayer 
+        <ParallaxLayer
+          className="about-parallax-layer"
           offset={4} 
           speed={0.5}
-          onClick={() => ref.current.scrollTo(0)}>
+          onClick={() => ref.current.scrollTo(5)}>
           <div className="about-element-spirituals-list">
             {leadElements}
           </div>
         </ParallaxLayer>
-      </Parallax>
-      {/* <div className="about-main">
+        <ParallaxLayer
+          className="about-parallax-layer"
+          offset={5} 
+          speed={0.5}
+          onClick={() => ref.current.scrollTo(0)}>
+          <Footer />
+        </ParallaxLayer>
+      </Parallax> */}
+      <div className="about-main">
         <div className="about-main-image-container">
           <img className='about-main-image' src='/about/LD.png' />
         </div>
@@ -275,29 +284,21 @@ export default function About() {
         </div>
       </div>
       <div className="about-spacer" />
-      {spirituals.length > 0 ? (
-        <div className="about-element-spirituals-list">
-          {spiritualElements}
-        </div>
-      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      <div className="about-element-spirituals-list">
+        {spiritualElements}
+      </div>
       <div className="about-spacer" />
-      {btvs.length > 0 ? (
-        <div className="about-element-btvs-list">
-          {btvElements}
-        </div>
-        ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      <div className="about-element-btvs-list">
+        {btvElements}
+      </div>
       <div className="about-spacer" />
-      {academics.length > 0 ? (
-        <div className="about-element-academics-list">
-          {academicElements}
-        </div>
-      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>}
+      <div className="about-element-academics-list">
+        {academicElements}
+      </div>
       <div className="about-spacer" />
-      {leads.length > 0 ? (
-        <div className="about-element-leads-list">
-          {leadElements}
-        </div>
-      ) : <div className="loading"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>} */}
+      <div className="about-element-leads-list">
+        {leadElements}
+      </div>
     </div>
   )
 }

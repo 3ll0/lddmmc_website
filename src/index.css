@@ -185,6 +185,8 @@ body::-webkit-scrollbar {
   top: 0;
   z-index: 99;
 
+  font-weight: 500;
+
   padding-left: 2rem;
   padding-right: 2rem;
 
@@ -289,11 +291,9 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 .header-navbar-inactive {
-  font-weight: 400;
   text-decoration: none;
 }
 .header-navbar-active {
-  font-weight: 600;
   color: var(--primary-accent-color);
 }
 .header-facebook-icon, .header-instagram-icon > * {
@@ -541,18 +541,21 @@ body::-webkit-scrollbar {
   position: relative;
   width: 100%;
 }
-.home-image-container {
+.home-image-container, .home-image-container-mobile {
   display: flex;
   position: relative;
   width: 100%;
 }
-.home-image-container:before {
+.home-image-container:before, .home-image-container-mobile::before{
   position: absolute;
   content: "";
   background-color: var(--primary-accent-color);
   width: 100%;
   height: 100%;
   opacity: 80%;
+}
+.home-image-container-mobile {
+  display: none;
 }
 .home-image {
   width: 100%;
@@ -586,6 +589,9 @@ body::-webkit-scrollbar {
   flex-direction: column;
 
   align-items: center;
+  text-align: center;
+
+  margin: 2em;
 
   color: var(--always-white-color)
 }
@@ -603,7 +609,7 @@ body::-webkit-scrollbar {
   display: flex;
   flex-direction: column;
 
-  margin-left: 2em;
+  margin: 2em;
 
   font-size: 1em;
 }
@@ -643,17 +649,24 @@ body::-webkit-scrollbar {
   .home-content-container {
     flex-direction: column;
   }
-  .home-annoucement-container {
-    margin-left: 0;
-    margin-top: 2em
+  .home-image-container {
+    display: none;
+  }
+  .home-image-container-mobile {
+    display: flex;
   }
 }
-@media(max-width: 900px) {
+@media(max-width: 700px) {
   .home-title-container, .home-annoucement-container {
     font-size: 0.75rem;
   }
 }
-@media(max-width: 620px) {
+@media(max-width: 400px) {
+  .home-title-container, .home-annoucement-container {
+    font-size: 0.6rem;
+  }
+}
+@media(max-width: 350px) {
   .home-title-container, .home-annoucement-container {
     font-size: 0.5rem;
   }
@@ -956,11 +969,12 @@ body::-webkit-scrollbar {
   font-size: 1.25rem;
 
   margin-top: 0.5rem;
+
+  white-space: pre-wrap;
 }
 .chapter-details-links {
   display: flex;
   flex-direction: column;
-
 }
 .chapter-details-link {
   color: var(--primary-accent-color);
@@ -1127,6 +1141,7 @@ body::-webkit-scrollbar {
 
 .resources-page-titles {
   font-size: 2rem;
+  font-weight: 500;
 }
 
 .resources-default {
@@ -1177,7 +1192,28 @@ body::-webkit-scrollbar {
 .resources-dhld-downloads-file {
   color: var(--primary-accent-color);
 }
+.resources-dhld-novenas-title {
+  font-size: 2rem;
+  font-weight: 500;
 
+  margin: 1rem;
+}
+.resources-dhld-novenas {
+
+}
+.resources-dhld-novena {
+  margin-bottom: 2rem;
+}
+.resources-dhld-novena-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.resources-dhld-novena-description {
+  white-space: pre-wrap;
+  
+  margin-left: 1rem;
+}
 /*** EVENTS PAGE ***/
 .events {
   display: flex;

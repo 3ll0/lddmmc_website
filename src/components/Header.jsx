@@ -13,7 +13,7 @@ function DarkThemeButton() {
 function HeaderMain() {
   return (
     <Link className='header-main' to='/'>
-      <img className='header-logo' src="/images/logo.png" />
+      <img className='header-logo' src="/shared/logo.png" />
       <div className='header-name-desktop'>
         Liên Đoàn Đức Mẹ Mân Côi
       </div>
