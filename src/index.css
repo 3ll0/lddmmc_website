@@ -1196,10 +1196,13 @@ body::-webkit-scrollbar {
   font-size: 2rem;
   font-weight: 500;
 
-  margin: 1rem;
+  padding: 1rem;
 }
 .resources-dhld-novenas {
-
+  padding: 2rem;
+}
+.resources-dhld-novenas-intro {
+  margin-bottom: 1rem;
 }
 .resources-dhld-novena {
   margin-bottom: 2rem;
