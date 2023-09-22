@@ -1,15 +1,15 @@
 export default function DHLD() {
   const novenas = [
-    {
-      key: 0,
-      name: "Day 1: Guidance and Wisdom",
-      description: "Thursday 9/21/23\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nDear Lord, we thank You for giving us Your mother as Our Lady of the Holy Rosary. Help us to turn to her as our mother in all of our needs! We are grateful for the gift of Our Lady of the Holy Rosary, and we humbly seek her intercession in our daily lives.\n\nAs we embark on this journey in preparation for our Đại Hội Liên Đoàn gathering, we humbly request in this novena for God’s guidance and wisdom. May His divine light shine upon us as we lead by example through our prudent choices. Our Lady of the Holy Rosary, pray for us that we may attain the understanding needed to carry out our event successfully.\n\nOur Lady of the Holy Rosary, we entrust our hopes and desires to you, pray for us!\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nConcluding Prayers: 1 Our Father, 3 Hail Mary, 1 Glory Be"
-    },
     // {
-    //   key: 1,
-    //   name: "Day 2: Unity Among Participants",
-    //   description: "Friday 9/22/23\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nDear Lord, we thank You for giving us Your mother as Our Lady of the Holy Rosary. Help us to turn to her as our mother in all of our needs! We are grateful for the gift of Our Lady of the Holy Rosary, and we humbly seek her intercession in our daily lives.\n\nAs we embark on this journey in preparation for our Đại Hội Liên Đoàn gathering, we humbly request in this novena for unity and harmony among all participants. May our differences be a source of strength, and may we come together with a shared vision, love, and purpose. Our Lady of the Holy Rosary, pray for us that we may work together in solidarity to carry out our event successfully.\n\nOur Lady of the Holy Rosary, we entrust our hopes and desires to you, pray for us!\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nConcluding Prayers: 1 Our Father, 3 Hail Mary, 1 Glory Be"
+    //   key: 0,
+    //   name: "Day 1: Guidance and Wisdom",
+    //   description: "Thursday 9/21/23\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nDear Lord, we thank You for giving us Your mother as Our Lady of the Holy Rosary. Help us to turn to her as our mother in all of our needs! We are grateful for the gift of Our Lady of the Holy Rosary, and we humbly seek her intercession in our daily lives.\n\nAs we embark on this journey in preparation for our Đại Hội Liên Đoàn gathering, we humbly request in this novena for God’s guidance and wisdom. May His divine light shine upon us as we lead by example through our prudent choices. Our Lady of the Holy Rosary, pray for us that we may attain the understanding needed to carry out our event successfully.\n\nOur Lady of the Holy Rosary, we entrust our hopes and desires to you, pray for us!\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nConcluding Prayers: 1 Our Father, 3 Hail Mary, 1 Glory Be"
     // },
+    {
+      key: 1,
+      name: "Day 2: Unity Among Participants",
+      description: "Friday 9/22/23\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nDear Lord, we thank You for giving us Your mother as Our Lady of the Holy Rosary. Help us to turn to her as our mother in all of our needs! We are grateful for the gift of Our Lady of the Holy Rosary, and we humbly seek her intercession in our daily lives.\n\nAs we embark on this journey in preparation for our Đại Hội Liên Đoàn gathering, we humbly request in this novena for unity and harmony among all participants. May our differences be a source of strength, and may we come together with a shared vision, love, and purpose. Our Lady of the Holy Rosary, pray for us that we may work together in solidarity to carry out our event successfully.\n\nOur Lady of the Holy Rosary, we entrust our hopes and desires to you, pray for us!\n\nIn the name of the Father, and of the Son, and of the Holy Spirit. Amen.\n\nConcluding Prayers: 1 Our Father, 3 Hail Mary, 1 Glory Be"
+    },
     // {
     //   key: 2,
     //   name: "Day 3: Strength and Perseverance",
