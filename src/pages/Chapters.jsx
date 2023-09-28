@@ -46,10 +46,10 @@ export default function Chapters() {
     {
       id: "savio",
       name: "Savio",
-      parish: "St. Christopher",
-      location: "",
-      sinhhoat: "",
-      description: "",
+      parish: "St. Christopher Catholic Church",
+      location: "8150 Park Pl Blvd, Houston, TX 77017",
+      sinhhoat: "Sinh Hoat: 2:00 - 3:00pm",
+      description: "Founded in 1977 by Sister Anna Trần Thị Hương Ngào in New Orleans, Doan TNTT Savio's mission centers on youth ministry and religious education. Sister Ngào's commitment led to its establishment in Houston, where it formally joined the Vietnamese Eucharistic Youth Movement in the United States in 1989, adopting the name \"Doan TNTT Dominic Savio\" in honor of St. Dominic Savio's inspirational spirituality, celebrated on his feast day, March 9th. However, our Doan typically celebrates its anniversary in mid-June. With 34 years of history, the organization continues to grow, supported by dedicated benefactors, in its mission to help more young children come to know God.",
       links: [
       ],
       logo: "/chapters/Savio.png"
