@@ -38,7 +38,7 @@ export default function Chapters() {
       parish: "",
       location: "",
       sinhhoat: "",
-      description: "",
+      description: "Before our doan was established, our founding Huỳnh Truong grew up at doan Kito Vua at Lo Đức. All our huynh trưởng would sinh hoạt at Kito Vua, then go to St Elizabeth Ann Seton to teach/TA. After a couple years of doing this, the community there and God called on us to form a doan at SEAS. After much consideration and support from the huynh truong at Kito Vua, we decided to push through and begin building our doan. After speaking with Cha and getting the the ball rolling, we were able to see our doan grow. We started with 40 cac em and now we are going into an our 6th year with almost 100 các em!",
       links: [
       ],
       logo: "/chapters/CBN.jpg"

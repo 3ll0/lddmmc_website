@@ -62,16 +62,23 @@ function HomeImage() {
     {
       id: 0,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/12/2023", 
-      content: "Please pray for the soul of MARIA MAGDELENA, mother of Tr. Khải Hoàn Đoàn Savio.",
+      time: "10/2/2023", 
+      content: "VEYM Adoration at the Co Cathedral will be December 7 at 8PM",
       link: ""
     },
     {
       id: 1,
       name: "Liên Đoàn Đức Mẹ Mân Côi", 
-      time: "9/21/2023", 
-      content: "9-Day Spiritual Novena + Countdown for DHLD starts today! Click Here!",
-      link: "http://www.lddmmc.org/resources/dhld"
+      time: "10/2/2023", 
+      content: "CTTT will be December 24",
+      link: ""
+    },
+    {
+      id: 2,
+      name: "Liên Đoàn Đức Mẹ Mân Côi", 
+      time: "10/2/2023", 
+      content: "HT retreat is January 5-7 at Camp Allen",
+      link: ""
     }
   ]
 
