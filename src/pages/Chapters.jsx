@@ -8,7 +8,7 @@ export default function Chapters() {
       parish: "Vietnamese Martrys",
       location: "10610 Kingspoint Rd, Houston, TX 77075",
       sinhhoat: "Saturday: 1:00 - 2:45",
-      description: "Doan TNTT at GXCTTDVN was established in 1987 with the name Doan CTTDVN. In 2005 the name was changed to Doan Anre Phu Yen (APY) to help us focus on and follow the footsteps of one young VN martyr instead of all 118 VN martyrs. The feast day of our patron St. Anre Phu Yen is July 26, but we usually have big celebration of our anniversary around le CTTDVN, in late November or early December There are currently around 200 members. After TNTT time, most of our young members attend GLVN classes. We stay back to take care with the readings, ushering, and extraordinary Eucharistic ministry at the 6PM mass.",
+      description: "Doan TNTT at GXCTTDVN was established in 1989 with the name Doan CTTDVN. In 2005 the name was changed to Doan Anre Phu Yen (APY) to help us focus on and follow the footsteps of one young VN martyr instead of all 118 VN martyrs. The feast day of our patron St. Anre Phu Yen is July 26, but we usually have big celebration of our anniversary around le CTTDVN, in late November or early December There are currently around 200 members. After TNTT time, most of our young members attend GLVN classes. We stay back to take care with the readings, ushering, and extraordinary Eucharistic ministry at the 6PM mass.",
       links: [
         {
           name: 'Facebook',

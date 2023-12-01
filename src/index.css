@@ -1130,7 +1130,7 @@ body::-webkit-scrollbar {
 .resources-thieu,
 .resources-nghia,
 .resources-hiep,
-.resources-dhld {
+.resources-forms {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1154,28 +1154,18 @@ body::-webkit-scrollbar {
 }
 
 
-.resources-dhld {
+.resources-forms {
 }
-.resources-dhld-flyers {
-  display: flex;
-  flex-direction: column;
-
-}
-.resources-dhld-flyer {
-  width: 100%;
-  margin-bottom: 1rem;
-
-}
-.resources-dhld-downloads {
+.resources-forms-downloads {
   display: flex;
   flex-direction: column;
 
   width: 100%;
 }
-.resources-dhld-downloads-title {
+.resources-forms-downloads-title {
   font-size: 2rem;
 }
-.resources-dhld-downloads-spacer {
+.resources-forms-downloads-spacer {
   display: flex;
 
   height: 1px;
@@ -1185,37 +1175,12 @@ body::-webkit-scrollbar {
 
   background-color: var(--primary-accent-color);
 }
-.resources-dhld-downloads-files {
+.resources-forms-downloads-files {
   display: flex;
   flex-direction: column;
 }
-.resources-dhld-downloads-file {
+.resources-forms-downloads-file {
   color: var(--primary-accent-color);
-}
-.resources-dhld-novenas-title {
-  font-size: 2rem;
-  font-weight: 500;
-
-  padding: 1rem;
-}
-.resources-dhld-novenas {
-  padding: 2rem;
-}
-.resources-dhld-novenas-intro {
-  margin-bottom: 1rem;
-}
-.resources-dhld-novena {
-  margin-bottom: 2rem;
-}
-.resources-dhld-novena-name {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-.resources-dhld-novena-description {
-  white-space: pre-wrap;
-  
-  margin-left: 1rem;
 }
 /*** EVENTS PAGE ***/
 .events {

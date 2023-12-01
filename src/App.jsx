@@ -18,7 +18,7 @@ import Thieu from './pages/resources/academic/Thieu'
 import Nghia from './pages/resources/academic/Nghia'
 import Hiep from './pages/resources/academic/Hiep'
 
-import DHLD from './pages/resources/other/DHLD'
+import Forms from './pages/resources/other/Forms'
 
 export default function App() {
   return (
@@ -39,7 +39,7 @@ export default function App() {
             <Route path='nghia' element={<Nghia />} />
             <Route path='hiep' element={<Hiep />} />
 
-            <Route path='dhld' element={<DHLD />} />
+            <Route path='forms' element={<Forms />} />
           </Route>
           <Route path='events' element={<Events />} />
           <Route path='gallery' element={<Gallery />} />
